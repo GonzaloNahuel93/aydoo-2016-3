@@ -1,9 +1,15 @@
 package ar.edu.untref.aydoo;
 
-public class Program 
+import java.io.File;
+
+public class Program
 {
-    public static final void main(String arg[])
-    {
-        System.out.println("hola!");
+
+    public static final void main(String args[]) {
+
+        File archivoDeEntrada = new File(args[0]);
+        new LectorDeEntrada().leerArchivo(archivoDeEntrada);
+
     }
+
 }
