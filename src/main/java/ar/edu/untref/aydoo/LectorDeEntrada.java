@@ -39,7 +39,7 @@ public class LectorDeEntrada {
 
         } catch (IOException e) {
 
-            throw new NoSePuedeCerrarArchivoException();
+            throw new LecturaInvalidaException();
 
         }
 
