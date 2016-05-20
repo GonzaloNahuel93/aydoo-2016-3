@@ -1,4 +1,4 @@
-package ar.edu.untref.aydoo;
+package A.Entrada;
 
 import java.io.*;
 import java.util.LinkedList;

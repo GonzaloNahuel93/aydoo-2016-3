@@ -1,8 +1,9 @@
-package ar.edu.untref.aydoo;
+package B.Transformacion;
 
-/**
- * Created by synysterlove on 19/05/16.
- */
+import C.ComponentesSimples.Elemento;
+import D.ComponentesHTML.ComponenteHTML;
+import D.ComponentesHTML.LineaHTML;
+
 public class TransformacionDeLinea implements EstrategiaDeTransformacion {
     
     @Override
@@ -12,4 +13,5 @@ public class TransformacionDeLinea implements EstrategiaDeTransformacion {
         return transformado;
 
     }
+ 
 }

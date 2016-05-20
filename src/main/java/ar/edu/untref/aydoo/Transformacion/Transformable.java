@@ -1,8 +1,7 @@
-package ar.edu.untref.aydoo;
+package B.Transformacion;
 
-/**
- * Created by synysterlove on 19/05/16.
- */
+import D.ComponentesHTML.LineaHTML;
+
 public interface Transformable {
 
     public LineaHTML getTransformado();

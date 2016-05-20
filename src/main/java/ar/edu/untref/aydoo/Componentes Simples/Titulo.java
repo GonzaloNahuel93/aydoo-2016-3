@@ -1,17 +1,14 @@
-package ar.edu.untref.aydoo;
+package C.ComponentesSimples;
 
-/**
- * Created by synysterlove on 19/05/16.
- */
+import D.ComponentesHTML.LineaHTML;
+import D.ComponentesHTML.TituloHTML;
+
 public class Titulo extends Elemento {
 
-
     public Titulo(String titulo) {
-
         super(titulo);
-
     }
-    
+
     @Override
     public LineaHTML getTransformado() {
 
@@ -19,4 +16,5 @@ public class Titulo extends Elemento {
         return tituloHTML;
 
     }
+
 }

@@ -1,4 +1,4 @@
-package ar.edu.untref.aydoo;
+package A.Entrada;
 
 /**
  * Created by synysterlove on 17/05/16.
