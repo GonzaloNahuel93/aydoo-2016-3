@@ -1,4 +1,4 @@
-package ar.edu.untref.aydoo;
+package A.Entrada;
 
 import org.junit.Assert;
 import org.junit.Test;

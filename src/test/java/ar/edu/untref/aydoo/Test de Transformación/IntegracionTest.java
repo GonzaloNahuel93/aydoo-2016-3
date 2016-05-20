@@ -1,11 +1,11 @@
-package ar.edu.untref.aydoo;
+package B.Transformacion;
 
 import org.junit.Assert;
 import org.junit.Test;
 
-/**
- * Created by synysterlove on 19/05/16.
- */
+import C.ComponentesSimples.Titulo;
+import D.ComponentesHTML.ComponenteHTML;
+
 public class IntegracionTest {
 
     /*Tests de las transformaciones*/
