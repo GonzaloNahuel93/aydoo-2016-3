@@ -1,19 +1,19 @@
-package ar.edu.untref.aydoo;
+package ar.edu.untref.aydoo.Tests;
 
 import org.junit.Assert;
 import org.junit.Test;
 
-/**
- * Created by synysterlove on 21/05/16.
- */
+import ar.edu.untref.aydoo.Programa.Elementos.ItemDeListaHTML;
+import ar.edu.untref.aydoo.Programa.Elementos.ListaHTML;
+
 public class ListaHTMLTest {
 
     @Test
     public void queSeColoquenCorrectamenteVariasLineasDeTextoAUnaLista() {
 
-        ItemDeListaHTML item1 = new ItemDeListaHTML("soy el primer item");
-        ItemDeListaHTML item2 = new ItemDeListaHTML("soy el segundo item");
-        ItemDeListaHTML item3 = new ItemDeListaHTML("soy el tercer item");
+        ItemDeListaHTML item1 = new ItemDeListaHTML("Primer Item");
+        ItemDeListaHTML item2 = new ItemDeListaHTML("Segundo Item");
+        ItemDeListaHTML item3 = new ItemDeListaHTML("Tercer Item");
         ListaHTML listaHTML = new ListaHTML();
 
         listaHTML.agregarItem(item1);
@@ -22,12 +22,11 @@ public class ListaHTMLTest {
         String contenidoDeLaListaHTML = listaHTML.getContenido();
 
         Assert.assertEquals(("<ul>\n" +
-                " <li>soy el primer item</li>\n" +
-                " <li>soy el segundo item</li>\n" +
-                " <li>soy el tercer item</li>\n" +
-                "</ul>"), contenidoDeLaListaHTML);
+                			 " <li>Primer Item</li>\n" +
+                			 " <li>Segundo Item</li>\n" +
+                			 " <li>Tercer Item</li>\n" +
+                			 "</ul>"), contenidoDeLaListaHTML);
 
     }
-
 
 }

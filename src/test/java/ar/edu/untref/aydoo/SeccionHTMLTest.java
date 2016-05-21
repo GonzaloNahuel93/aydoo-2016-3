@@ -1,7 +1,12 @@
-package ar.edu.untref.aydoo;
+package ar.edu.untref.aydoo.Tests;
 
 import org.junit.Assert;
 import org.junit.Test;
+
+import ar.edu.untref.aydoo.Programa.Elementos.ImagenHTML;
+import ar.edu.untref.aydoo.Programa.Elementos.SeccionHTML;
+import ar.edu.untref.aydoo.Programa.Elementos.SubtituloHTML;
+import ar.edu.untref.aydoo.Programa.Elementos.TituloHTML;
 
 public class SeccionHTMLTest {
 
@@ -19,11 +24,11 @@ public class SeccionHTMLTest {
 		String contenidoDeLaSeccionHTML = seccionHTML.getContenido();
 
 		Assert.assertEquals(("<section>\n" +
-                                        " <h1>Analisis y Diseno Orientado a Objetos</h1>\n" +
-                                        " <h2>Trabajo Practico Numero 1</h2>\n" +
-                                        " <img src=\"Imagen.png\"/>\n" +
-                                        "</section>"), contenidoDeLaSeccionHTML);
+                             " <h1>Analisis y Diseno Orientado a Objetos</h1>\n" +
+                             " <h2>Trabajo Practico Numero 1</h2>\n" +
+                             " <img src=\"Imagen.png\"/>\n" +
+                             "</section>"), contenidoDeLaSeccionHTML);
 
 	}
-
+	
 }

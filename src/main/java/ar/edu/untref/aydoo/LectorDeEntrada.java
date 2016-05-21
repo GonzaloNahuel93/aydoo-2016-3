@@ -1,21 +1,15 @@
-package ar.edu.untref.aydoo;
+package ar.edu.untref.aydoo.Programa;
 
 import java.io.*;
 import java.util.LinkedList;
 import java.util.List;
 
-/**
- * Created by synysterlove on 17/05/16.
- */
 public class LectorDeEntrada {
-
 
     private List<String> contenidoDelArchivoDeEntrada;
 
     public LectorDeEntrada() {
-
             this.contenidoDelArchivoDeEntrada = new LinkedList<String>();
-
     }
 
     public void leerArchivo(File archivoDeEntrada) {
@@ -51,4 +45,5 @@ public class LectorDeEntrada {
         return this.contenidoDelArchivoDeEntrada;
 
     }
+
 }

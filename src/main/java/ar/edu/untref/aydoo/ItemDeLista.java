@@ -1,7 +1,6 @@
-package ar.edu.untref.aydoo;
+package ar.edu.untref.aydoo.Programa.Elementos;
 
 public class ItemDeLista extends Elemento{
-
 
     public ItemDeLista(String contenido){
         super(contenido);

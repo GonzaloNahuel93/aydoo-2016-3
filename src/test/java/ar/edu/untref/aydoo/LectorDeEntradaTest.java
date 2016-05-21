@@ -1,7 +1,9 @@
-package ar.edu.untref.aydoo;
+package ar.edu.untref.aydoo.Tests;
 
 import org.junit.Assert;
 import org.junit.Test;
+
+import ar.edu.untref.aydoo.Programa.LectorDeEntrada;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -9,11 +11,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.List;
 
-/**
- * Created by synysterlove on 17/05/16.
- */
 public class LectorDeEntradaTest {
-
 
     @Test
     public void queConUnArchivoVacioNoHagaNada() throws IOException {

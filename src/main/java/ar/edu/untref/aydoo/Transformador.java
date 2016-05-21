@@ -1,5 +1,7 @@
-package ar.edu.untref.aydoo;
+package ar.edu.untref.aydoo.Programa;
 
+import ar.edu.untref.aydoo.Programa.Elementos.ComponenteHTML;
+import ar.edu.untref.aydoo.Programa.Elementos.Elemento;
 
 public class Transformador {
 

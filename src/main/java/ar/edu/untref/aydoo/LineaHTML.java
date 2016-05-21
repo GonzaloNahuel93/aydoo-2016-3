@@ -1,4 +1,4 @@
-package ar.edu.untref.aydoo;
+package ar.edu.untref.aydoo.Programa.Elementos;
 
 public abstract class LineaHTML implements ComponenteHTML {
 
@@ -13,9 +13,7 @@ public abstract class LineaHTML implements ComponenteHTML {
     }
 
     public String concatenarContenido(String contenido) {
-
         return contenido += (" " + this.getContenido() + "\n");
-
     }
 
 }

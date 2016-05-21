@@ -1,14 +1,9 @@
-package ar.edu.untref.aydoo;
+package ar.edu.untref.aydoo.Programa.Elementos;
 
-/**
- * Created by synysterlove on 21/05/16.
- */
 public class LineaDeTextoPlano extends Elemento {
     
     public LineaDeTextoPlano(String texto) {
-
-        super(texto);
-        
+        super(texto);     
     }
 
     @Override
@@ -18,4 +13,5 @@ public class LineaDeTextoPlano extends Elemento {
         return texto;
 
     }
+
 }

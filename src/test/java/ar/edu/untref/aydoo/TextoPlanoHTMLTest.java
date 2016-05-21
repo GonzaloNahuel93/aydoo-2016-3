@@ -1,20 +1,19 @@
-package ar.edu.untref.aydoo;
+package ar.edu.untref.aydoo.Tests;
 
 import org.junit.Assert;
 import org.junit.Test;
 
-/**
- * Created by synysterlove on 21/05/16.
- */
+import ar.edu.untref.aydoo.Programa.Elementos.TextoPlanoHTML;
+
 public class TextoPlanoHTMLTest {
 
     @Test
     public void queLaLineaEnHTMLDeTextoPlanoSeEscribaCorrectamente(){
 
-        TextoPlanoHTML textoPlanoHTML = new TextoPlanoHTML("holis");
+        TextoPlanoHTML textoPlanoHTML = new TextoPlanoHTML("Esto es una frase para escribir dentro de una seccion");
         String texto = textoPlanoHTML.getContenido();
 
-        Assert.assertEquals("holis", texto);
+        Assert.assertEquals("Esto es una frase para escribir dentro de una seccion", texto);
 
     }
     

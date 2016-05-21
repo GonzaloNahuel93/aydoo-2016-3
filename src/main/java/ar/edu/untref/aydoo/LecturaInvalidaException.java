@@ -1,8 +1,10 @@
-package ar.edu.untref.aydoo;
+package ar.edu.untref.aydoo.Programa;
 
-/**
- * Created by synysterlove on 17/05/16.
- */
+@SuppressWarnings("serial")
 public class LecturaInvalidaException extends RuntimeException{
     
+	public LecturaInvalidaException(){
+		super("La lectura del archivo es inválida.");
+	}
+	
 }

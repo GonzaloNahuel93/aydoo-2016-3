@@ -1,11 +1,9 @@
-package ar.edu.untref.aydoo;
-
+package ar.edu.untref.aydoo.Programa.Elementos;
 
 public class TextoPlanoHTML extends LineaHTML {
     
-    protected TextoPlanoHTML(String contenido) {
-
+    public TextoPlanoHTML(String contenido) {
         super(contenido);
-
     }
+
 }

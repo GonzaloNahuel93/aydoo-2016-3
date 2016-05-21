@@ -1,4 +1,4 @@
-package ar.edu.untref.aydoo;
+package ar.edu.untref.aydoo.Programa.Elementos;
 
 public class Subtitulo extends Elemento{
 

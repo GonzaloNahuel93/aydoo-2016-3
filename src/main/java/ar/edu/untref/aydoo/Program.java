@@ -1,9 +1,8 @@
-package ar.edu.untref.aydoo;
+package ar.edu.untref.aydoo.Programa;
 
 import java.io.File;
 
-public class Program
-{
+public class Program{
 
     public static final void main(String args[]) {
 
