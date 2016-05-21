@@ -12,4 +12,10 @@ public abstract class LineaHTML implements ComponenteHTML {
     	return (this.contenido);
     }
 
+    public String concatenarContenido(String contenido) {
+
+        return contenido += (" " + this.getContenido() + "\n");
+
+    }
+
 }

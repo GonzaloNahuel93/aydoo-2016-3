@@ -5,31 +5,25 @@ import java.util.List;
 
 public abstract class BloqueHTML implements ComponenteHTML {
 
-	protected List<ComponenteHTML> componentes;
+    protected List<LineaHTML> lineas;
 
 	protected BloqueHTML(){
 
-		this.componentes = new ArrayList<ComponenteHTML>();
+        this.lineas = new ArrayList<LineaHTML>();
 
 	}
 
-	public void agregarComponente(ComponenteHTML componente){
 
-		this.componentes.add(componente);
-
-	}
-
+    @Override
 	public String getContenido(){
 
-		String contenido = "<section>\n";
+		String contenido = "";
 
-		for(ComponenteHTML componente: this.componentes){
+		for(LineaHTML linea: this.lineas){
 
-			contenido = contenido + " " + componente.getContenido() + "\n";
+            contenido = linea.concatenarContenido(contenido);
 
         }
-
-		contenido = contenido + "</section>";
 
 		return contenido;
 

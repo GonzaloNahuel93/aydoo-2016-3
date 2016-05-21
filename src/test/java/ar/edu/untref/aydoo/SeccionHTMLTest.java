@@ -13,16 +13,16 @@ public class SeccionHTMLTest {
 		ImagenHTML imagenHTML = new ImagenHTML("Imagen.png");
 		SeccionHTML seccionHTML = new SeccionHTML();
 
-		seccionHTML.agregarComponente(tituloHTML);
-		seccionHTML.agregarComponente(subtituloHTML);
-		seccionHTML.agregarComponente(imagenHTML);
+		seccionHTML.agregarLinea(tituloHTML);
+		seccionHTML.agregarLinea(subtituloHTML);
+		seccionHTML.agregarLinea(imagenHTML);
 		String contenidoDeLaSeccionHTML = seccionHTML.getContenido();
 
-		Assert.assertTrue(contenidoDeLaSeccionHTML.equals("<section>\n" + 
-														  " <h1>Analisis y Diseno Orientado a Objetos</h1>\n" +
-														  " <h2>Trabajo Practico Numero 1</h2>\n" +
-														  " <img src=\"Imagen.png\"/>\n" +
-														  "</section>"));
+		Assert.assertEquals(("<section>\n" +
+                                        " <h1>Analisis y Diseno Orientado a Objetos</h1>\n" +
+                                        " <h2>Trabajo Practico Numero 1</h2>\n" +
+                                        " <img src=\"Imagen.png\"/>\n" +
+                                        "</section>"), contenidoDeLaSeccionHTML);
 
 	}
 
