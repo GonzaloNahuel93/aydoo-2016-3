@@ -47,6 +47,16 @@ public class IntegracionTest {
 
     }
 
+    @Test
+    public void queTransformeCorrectamenteUnItemDeLista() {
+
+        ItemDeLista item = new ItemDeLista("soy un item");
+        Transformador transformadorItem = new Transformador(new TransformacionDeLinea());
+        ComponenteHTML transformado = transformadorItem.transformar(item);
+        Assert.assertEquals("<li>soy un item</li>", transformado.getContenido());
+
+    }
+
     /*Transformaciones de bloque*/
 
     @Test
