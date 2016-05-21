@@ -6,9 +6,9 @@ import org.junit.Test;
 public class SeccionHTMLTest {
 
 	@Test
-	public void seColocanComponentesSimplesALaSeccion(){
+	public void queSeColoquenCorrectamenteVariosComponentesSimplesAUnaSeccion(){
 
-		TituloHTML tituloHTML = new TituloHTML("Analisis y Dise�o Orientado a Objetos");
+		TituloHTML tituloHTML = new TituloHTML("Analisis y Diseno Orientado a Objetos");
 		SubtituloHTML subtituloHTML = new SubtituloHTML("Trabajo Practico Numero 1");
 		ImagenHTML imagenHTML = new ImagenHTML("Imagen.png");
 		SeccionHTML seccionHTML = new SeccionHTML();
@@ -19,7 +19,7 @@ public class SeccionHTMLTest {
 		String contenidoDeLaSeccionHTML = seccionHTML.getContenido();
 
 		Assert.assertTrue(contenidoDeLaSeccionHTML.equals("<section>\n" + 
-														  " <h1>Analisis y Dise�o Orientado a Objetos</h1>\n" +
+														  " <h1>Analisis y Diseno Orientado a Objetos</h1>\n" +
 														  " <h2>Trabajo Practico Numero 1</h2>\n" +
 														  " <img src=\"Imagen.png\"/>\n" +
 														  "</section>"));

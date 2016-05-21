@@ -6,7 +6,7 @@ import org.junit.Test;
 public class TituloHTMLTest {
 
 	@Test
-	public void seColocaUnContenidoDeUnTituloParaPasarloATituloEnHTML(){
+	public void queLaLineaEnHTMLDeUnTituloSeEscribaCorrectamente(){
 
 		TituloHTML tituloHTML = new TituloHTML("Esto es un Titulo");
 		String contenidoDelTituloHTML = tituloHTML.getContenido();

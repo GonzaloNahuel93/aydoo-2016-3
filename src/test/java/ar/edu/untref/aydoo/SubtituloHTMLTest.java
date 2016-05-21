@@ -6,7 +6,7 @@ import org.junit.Test;
 public class SubtituloHTMLTest {
 
 	@Test
-	public void seColocaUnContenidoDeUnSubtituloParaPasarloASubtituloEnHTML(){
+	public void queLaLineaEnHTMLDeUnSubtituloSeEscribaCorrectamente(){
 
 		SubtituloHTML subtituloHTML = new SubtituloHTML("Esto es un Subtitulo");
 		String contenidoDelSubtituloHTML = subtituloHTML.getContenido();

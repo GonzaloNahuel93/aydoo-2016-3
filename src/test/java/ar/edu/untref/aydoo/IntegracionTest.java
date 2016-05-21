@@ -12,8 +12,18 @@ public class IntegracionTest {
 
         Titulo titulo = new Titulo("Osvaldo vende humo");
         Transformador transformadorTitulo = new Transformador(new TransformacionDeLinea());
-        ComponenteHTML componenteHTML = transformadorTitulo.transformar(titulo);
-        Assert.assertEquals("<h1>Osvaldo vende humo</h1>", componenteHTML.getContenido());
+        ComponenteHTML transformado = transformadorTitulo.transformar(titulo);
+        Assert.assertEquals("<h1>Osvaldo vende humo</h1>", transformado.getContenido());
+
+    }
+
+    @Test
+    public void queTransformeCorrectamenteUnSubtitulo() {
+
+        Subtitulo subtitulo = new Subtitulo("No te apachorres");
+        Transformador transformadorSubtitulo = new Transformador(new TransformacionDeLinea());
+        ComponenteHTML transformado = transformadorSubtitulo.transformar(subtitulo);
+        Assert.assertEquals("<h2>No te apachorres</h2>", transformado.getContenido());
 
     }
 

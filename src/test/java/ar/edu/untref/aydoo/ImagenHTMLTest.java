@@ -6,7 +6,7 @@ import org.junit.Test;
 public class ImagenHTMLTest {
 
 	@Test
-	public void seColocaUnContenidoDeUnaImagenParaPasarlaAImagenEnHTML(){
+	public void queLaLineaEnHTMLDeUnaImagenSeEscribaCorrectamente(){
 
 		ImagenHTML imagenHTML = new ImagenHTML("Imagen.png");
 		String contenidoDeLaImagenHTML = imagenHTML.getContenido();

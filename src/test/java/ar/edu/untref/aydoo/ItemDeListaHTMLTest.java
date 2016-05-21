@@ -6,7 +6,7 @@ import org.junit.Test;
 public class ItemDeListaHTMLTest {
 
 	@Test
-	public void seColocaUnContenidoDeUnItemDeListaParaPasarloAItemDeListaEnHTML(){
+	public void queLaLineaEnHTMLDeUnItemDeListaSeEscribaCorrectamente(){
 
 		ItemDeListaHTML itemDeListaHTML = new ItemDeListaHTML("Esto es un Item de una Lista");
 		String contenidoDelItemDeListaHTML = itemDeListaHTML.getContenido();
