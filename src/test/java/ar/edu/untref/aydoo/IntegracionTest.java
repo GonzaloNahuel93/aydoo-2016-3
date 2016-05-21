@@ -47,5 +47,14 @@ public class IntegracionTest {
 
     }
 
+    /*Transformaciones de bloque*/
+
+    @Test
+    public void queTransformeCorrectamenteUnaSeccion() {
+
+
+
+    }
+
 
 }
