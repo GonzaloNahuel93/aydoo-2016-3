@@ -28,19 +28,6 @@ public class ListaHTMLTest {
                 "</ul>"), contenidoDeLaListaHTML);
 
     }
-
-    /*
-    @Test(expected=Exception.class)
-    public void queNoPuedaMeterUnTituloDentroDeUnaLista() {
-
-        ItemDeListaHTML item1 = new ItemDeListaHTML("soy el primer item");
-        TituloHTML titulo = new TituloHTML("soy un titulo");
-        ListaHTML listaHTML = new ListaHTML();
-
-        listaHTML.agregarComponente(item1);
-        listaHTML.agregarComponente(titulo);
-
-    }
-    */
+    
 
 }
