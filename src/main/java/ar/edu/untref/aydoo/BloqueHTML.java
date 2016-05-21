@@ -3,7 +3,7 @@ package ar.edu.untref.aydoo;
 import java.util.ArrayList;
 import java.util.List;
 
-public interface BloqueHTML implements ComponenteHTML {
+public abstract class BloqueHTML implements ComponenteHTML {
 
 	protected List<ComponenteHTML> componentes;
 
