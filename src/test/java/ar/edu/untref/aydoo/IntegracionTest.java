@@ -37,5 +37,15 @@ public class IntegracionTest {
 
     }
 
+    @Test
+    public void queTransformeCorrectamenteTextoPlano() {
+
+        LineaDeTextoPlano texto = new LineaDeTextoPlano("soy una linea");
+        Transformador transformadorTexto = new Transformador(new TransformacionDeLinea());
+        ComponenteHTML transformado = transformadorTexto.transformar(texto);
+        Assert.assertEquals("soy una linea", transformado.getContenido());
+
+    }
+
 
 }
