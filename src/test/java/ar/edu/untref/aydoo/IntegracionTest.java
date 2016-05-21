@@ -5,7 +5,7 @@ import org.junit.Test;
 
 public class IntegracionTest {
 
-    /*Tests de las transformaciones*/
+    /*Tests de las transformaciones de linea*/
 
     @Test
     public void queTransformeCorrectamenteUnTitulo() {
@@ -26,5 +26,16 @@ public class IntegracionTest {
         Assert.assertEquals("<h2>No te apachorres</h2>", transformado.getContenido());
 
     }
+
+    @Test
+    public void queTransformeCorrectamenteUnaImagen() {
+
+        Imagen imagen = new Imagen("Caca.jpg");
+        Transformador transformadorImagen = new Transformador(new TransformacionDeLinea());
+        ComponenteHTML transformado = transformadorImagen.transformar(imagen);
+        Assert.assertEquals("<img src=\"Caca.jpg\"/>", transformado.getContenido());
+
+    }
+
 
 }
