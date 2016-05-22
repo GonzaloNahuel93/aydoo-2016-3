@@ -18,7 +18,7 @@ public class ItemDeListaHTMLTest {
 	}
 
 	@Test
-	public void queLaLineaEnHTMLDeUnItemDeListaSeEscribaCorrectamenteCuandoHayUnSalto(){
+	public void queLaLineaEnHTMLDeUnItemDeListaSeEscribaCorrectamenteCuandoHayUnSaltoDeLinea(){
 
 		ItemDeListaHTML itemDeListaHTML = new ItemDeListaHTML("Esto es un \n" + 
 															  "Item de una Lista");

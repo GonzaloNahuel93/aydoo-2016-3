@@ -17,4 +17,16 @@ public class SubtituloHTMLTest {
 
 	}
 
+	@Test
+	public void queLaLineaEnHTMLDeUnSubtituloSeEscribaCorrectamenteCuandoHayUnSaltoDeLinea(){
+
+		SubtituloHTML subtituloHTML = new SubtituloHTML("Esto es un \n" +
+														"Subtitulo");
+		String contenidoDelSubtituloHTML = subtituloHTML.getContenido();
+
+		Assert.assertTrue(contenidoDelSubtituloHTML.equals("<h2>Esto es un \n" + 
+														   "Subtitulo</h2>"));
+
+	}
+
 }
