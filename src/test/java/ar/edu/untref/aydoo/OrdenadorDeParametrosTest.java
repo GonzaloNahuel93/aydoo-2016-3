@@ -62,4 +62,17 @@ public class OrdenadorDeParametrosTest {
 
 	}
 
+	@Test
+	public void seInsertaSolamenteElArchivoATransformar(){
+
+		String[] parametros = {"miPresentacion.md"};
+		OrdenadorDeParametros ordenador = new OrdenadorDeParametros();
+
+		String[] parametrosOrdenados = ordenador.ordenar(parametros);
+
+		Assert.assertEquals("", parametrosOrdenados[0]);
+		Assert.assertEquals("miPresentacion.md", parametrosOrdenados[1]);
+
+	}
+
 }
