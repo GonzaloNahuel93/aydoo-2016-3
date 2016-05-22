@@ -1,10 +1,10 @@
 package ar.edu.untref.aydoo;
 
-public abstract class ElementoSimple implements Transformable {
+public abstract class ElementoDeLinea extends Elemento {
 
     private String contenido;
 
-    public ElementoSimple(String contenido) {
+    public ElementoDeLinea(String contenido) {
         this.contenido = contenido;
     }
 

@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * Created by synysterlove on 22/05/16.
  */
-public class Lista implements Transformable {
+public class Lista extends Elemento {
 
 
     private List<ItemDeLista> items;
@@ -18,7 +18,7 @@ public class Lista implements Transformable {
     }
 
     @Override
-    public ComponenteHTML getTransformado() {
+    public TransformadoHTML getTransformado() {
 
         ListaHTML listaTransformada = this.transformarItems(new ListaHTML());
         return listaTransformada;
@@ -27,9 +27,11 @@ public class Lista implements Transformable {
 
     private ListaHTML transformarItems(ListaHTML listaHTML) {
 
+        Transformador transformadorItems = new Transformador();
         for(ItemDeLista item : this.items) {
 
-            listaHTML.agregarItem(new ItemDeListaHTML(item.getContenido()));
+            ItemDeListaHTML itemHTML = (ItemDeListaHTML)transformadorItems.transformar(item);
+            listaHTML.agregarItem(itemHTML);
 
         }
 

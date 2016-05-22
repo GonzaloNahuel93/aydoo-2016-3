@@ -1,13 +1,13 @@
 package ar.edu.untref.aydoo;
 
-public class Titulo extends ElementoSimple {
+public class Titulo extends ElementoDeLinea {
 
     public Titulo(String titulo) {
         super(titulo);
     }
 
     @Override
-    public ComponenteHTML getTransformado() {
+    public TransformadoHTML getTransformado() {
 
         TituloHTML tituloHTML = new TituloHTML(this.getContenido());
         return tituloHTML;

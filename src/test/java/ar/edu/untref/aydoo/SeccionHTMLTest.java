@@ -13,9 +13,9 @@ public class SeccionHTMLTest {
 		ImagenHTML imagenHTML = new ImagenHTML("Imagen.png");
 		SeccionHTML seccionHTML = new SeccionHTML();
 
-		seccionHTML.agregarLinea(tituloHTML);
-		seccionHTML.agregarLinea(subtituloHTML);
-		seccionHTML.agregarLinea(imagenHTML);
+		seccionHTML.agregarElemento(tituloHTML);
+		seccionHTML.agregarElemento(subtituloHTML);
+		seccionHTML.agregarElemento(imagenHTML);
 		String contenidoDeLaSeccionHTML = seccionHTML.getContenido();
 
 		Assert.assertEquals(("<section>\n" +

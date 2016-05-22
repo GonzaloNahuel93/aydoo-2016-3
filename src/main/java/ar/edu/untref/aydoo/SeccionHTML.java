@@ -1,14 +1,39 @@
 package ar.edu.untref.aydoo;
 
-public class SeccionHTML extends BloqueHTML {
+import java.util.ArrayList;
+import java.util.List;
 
-    public void agregarLinea(LineaHTML lineaHTML) {
-        this.lineas.add(lineaHTML);
+public class SeccionHTML implements TransformadoHTML {
+
+    private List<ElementoHTML> contenido;
+
+    public SeccionHTML() {
+
+        this.contenido = new ArrayList<ElementoHTML>();
+
+    }
+
+    public void agregarElemento(ElementoHTML elementoHTML) {
+        this.contenido.add(elementoHTML);
     }
 
     @Override
     public String getContenido() {
-        return "<section>\n" + super.getContenido() + "</section>";
+
+        return "<section>\n" + this.construirStringDeContenidos() + "</section>";
+
+    }
+
+    private String construirStringDeContenidos() {
+
+        String stringContenido = "";
+
+        for(ElementoHTML elemento: this.contenido){
+            stringContenido = elemento.concatenarContenido(stringContenido);
+        }
+
+        return stringContenido;
+
     }
 
 }
