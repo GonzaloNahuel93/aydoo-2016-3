@@ -30,7 +30,7 @@ public class Lista extends Elemento {
         Transformador transformadorItems = new Transformador();
         for(ItemDeLista item : this.items) {
 
-            ItemDeListaHTML itemHTML = (ItemDeListaHTML)transformadorItems.transformar(item);
+            ItemDeListaHTML itemHTML = (ItemDeListaHTML) transformadorItems.transformar(item);
             listaHTML.agregarItem(itemHTML);
 
         }

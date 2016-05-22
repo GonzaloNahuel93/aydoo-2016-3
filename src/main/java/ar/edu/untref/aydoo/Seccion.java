@@ -29,7 +29,7 @@ public class Seccion implements Transformable {
         Transformador transformadorContenido = new Transformador();
         for(Elemento elemento : this.contenido) {
 
-            ElementoHTML elementoHTML = (ElementoHTML)transformadorContenido.transformar(elemento);
+            ElementoHTML elementoHTML = (ElementoHTML) transformadorContenido.transformar(elemento);
             seccionHTML.agregarElemento(elementoHTML);
 
         }

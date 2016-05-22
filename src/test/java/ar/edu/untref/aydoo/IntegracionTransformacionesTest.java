@@ -143,4 +143,66 @@ public class IntegracionTransformacionesTest {
 
     }
 
+    @Test
+    public void queRealiceUnaTransformacionCompletaCorrectamente() {
+
+        Titulo titulo1 = new Titulo("Titulo1");
+        Subtitulo subtitulo1 = new Subtitulo("Subtitulo1");
+        Imagen imagen1 = new Imagen("Imagen1.png");
+        Lista lista1 = new Lista();
+        ItemDeLista item11 = new ItemDeLista("item1.1");
+        ItemDeLista item12 = new ItemDeLista("item1.2");
+        lista1.agregarItem(item11);
+        lista1.agregarItem(item12);
+
+        Titulo titulo2 = new Titulo("Titulo2");
+        Subtitulo subtitulo2 = new Subtitulo("Subtitulo2");
+        Imagen imagen2 = new Imagen("Imagen2.png");
+        Lista lista2 = new Lista();
+        ItemDeLista item21 = new ItemDeLista("item2.1");
+        ItemDeLista item22 = new ItemDeLista("item2.2");
+        lista2.agregarItem(item21);
+        lista2.agregarItem(item22);
+
+        Seccion seccion1 = new Seccion();
+        seccion1.agregarContenido(titulo1);
+        seccion1.agregarContenido(subtitulo1);
+        seccion1.agregarContenido(imagen1);
+        seccion1.agregarContenido(lista1);
+
+        Seccion seccion2 = new Seccion();
+        seccion2.agregarContenido(titulo2);
+        seccion2.agregarContenido(subtitulo2);
+        seccion2.agregarContenido(imagen2);
+        seccion2.agregarContenido(lista2);
+
+        EstructuraBase estructuraBase = new EstructuraBase();
+        estructuraBase.agregarComponente(seccion1);
+        estructuraBase.agregarComponente(seccion2);
+
+        Transformador transformadorIntegrado = new Transformador();
+        TransformadoHTML transformado = transformadorIntegrado.transformar(estructuraBase);
+
+        Assert.assertEquals(("<section>\n" +
+                " <h1>Titulo1</h1>\n" +
+                " <h2>Subtitulo1</h2>\n" +
+                " <img src=\"Imagen1.png\"/>\n" +
+                "<ul>\n" +
+                " <li>item1.1</li>\n" +
+                " <li>item1.2</li>\n" +
+                "</ul>\n" +
+                "</section>\n" +
+
+                "<section>\n" +
+                " <h1>Titulo2</h1>\n" +
+                " <h2>Subtitulo2</h2>\n" +
+                " <img src=\"Imagen2.png\"/>\n" +
+                "<ul>\n" +
+                " <li>item2.1</li>\n" +
+                " <li>item2.2</li>\n" +
+                "</ul>\n" +
+                "</section>\n"), transformado.getContenido());
+
+    }
+
 }
