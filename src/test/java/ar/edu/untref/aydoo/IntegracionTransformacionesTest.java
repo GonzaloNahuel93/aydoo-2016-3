@@ -82,10 +82,12 @@ public class IntegracionTransformacionesTest {
         Assert.assertEquals(("<ul>\n" +
                 " <li>Hola</li>\n" +
                 " <li>Chau</li>\n" +
-                "</ul>"), transformado.getContenido());
+                "</ul>\n"
+), transformado.getContenido());
 
     }
 
+    /*
     @Test
     public void queTransformeCorrectamenteUnaSeccion() {
 
@@ -108,5 +110,39 @@ public class IntegracionTransformacionesTest {
                 "</section>"),transformado.getContenido());
 
     }
+
+    @Test
+    public void queTransformeCorrectamenteUnaSeccionConUnaListaAdentro() {
+
+        Titulo titulo = new Titulo("Titulo");
+        Subtitulo subtitulo = new Subtitulo("Subtitulo");
+        Imagen imagen = new Imagen("Git.png");
+        Lista lista = new Lista();
+        ItemDeLista item1 = new ItemDeLista("item1");
+        ItemDeLista item2 = new ItemDeLista("item2");
+        lista.agregarItem(item1);
+        lista.agregarItem(item2);
+        Seccion seccion = new Seccion();
+
+        seccion.agregarContenido(titulo);
+        seccion.agregarContenido(subtitulo);
+        seccion.agregarContenido(imagen);
+        seccion.agregarContenido(lista);
+
+        Transformador transformadorSeccion = new Transformador();
+        TransformadoHTML transformado = transformadorSeccion.transformar(seccion);
+
+        Assert.assertEquals(("<section>\n" +
+                "<h1>Titulo</h1>\n" +
+                "<h2>Subtitulo</h2>\n" +
+                "<img src=\"Git.png\"/>\n" +
+                "<ul>\n" +
+                " <li>item1</li>\n" +
+                " <li>item2</li>\n" +
+                "</ul>\n" +
+                "</section>"),transformado.getContenido());
+
+    }
+    */
 
 }

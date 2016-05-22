@@ -16,7 +16,9 @@ public class ListaHTML implements ElementoHTML {
         String stringLista = "";
 
         for(LineaHTML linea: this.lineas){
+
             stringLista = linea.concatenarContenido(stringLista);
+
         }
 
         return stringLista;
@@ -37,7 +39,7 @@ public class ListaHTML implements ElementoHTML {
     @Override
     public String concatenarContenido(String contenido) {
 
-        return "<ul>\n" + this.construirStringLista() + "</ul>";
-
+        return "<ul>\n" + this.construirStringLista() + "</ul>\n";
+       // " " + this.getContenido() + "\n"
     }
 }

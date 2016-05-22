@@ -22,7 +22,7 @@ public class ListaHTMLTest {
                 			 " <li>Primer Item</li>\n" +
                 			 " <li>Segundo Item</li>\n" +
                 			 " <li>Tercer Item</li>\n" +
-                			 "</ul>"), contenidoDeLaListaHTML);
+                			 "</ul>\n"), contenidoDeLaListaHTML);
 
     }
 

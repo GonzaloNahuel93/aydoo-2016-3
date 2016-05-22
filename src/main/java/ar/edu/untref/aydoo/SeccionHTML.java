@@ -29,7 +29,9 @@ public class SeccionHTML implements TransformadoHTML {
         String stringContenido = "";
 
         for(ElementoHTML elemento: this.contenido){
+
             stringContenido = elemento.concatenarContenido(stringContenido);
+
         }
 
         return stringContenido;
