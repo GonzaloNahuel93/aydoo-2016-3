@@ -1,6 +1,4 @@
-package ar.edu.untref.aydoo.Programa;
-
-import ar.edu.untref.aydoo.Programa.Elementos.LineaHTML;
+package ar.edu.untref.aydoo;
 
 public interface Transformable {
 

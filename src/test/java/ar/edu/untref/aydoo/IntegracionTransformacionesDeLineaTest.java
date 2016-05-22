@@ -1,15 +1,7 @@
-package ar.edu.untref.aydoo.Tests;
+package ar.edu.untref.aydoo;
 
 import org.junit.Assert;
 import org.junit.Test;
-import ar.edu.untref.aydoo.Programa.TransformacionDeLinea;
-import ar.edu.untref.aydoo.Programa.Transformador;
-import ar.edu.untref.aydoo.Programa.Elementos.ComponenteHTML;
-import ar.edu.untref.aydoo.Programa.Elementos.Imagen;
-import ar.edu.untref.aydoo.Programa.Elementos.ItemDeLista;
-import ar.edu.untref.aydoo.Programa.Elementos.LineaDeTextoPlano;
-import ar.edu.untref.aydoo.Programa.Elementos.Subtitulo;
-import ar.edu.untref.aydoo.Programa.Elementos.Titulo;
 
 public class IntegracionTransformacionesDeLineaTest {
 

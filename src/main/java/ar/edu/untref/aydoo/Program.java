@@ -1,4 +1,4 @@
-package ar.edu.untref.aydoo.Programa;
+package ar.edu.untref.aydoo;
 
 import java.io.File;
 

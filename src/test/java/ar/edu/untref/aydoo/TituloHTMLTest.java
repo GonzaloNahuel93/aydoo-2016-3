@@ -1,9 +1,7 @@
-package ar.edu.untref.aydoo.Tests;
+package ar.edu.untref.aydoo;
 
 import org.junit.Assert;
 import org.junit.Test;
-
-import ar.edu.untref.aydoo.Programa.Elementos.TituloHTML;
 
 public class TituloHTMLTest {
 

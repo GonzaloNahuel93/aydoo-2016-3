@@ -1,8 +1,4 @@
-package ar.edu.untref.aydoo.Programa;
-
-import ar.edu.untref.aydoo.Programa.Elementos.ComponenteHTML;
-import ar.edu.untref.aydoo.Programa.Elementos.Elemento;
-import ar.edu.untref.aydoo.Programa.Elementos.LineaHTML;
+package ar.edu.untref.aydoo;
 
 public class TransformacionDeLinea implements EstrategiaDeTransformacion {
     

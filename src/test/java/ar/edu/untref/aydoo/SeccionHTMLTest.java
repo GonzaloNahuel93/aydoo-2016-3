@@ -1,12 +1,7 @@
-package ar.edu.untref.aydoo.Tests;
+package ar.edu.untref.aydoo;
 
 import org.junit.Assert;
 import org.junit.Test;
-
-import ar.edu.untref.aydoo.Programa.Elementos.ImagenHTML;
-import ar.edu.untref.aydoo.Programa.Elementos.SeccionHTML;
-import ar.edu.untref.aydoo.Programa.Elementos.SubtituloHTML;
-import ar.edu.untref.aydoo.Programa.Elementos.TituloHTML;
 
 public class SeccionHTMLTest {
 

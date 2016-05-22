@@ -1,6 +1,4 @@
-package ar.edu.untref.aydoo.Programa.Elementos;
-
-import ar.edu.untref.aydoo.Programa.Transformable;
+package ar.edu.untref.aydoo;
 
 public abstract class Elemento implements Transformable {
 

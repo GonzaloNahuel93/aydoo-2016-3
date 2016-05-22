@@ -1,7 +1,4 @@
-package ar.edu.untref.aydoo.Programa;
-
-import ar.edu.untref.aydoo.Programa.Elementos.ComponenteHTML;
-import ar.edu.untref.aydoo.Programa.Elementos.Elemento;
+package ar.edu.untref.aydoo;
 
 //Interface del Patron Strategy
 
