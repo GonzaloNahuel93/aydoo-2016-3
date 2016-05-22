@@ -7,7 +7,7 @@ import ar.edu.untref.aydoo.OrdenadorDeParametros;
 public class OrdenadorDeParametrosTest {
 
 	@Test
-	public void queOrdeneLosParametrosAcordeAlOrdenEstandarDefinido(){
+	public void queOrdeneLosParametrosDeEntradaAcordeAlOrdenEstandarDefinido(){
 
 		//El orden estandar definido es:
 		//1) Modo de salida.
@@ -19,6 +19,19 @@ public class OrdenadorDeParametrosTest {
 		String[] parametrosOrdenados = ordenador.ordenar(parametros);
 
 		Assert.assertEquals("--mode=default", parametrosOrdenados[0]);
+		Assert.assertEquals("miPresentacion.md", parametrosOrdenados[1]);
+
+	}
+
+	@Test
+	public void queOrdeneLosParametrosDeEntradaAunqueElModoPedidoSeaInvalido(){
+
+		String[] parametros = {"miPresentacion.md", "--mode=arcoiris"};
+		OrdenadorDeParametros ordenador = new OrdenadorDeParametros();
+
+		String[] parametrosOrdenados = ordenador.ordenar(parametros);
+
+		Assert.assertEquals("--mode=arcoiris", parametrosOrdenados[0]);
 		Assert.assertEquals("miPresentacion.md", parametrosOrdenados[1]);
 
 	}
