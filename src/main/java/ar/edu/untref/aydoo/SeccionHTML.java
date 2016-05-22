@@ -1,9 +1,7 @@
-package ar.edu.untref.aydoo.elementos;
+package ar.edu.untref.aydoo;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import ar.edu.untref.aydoo.TransformadoHTML;
 
 public class SeccionHTML implements TransformadoHTML {
 
@@ -19,7 +17,7 @@ public class SeccionHTML implements TransformadoHTML {
 
     @Override
     public String getContenido() {
-        return "<section>\n" + this.construirStringDeContenidos() + "</section>\n";
+        return "<section>\n" + this.construirStringDeContenidos() + "</section>\n\n";
     }
 
     private String construirStringDeContenidos() {

@@ -3,12 +3,12 @@ package ar.edu.untref.aydoo.tests;
 import org.junit.Assert;
 import org.junit.Test;
 
-import ar.edu.untref.aydoo.elementos.ImagenHTML;
-import ar.edu.untref.aydoo.elementos.ItemDeListaHTML;
-import ar.edu.untref.aydoo.elementos.ListaHTML;
-import ar.edu.untref.aydoo.elementos.SeccionHTML;
-import ar.edu.untref.aydoo.elementos.SubtituloHTML;
-import ar.edu.untref.aydoo.elementos.TituloHTML;
+import ar.edu.untref.aydoo.ImagenHTML;
+import ar.edu.untref.aydoo.ItemDeListaHTML;
+import ar.edu.untref.aydoo.ListaHTML;
+import ar.edu.untref.aydoo.SeccionHTML;
+import ar.edu.untref.aydoo.SubtituloHTML;
+import ar.edu.untref.aydoo.TituloHTML;
 
 public class SeccionHTMLTest {
 
@@ -26,10 +26,11 @@ public class SeccionHTMLTest {
 		String contenidoDeLaSeccionHTML = seccionHTML.getContenido();
 
 		Assert.assertEquals(("<section>\n" +
-                             " <h1>Analisis y Diseno Orientado a Objetos</h1>\n" +
-                             " <h2>Trabajo Practico Numero 1</h2>\n" +
-                             " <img src=\"Imagen.png\"/>\n" +
-                             "</section>\n"), contenidoDeLaSeccionHTML);
+                             "<h1>Analisis y Diseno Orientado a Objetos</h1>\n" +
+                             "<h2>Trabajo Practico Numero 1</h2>\n" +
+                             "<img src=\"Imagen.png\"/>\n" +
+                             "</section>\n\n")
+                             , contenidoDeLaSeccionHTML);
 
 	}
 
@@ -47,11 +48,12 @@ public class SeccionHTMLTest {
         String contenidoDeLaSeccionHTML = seccionHTML.getContenido();
 
         Assert.assertEquals(("<section>\n" +
-                "<ul>\n" +
-                " <li>item1</li>\n" +
-                " <li>item2</li>\n" +
-                "</ul>\n" +
-                "</section>\n"), contenidoDeLaSeccionHTML);
+                			 "<ul>\n" +
+                			 "<li>item1</li>\n" +
+                			 "<li>item2</li>\n" +
+                			 "</ul>\n" +
+        					 "</section>\n\n")
+        					 , contenidoDeLaSeccionHTML);
 
     }
 	

@@ -3,7 +3,7 @@ package ar.edu.untref.aydoo.tests;
 import org.junit.Assert;
 import org.junit.Test;
 
-import ar.edu.untref.aydoo.elementos.SubtituloHTML;
+import ar.edu.untref.aydoo.SubtituloHTML;
 
 public class SubtituloHTMLTest {
 

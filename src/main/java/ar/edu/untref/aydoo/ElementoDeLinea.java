@@ -1,5 +1,4 @@
-package ar.edu.untref.aydoo.elementos;
-
+package ar.edu.untref.aydoo;
 
 public abstract class ElementoDeLinea extends Elemento {
 

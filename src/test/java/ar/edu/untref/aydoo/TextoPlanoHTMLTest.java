@@ -3,7 +3,7 @@ package ar.edu.untref.aydoo.tests;
 import org.junit.Assert;
 import org.junit.Test;
 
-import ar.edu.untref.aydoo.elementos.TextoPlanoHTML;
+import ar.edu.untref.aydoo.TextoPlanoHTML;
 
 public class TextoPlanoHTMLTest {
 

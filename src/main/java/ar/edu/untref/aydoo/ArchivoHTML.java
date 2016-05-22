@@ -3,8 +3,6 @@ package ar.edu.untref.aydoo;
 import java.util.ArrayList;
 import java.util.List;
 
-import ar.edu.untref.aydoo.elementos.SeccionHTML;
-
 public class ArchivoHTML implements TransformadoHTML {
 
     List<SeccionHTML> seccionesHTML;

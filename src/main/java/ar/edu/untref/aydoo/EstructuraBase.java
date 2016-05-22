@@ -3,9 +3,6 @@ package ar.edu.untref.aydoo;
 import java.util.ArrayList;
 import java.util.List;
 
-import ar.edu.untref.aydoo.elementos.Seccion;
-import ar.edu.untref.aydoo.elementos.SeccionHTML;
-
 public class EstructuraBase implements Transformable {
 
     private List<Seccion> secciones;

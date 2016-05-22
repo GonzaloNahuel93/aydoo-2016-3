@@ -3,7 +3,7 @@ package ar.edu.untref.aydoo.tests;
 import org.junit.Assert;
 import org.junit.Test;
 
-import ar.edu.untref.aydoo.entrada.LectorDeEntrada;
+import ar.edu.untref.aydoo.LectorDeEntrada;
 
 import java.io.BufferedWriter;
 import java.io.File;

@@ -1,6 +1,5 @@
-package ar.edu.untref.aydoo.elementos;
+package ar.edu.untref.aydoo;
 
-import ar.edu.untref.aydoo.TransformadoHTML;
 
 public interface ElementoHTML extends TransformadoHTML {
 

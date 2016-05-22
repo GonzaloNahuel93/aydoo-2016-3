@@ -3,8 +3,8 @@ package ar.edu.untref.aydoo.tests;
 import org.junit.Assert;
 import org.junit.Test;
 
-import ar.edu.untref.aydoo.elementos.ItemDeListaHTML;
-import ar.edu.untref.aydoo.elementos.ListaHTML;
+import ar.edu.untref.aydoo.ItemDeListaHTML;
+import ar.edu.untref.aydoo.ListaHTML;
 
 public class ListaHTMLTest {
 
@@ -22,10 +22,11 @@ public class ListaHTMLTest {
         String contenidoDeLaListaHTML = listaHTML.getContenido();
 
         Assert.assertEquals(("<ul>\n" +
-                			 " <li>Primer Item</li>\n" +
-                			 " <li>Segundo Item</li>\n" +
-                			 " <li>Tercer Item</li>\n" +
-                			 "</ul>\n"), contenidoDeLaListaHTML);
+                			 "<li>Primer Item</li>\n" +
+                			 "<li>Segundo Item</li>\n" +
+                			 "<li>Tercer Item</li>\n" +
+                			 "</ul>\n")
+                			 , contenidoDeLaListaHTML);
 
     }
 

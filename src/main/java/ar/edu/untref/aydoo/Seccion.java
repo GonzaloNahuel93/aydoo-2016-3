@@ -1,11 +1,7 @@
-package ar.edu.untref.aydoo.elementos;
+package ar.edu.untref.aydoo;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import ar.edu.untref.aydoo.Transformable;
-import ar.edu.untref.aydoo.TransformadoHTML;
-import ar.edu.untref.aydoo.Transformador;
 
 public class Seccion implements Transformable {
 

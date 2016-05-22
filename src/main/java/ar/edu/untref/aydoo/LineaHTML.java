@@ -1,5 +1,4 @@
-package ar.edu.untref.aydoo.elementos;
-
+package ar.edu.untref.aydoo;
 
 public abstract class LineaHTML implements ElementoHTML {
 
@@ -15,9 +14,7 @@ public abstract class LineaHTML implements ElementoHTML {
 
     @Override
     public String concatenarContenido(String contenido) {
-
-        return contenido += (" " + this.getContenido() + "\n");
-
+        return contenido += (this.getContenido() + "\n");
     }
 
 }
