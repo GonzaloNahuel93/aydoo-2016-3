@@ -3,11 +3,11 @@ package ar.edu.untref.aydoo;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ArchivoHTML implements TransformadoHTML {
+public class CodigoHTML implements ElementoTransformadoHTML {
 
     List<SeccionHTML> seccionesHTML;
 
-    public ArchivoHTML() {
+    public CodigoHTML() {
         this.seccionesHTML = new ArrayList<SeccionHTML>();
     }
 

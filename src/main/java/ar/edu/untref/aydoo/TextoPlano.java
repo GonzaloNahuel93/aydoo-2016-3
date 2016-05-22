@@ -1,6 +1,5 @@
 package ar.edu.untref.aydoo;
 
-
 public class TextoPlano extends ElementoDeLinea {
     
     public TextoPlano(String texto) {
@@ -8,7 +7,7 @@ public class TextoPlano extends ElementoDeLinea {
     }
 
     @Override
-    public TransformadoHTML getTransformado() {
+    public ElementoTransformadoHTML getTransformado() {
 
         TextoPlanoHTML texto = new TextoPlanoHTML(this.getContenido());
         return texto;

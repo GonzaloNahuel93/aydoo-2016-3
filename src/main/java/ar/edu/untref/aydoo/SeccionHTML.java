@@ -3,7 +3,7 @@ package ar.edu.untref.aydoo;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SeccionHTML implements TransformadoHTML {
+public class SeccionHTML implements ElementoTransformadoHTML {
 
     private List<ElementoHTML> contenido;
 

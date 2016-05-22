@@ -8,7 +8,7 @@ public class Titulo extends ElementoDeLinea {
     }
 
     @Override
-    public TransformadoHTML getTransformado() {
+    public ElementoTransformadoHTML getTransformado() {
 
         TituloHTML tituloHTML = new TituloHTML(this.getContenido());
         return tituloHTML;

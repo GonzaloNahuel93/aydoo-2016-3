@@ -8,7 +8,7 @@ public class Imagen extends ElementoDeLinea {
 	}
 
 	@Override
-	public TransformadoHTML getTransformado() {
+	public ElementoTransformadoHTML getTransformado() {
 
 		ImagenHTML imagenHTML = new ImagenHTML(this.getContenido());
 		return imagenHTML;

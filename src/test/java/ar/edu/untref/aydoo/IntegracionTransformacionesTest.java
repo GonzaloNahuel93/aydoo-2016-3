@@ -11,12 +11,12 @@ import ar.edu.untref.aydoo.Seccion;
 import ar.edu.untref.aydoo.Subtitulo;
 import ar.edu.untref.aydoo.TextoPlano;
 import ar.edu.untref.aydoo.Titulo;
-import ar.edu.untref.aydoo.TransformadoHTML;
+import ar.edu.untref.aydoo.ElementoTransformadoHTML;
 import ar.edu.untref.aydoo.Transformador;
 
 public class IntegracionTransformacionesTest {
 
-    //Tests de las Transformaciones
+    //Tests de todas las Transformaciones
 
     @Test
     public void queTransformeCorrectamenteUnTitulo() {
@@ -24,7 +24,7 @@ public class IntegracionTransformacionesTest {
         Titulo titulo = new Titulo("Esto es un titulo");
         Transformador transformadorTitulo = new Transformador();
         
-        TransformadoHTML transformado = transformadorTitulo.transformar(titulo);
+        ElementoTransformadoHTML transformado = transformadorTitulo.transformar(titulo);
         
         Assert.assertEquals("<h1>Esto es un titulo</h1>", transformado.getContenido());
 
@@ -36,7 +36,7 @@ public class IntegracionTransformacionesTest {
         Subtitulo subtitulo = new Subtitulo("Esto es un subtitulo");
         Transformador transformadorSubtitulo = new Transformador();
         
-        TransformadoHTML transformado = transformadorSubtitulo.transformar(subtitulo);
+        ElementoTransformadoHTML transformado = transformadorSubtitulo.transformar(subtitulo);
         
         Assert.assertEquals("<h2>Esto es un subtitulo</h2>", transformado.getContenido());
 
@@ -48,7 +48,7 @@ public class IntegracionTransformacionesTest {
         Imagen imagen = new Imagen("Esto es una imagen.jpg");
         Transformador transformadorImagen = new Transformador();
         
-        TransformadoHTML transformado = transformadorImagen.transformar(imagen);
+        ElementoTransformadoHTML transformado = transformadorImagen.transformar(imagen);
         
         Assert.assertEquals("<img src=\"Esto es una imagen.jpg\"/>", transformado.getContenido());
 
@@ -60,7 +60,7 @@ public class IntegracionTransformacionesTest {
         TextoPlano texto = new TextoPlano("Esto es una linea");
         Transformador transformadorTexto = new Transformador();
         
-        TransformadoHTML transformado = transformadorTexto.transformar(texto);
+        ElementoTransformadoHTML transformado = transformadorTexto.transformar(texto);
         
         Assert.assertEquals("Esto es una linea", transformado.getContenido());
 
@@ -72,7 +72,7 @@ public class IntegracionTransformacionesTest {
         ItemDeLista item = new ItemDeLista("Esto es un item de lista");
         Transformador transformadorItem = new Transformador();
         
-        TransformadoHTML transformado = transformadorItem.transformar(item);
+        ElementoTransformadoHTML transformado = transformadorItem.transformar(item);
         
         Assert.assertEquals("<li>Esto es un item de lista</li>", transformado.getContenido());
 
@@ -88,7 +88,7 @@ public class IntegracionTransformacionesTest {
         lista.agregarItem(item2);
 
         Transformador transformadorLista = new Transformador();
-        TransformadoHTML transformado = transformadorLista.transformar(lista);
+        ElementoTransformadoHTML transformado = transformadorLista.transformar(lista);
 
         Assert.assertEquals(("<ul>\n" +
                 			 "<li>Hola</li>\n" +
@@ -111,7 +111,7 @@ public class IntegracionTransformacionesTest {
         seccion.agregarContenido(imagen);
 
         Transformador transformadorSeccion = new Transformador();
-        TransformadoHTML transformado = transformadorSeccion.transformar(seccion);
+        ElementoTransformadoHTML transformado = transformadorSeccion.transformar(seccion);
 
         Assert.assertEquals(("<section>\n" +
         					 "<h1>Titulo</h1>\n" +
@@ -141,7 +141,7 @@ public class IntegracionTransformacionesTest {
         seccion.agregarContenido(lista);
 
         Transformador transformadorSeccion = new Transformador();
-        TransformadoHTML transformado = transformadorSeccion.transformar(seccion);
+        ElementoTransformadoHTML transformado = transformadorSeccion.transformar(seccion);
 
         Assert.assertEquals(("<section>\n" +
         					 "<h1>Titulo</h1>\n" +
@@ -194,7 +194,7 @@ public class IntegracionTransformacionesTest {
         estructuraBase.agregarComponente(seccion2);
 
         Transformador transformadorIntegrado = new Transformador();
-        TransformadoHTML transformado = transformadorIntegrado.transformar(estructuraBase);
+        ElementoTransformadoHTML transformado = transformadorIntegrado.transformar(estructuraBase);
 
         Assert.assertEquals(("<section>\n" +
                 			 "<h1>Titulo1</h1>\n" +

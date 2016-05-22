@@ -2,6 +2,6 @@ package ar.edu.untref.aydoo;
 
 public interface Transformable {
 
-    public TransformadoHTML getTransformado();
+    public ElementoTransformadoHTML getTransformado();
     
 }

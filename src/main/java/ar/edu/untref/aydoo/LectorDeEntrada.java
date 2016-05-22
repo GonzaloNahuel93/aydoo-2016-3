@@ -44,9 +44,7 @@ public class LectorDeEntrada {
 
     
     public List<String> getContenidoDelArchivoDeEntrada() {
-
-        return this.contenidoDelArchivoDeEntrada;
-
+    	return this.contenidoDelArchivoDeEntrada;
     }
 
 }

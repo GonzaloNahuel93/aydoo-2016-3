@@ -8,7 +8,7 @@ public class Subtitulo extends ElementoDeLinea {
 	}
 
 	@Override
-	public TransformadoHTML getTransformado() {
+	public ElementoTransformadoHTML getTransformado() {
 		
 		 SubtituloHTML subtituloHTML = new SubtituloHTML(this.getContenido());
 	     return subtituloHTML;

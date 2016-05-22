@@ -20,9 +20,9 @@ public class EstructuraBase implements Transformable {
     }
 
     @Override
-    public TransformadoHTML getTransformado() {
+    public ElementoTransformadoHTML getTransformado() {
 
-        ArchivoHTML transformado = new ArchivoHTML();
+        CodigoHTML transformado = new CodigoHTML();
         Transformador transformadorDeSecciones = new Transformador();
         
         for (Seccion seccion : this.secciones) {

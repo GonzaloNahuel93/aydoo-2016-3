@@ -12,7 +12,7 @@ public class Lista extends Elemento {
     }
 
     @Override
-    public TransformadoHTML getTransformado() {
+    public ElementoTransformadoHTML getTransformado() {
 
         ListaHTML listaTransformada = this.transformarItems(new ListaHTML());
         return listaTransformada;

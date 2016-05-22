@@ -12,7 +12,7 @@ public class Seccion implements Transformable {
     }
     
     @Override
-    public TransformadoHTML getTransformado() {
+    public ElementoTransformadoHTML getTransformado() {
 
         SeccionHTML seccionTransformada = this.transformarContenido(new SeccionHTML());
         return seccionTransformada;

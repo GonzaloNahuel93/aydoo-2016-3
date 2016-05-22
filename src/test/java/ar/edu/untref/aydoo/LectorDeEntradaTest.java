@@ -16,7 +16,7 @@ public class LectorDeEntradaTest {
     @Test
     public void queConUnArchivoVacioNoHagaNada() throws IOException {
 
-        File archivo = new File("archivo.txt");
+        File archivo = new File("archivo.md");
         FileWriter fw = new FileWriter(archivo);
         fw.write("");
         fw.close();
@@ -33,14 +33,14 @@ public class LectorDeEntradaTest {
     @Test
     public void queInterpreteCorrectamenteUnArchivoConTresLineas() throws IOException {
 
-        File archivo = new File("archivo.txt");
+        File archivo = new File("archivo.md");
         FileWriter fw = new FileWriter(archivo);
         BufferedWriter bw = new BufferedWriter(fw);
-        bw.write("hola");
+        bw.write("Este es");
         bw.newLine();
-        bw.write("soy un archivo");
+        bw.write("un archivo");
         bw.newLine();
-        bw.write("y no sirvo para nada");
+        bw.write("con tres lineas");
         bw.close();
         fw.close();
 
@@ -50,9 +50,9 @@ public class LectorDeEntradaTest {
         archivo.delete();
 
         List<String> contenido = lector.getContenidoDelArchivoDeEntrada();
-        Assert.assertEquals(contenido.get(0), "hola");
-        Assert.assertEquals(contenido.get(1), "soy un archivo");
-        Assert.assertEquals(contenido.get(2), "y no sirvo para nada");
+        Assert.assertEquals(contenido.get(0), "Este es");
+        Assert.assertEquals(contenido.get(1), "un archivo");
+        Assert.assertEquals(contenido.get(2), "con tres lineas");
 
     }
 

@@ -8,7 +8,7 @@ public class ItemDeLista extends ElementoDeLinea {
     }
 
     @Override
-    public TransformadoHTML getTransformado() {
+    public ElementoTransformadoHTML getTransformado() {
 
         ItemDeListaHTML itemDeListaHTML = new ItemDeListaHTML(this.getContenido());
         return itemDeListaHTML;

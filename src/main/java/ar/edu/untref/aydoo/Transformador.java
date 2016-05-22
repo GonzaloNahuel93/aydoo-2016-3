@@ -2,9 +2,9 @@ package ar.edu.untref.aydoo;
 
 public class Transformador {
 
-    public TransformadoHTML transformar(Transformable elemento) {
+    public ElementoTransformadoHTML transformar(Transformable elemento) {
 
-        TransformadoHTML transformado = elemento.getTransformado();
+        ElementoTransformadoHTML transformado = elemento.getTransformado();
         return transformado;
 
     }
