@@ -20,7 +20,7 @@ public class SeccionHTML implements TransformadoHTML {
     @Override
     public String getContenido() {
 
-        return "<section>\n" + this.construirStringDeContenidos() + "</section>";
+        return "<section>\n" + this.construirStringDeContenidos() + "</section>\n";
 
     }
 
