@@ -1,10 +1,10 @@
 package ar.edu.untref.aydoo;
 
-public abstract class Elemento implements Transformable {
+public abstract class ElementoSimple implements Transformable {
 
     private String contenido;
 
-    public Elemento(String contenido) {
+    public ElementoSimple(String contenido) {
         this.contenido = contenido;
     }
 

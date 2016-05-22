@@ -3,7 +3,7 @@ package ar.edu.untref.aydoo;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class IntegracionTransformacionesDeLineaTest {
+public class IntegracionTransformacionesTest {
 
     //Tests de las Transformaciones de Linea
 
@@ -11,7 +11,7 @@ public class IntegracionTransformacionesDeLineaTest {
     public void queTransformeCorrectamenteUnTitulo() {
 
         Titulo titulo = new Titulo("Esto es un titulo");
-        Transformador transformadorTitulo = new Transformador(new TransformacionDeLinea());
+        Transformador transformadorTitulo = new Transformador();
         
         ComponenteHTML transformado = transformadorTitulo.transformar(titulo);
         
@@ -23,7 +23,7 @@ public class IntegracionTransformacionesDeLineaTest {
     public void queTransformeCorrectamenteUnSubtitulo() {
 
         Subtitulo subtitulo = new Subtitulo("Esto es un subtitulo");
-        Transformador transformadorSubtitulo = new Transformador(new TransformacionDeLinea());
+        Transformador transformadorSubtitulo = new Transformador();
         
         ComponenteHTML transformado = transformadorSubtitulo.transformar(subtitulo);
         
@@ -35,7 +35,7 @@ public class IntegracionTransformacionesDeLineaTest {
     public void queTransformeCorrectamenteUnaImagen() {
 
         Imagen imagen = new Imagen("Esto es una imagen.jpg");
-        Transformador transformadorImagen = new Transformador(new TransformacionDeLinea());
+        Transformador transformadorImagen = new Transformador();
         
         ComponenteHTML transformado = transformadorImagen.transformar(imagen);
         
@@ -47,7 +47,7 @@ public class IntegracionTransformacionesDeLineaTest {
     public void queTransformeCorrectamenteTextoPlano() {
 
         LineaDeTextoPlano texto = new LineaDeTextoPlano("Esto es una linea");
-        Transformador transformadorTexto = new Transformador(new TransformacionDeLinea());
+        Transformador transformadorTexto = new Transformador();
         
         ComponenteHTML transformado = transformadorTexto.transformar(texto);
         
@@ -59,11 +59,30 @@ public class IntegracionTransformacionesDeLineaTest {
     public void queTransformeCorrectamenteUnItemDeLista() {
 
         ItemDeLista item = new ItemDeLista("Esto es un item de lista");
-        Transformador transformadorItem = new Transformador(new TransformacionDeLinea());
+        Transformador transformadorItem = new Transformador();
         
         ComponenteHTML transformado = transformadorItem.transformar(item);
         
         Assert.assertEquals("<li>Esto es un item de lista</li>", transformado.getContenido());
+
+    }
+
+    @Test
+    public void queTransformeCorrectamenteUnaLista() {
+
+        ItemDeLista item1 = new ItemDeLista("Hola");
+        ItemDeLista item2 = new ItemDeLista("Chau");
+        Lista lista = new Lista();
+        lista.agregarItem(item1);
+        lista.agregarItem(item2);
+
+        Transformador transformadorLista = new Transformador();
+        ComponenteHTML transformado = transformadorLista.transformar(lista);
+
+        Assert.assertEquals(("<ul>\n" +
+                " <li>Hola</li>\n" +
+                " <li>Chau</li>\n" +
+                "</ul>"), transformado.getContenido());
 
     }
 

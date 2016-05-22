@@ -1,13 +1,13 @@
 package ar.edu.untref.aydoo;
 
-public class Subtitulo extends Elemento{
+public class Subtitulo extends ElementoSimple {
 
 	public Subtitulo(String subtitulo){
 		super(subtitulo);
 	}
 
 	@Override
-	public LineaHTML getTransformado() {
+	public ComponenteHTML getTransformado() {
 		
 		 SubtituloHTML subtituloHTML = new SubtituloHTML(this.getContenido());
 	     return subtituloHTML;
