@@ -1,4 +1,4 @@
-package ar.edu.untref.aydoo;
+package ar.edu.untref.aydoo.entrada;
 
 @SuppressWarnings("serial")
 public class ArchivoInvalidoException extends RuntimeException {

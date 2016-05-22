@@ -1,4 +1,4 @@
-package ar.edu.untref.aydoo;
+package ar.edu.untref.aydoo.elementos;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,22 +7,8 @@ public class ListaHTML implements ElementoHTML {
 
     protected List<LineaHTML> lineas;
 
-    protected ListaHTML(){
+    public ListaHTML(){
         this.lineas = new ArrayList<LineaHTML>();
-    }
-
-    private String construirStringLista(){
-
-        String stringLista = "";
-
-        for(LineaHTML linea: this.lineas){
-
-            stringLista = linea.concatenarContenido(stringLista);
-
-        }
-
-        return stringLista;
-
     }
 
     public void agregarItem(ItemDeListaHTML item) {
@@ -31,15 +17,27 @@ public class ListaHTML implements ElementoHTML {
 
     @Override
     public String getContenido() {
-
     	return this.concatenarContenido("");
-
     }
 
     @Override
     public String concatenarContenido(String contenido) {
+    	
+    	contenido += "<ul>\n" + this.construirStringLista() + "</ul>\n";
+        return contenido;
+        
+    }
+    
+    private String construirStringLista(){
 
-        return contenido += "<ul>\n" + this.construirStringLista() + "</ul>\n";
+        String stringLista = "";
+
+        for(LineaHTML linea: this.lineas){
+            stringLista = linea.concatenarContenido(stringLista);
+        }
+
+        return stringLista;
 
     }
+    
 }

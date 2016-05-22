@@ -1,10 +1,10 @@
-package ar.edu.untref.aydoo;
+package ar.edu.untref.aydoo.entrada;
 
-
+@SuppressWarnings("serial")
 public class LecturaInvalidaException extends RuntimeException{
     
 	public LecturaInvalidaException(){
-		super("La lectura del archivo es inv�lida.");
+		super("La lectura del archivo es invalida.");
 	}
 	
 }

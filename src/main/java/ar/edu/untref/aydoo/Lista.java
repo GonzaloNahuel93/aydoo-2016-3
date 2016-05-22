@@ -1,20 +1,17 @@
-package ar.edu.untref.aydoo;
+package ar.edu.untref.aydoo.elementos;
 
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by synysterlove on 22/05/16.
- */
-public class Lista extends Elemento {
+import ar.edu.untref.aydoo.TransformadoHTML;
+import ar.edu.untref.aydoo.Transformador;
 
+public class Lista extends Elemento {
 
     private List<ItemDeLista> items;
 
     public Lista() {
-
         items = new ArrayList<ItemDeLista>();
-
     }
 
     @Override
@@ -28,6 +25,7 @@ public class Lista extends Elemento {
     private ListaHTML transformarItems(ListaHTML listaHTML) {
 
         Transformador transformadorItems = new Transformador();
+        
         for(ItemDeLista item : this.items) {
 
             ItemDeListaHTML itemHTML = (ItemDeListaHTML) transformadorItems.transformar(item);
@@ -40,8 +38,7 @@ public class Lista extends Elemento {
     }
 
     public void agregarItem(ItemDeLista item) {
-
         this.items.add(item);
-
     }
+ 
 }

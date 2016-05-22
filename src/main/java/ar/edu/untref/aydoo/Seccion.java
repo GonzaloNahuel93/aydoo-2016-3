@@ -1,19 +1,18 @@
-package ar.edu.untref.aydoo;
+package ar.edu.untref.aydoo.elementos;
 
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by synysterlove on 22/05/16.
- */
+import ar.edu.untref.aydoo.Transformable;
+import ar.edu.untref.aydoo.TransformadoHTML;
+import ar.edu.untref.aydoo.Transformador;
+
 public class Seccion implements Transformable {
 
     private List<Elemento> contenido;
 
     public Seccion() {
-
         this.contenido = new ArrayList<Elemento>();
-
     }
     
     @Override
@@ -27,6 +26,7 @@ public class Seccion implements Transformable {
     private SeccionHTML transformarContenido(SeccionHTML seccionHTML) {
 
         Transformador transformadorContenido = new Transformador();
+        
         for(Elemento elemento : this.contenido) {
 
             ElementoHTML elementoHTML = (ElementoHTML) transformadorContenido.transformar(elemento);
@@ -38,9 +38,8 @@ public class Seccion implements Transformable {
 
     }
     
-    public void agregarContenido(Elemento elemento) {
-        
-        this.contenido.add(elemento);
-        
+    public void agregarContenido(Elemento elemento) {    
+        this.contenido.add(elemento);     
     }
+    
 }

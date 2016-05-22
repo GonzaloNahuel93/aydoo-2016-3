@@ -1,10 +1,10 @@
-package ar.edu.untref.aydoo;
+package ar.edu.untref.aydoo.entrada;
 
-
+@SuppressWarnings("serial")
 public class FormatoDeEntradaInvalidoException extends RuntimeException {
     
 	public FormatoDeEntradaInvalidoException(){
-		super("El formato del archivo de entrada es inv�lido.");
+		super("El formato del archivo de entrada es invalido.");
 	}
 	
 }

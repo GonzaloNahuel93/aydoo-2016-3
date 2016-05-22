@@ -1,11 +1,22 @@
-package ar.edu.untref.aydoo;
+package ar.edu.untref.aydoo.tests;
 
 import org.junit.Assert;
 import org.junit.Test;
 
+import ar.edu.untref.aydoo.EstructuraBase;
+import ar.edu.untref.aydoo.TransformadoHTML;
+import ar.edu.untref.aydoo.Transformador;
+import ar.edu.untref.aydoo.elementos.Imagen;
+import ar.edu.untref.aydoo.elementos.ItemDeLista;
+import ar.edu.untref.aydoo.elementos.TextoPlano;
+import ar.edu.untref.aydoo.elementos.Lista;
+import ar.edu.untref.aydoo.elementos.Seccion;
+import ar.edu.untref.aydoo.elementos.Subtitulo;
+import ar.edu.untref.aydoo.elementos.Titulo;
+
 public class IntegracionTransformacionesTest {
 
-    //Tests de las Transformaciones de Linea
+    //Tests de las Transformaciones
 
     @Test
     public void queTransformeCorrectamenteUnTitulo() {
@@ -46,7 +57,7 @@ public class IntegracionTransformacionesTest {
     @Test
     public void queTransformeCorrectamenteTextoPlano() {
 
-        LineaDeTextoPlano texto = new LineaDeTextoPlano("Esto es una linea");
+        TextoPlano texto = new TextoPlano("Esto es una linea");
         Transformador transformadorTexto = new Transformador();
         
         TransformadoHTML transformado = transformadorTexto.transformar(texto);
@@ -80,10 +91,10 @@ public class IntegracionTransformacionesTest {
         TransformadoHTML transformado = transformadorLista.transformar(lista);
 
         Assert.assertEquals(("<ul>\n" +
-                " <li>Hola</li>\n" +
-                " <li>Chau</li>\n" +
-                "</ul>\n"
-), transformado.getContenido());
+                			 " <li>Hola</li>\n" +
+                			 " <li>Chau</li>\n" +
+                			 "</ul>\n")
+                			 , transformado.getContenido());
 
     }
 
@@ -103,10 +114,11 @@ public class IntegracionTransformacionesTest {
         TransformadoHTML transformado = transformadorSeccion.transformar(seccion);
 
         Assert.assertEquals(("<section>\n" +
-                " <h1>Titulo</h1>\n" +
-                " <h2>Subtitulo</h2>\n" +
-                " <img src=\"Git.png\"/>\n" +
-                "</section>\n"),transformado.getContenido());
+        					 " <h1>Titulo</h1>\n" +
+        					 " <h2>Subtitulo</h2>\n" +
+        					 " <img src=\"Git.png\"/>\n" +
+        					 "</section>\n")
+        					 ,transformado.getContenido());
 
     }
 
@@ -132,14 +144,15 @@ public class IntegracionTransformacionesTest {
         TransformadoHTML transformado = transformadorSeccion.transformar(seccion);
 
         Assert.assertEquals(("<section>\n" +
-                " <h1>Titulo</h1>\n" +
-                " <h2>Subtitulo</h2>\n" +
-                " <img src=\"Git.png\"/>\n" +
-                "<ul>\n" +
-                " <li>item1</li>\n" +
-                " <li>item2</li>\n" +
-                "</ul>\n" +
-                "</section>\n"),transformado.getContenido());
+        					 " <h1>Titulo</h1>\n" +
+        					 " <h2>Subtitulo</h2>\n" +
+        					 " <img src=\"Git.png\"/>\n" +
+        					 "<ul>\n" +
+        					 " <li>item1</li>\n" +
+        					 " <li>item2</li>\n" +
+        					 "</ul>\n" +
+        					 "</section>\n")
+        					 ,transformado.getContenido());
 
     }
 
@@ -184,24 +197,25 @@ public class IntegracionTransformacionesTest {
         TransformadoHTML transformado = transformadorIntegrado.transformar(estructuraBase);
 
         Assert.assertEquals(("<section>\n" +
-                " <h1>Titulo1</h1>\n" +
-                " <h2>Subtitulo1</h2>\n" +
-                " <img src=\"Imagen1.png\"/>\n" +
-                "<ul>\n" +
-                " <li>item1.1</li>\n" +
-                " <li>item1.2</li>\n" +
-                "</ul>\n" +
-                "</section>\n" +
+                			 " <h1>Titulo1</h1>\n" +
+                			 " <h2>Subtitulo1</h2>\n" +
+                			 " <img src=\"Imagen1.png\"/>\n" +
+                			 "<ul>\n" +
+                			 " <li>item1.1</li>\n" +
+                			 " <li>item1.2</li>\n" +
+                			 "</ul>\n" +
+                			 "</section>\n" +
 
-                "<section>\n" +
-                " <h1>Titulo2</h1>\n" +
-                " <h2>Subtitulo2</h2>\n" +
-                " <img src=\"Imagen2.png\"/>\n" +
-                "<ul>\n" +
-                " <li>item2.1</li>\n" +
-                " <li>item2.2</li>\n" +
-                "</ul>\n" +
-                "</section>\n"), transformado.getContenido());
+                			 "<section>\n" +
+                			 " <h1>Titulo2</h1>\n" +
+                			 " <h2>Subtitulo2</h2>\n" +
+                			 " <img src=\"Imagen2.png\"/>\n" +
+                			 "<ul>\n" +
+                			 " <li>item2.1</li>\n" +
+                			 " <li>item2.2</li>\n" +
+                			 "</ul>\n" +
+        					 "</section>\n")
+        					 , transformado.getContenido());
 
     }
 

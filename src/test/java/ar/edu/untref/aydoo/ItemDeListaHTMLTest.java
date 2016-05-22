@@ -1,7 +1,9 @@
-package ar.edu.untref.aydoo;
+package ar.edu.untref.aydoo.tests;
 
 import org.junit.Assert;
 import org.junit.Test;
+
+import ar.edu.untref.aydoo.elementos.ItemDeListaHTML;
 
 public class ItemDeListaHTMLTest {
 

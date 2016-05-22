@@ -1,4 +1,4 @@
-package ar.edu.untref.aydoo;
+package ar.edu.untref.aydoo.entrada;
 
 import java.io.*;
 import java.util.LinkedList;
@@ -20,12 +20,15 @@ public class LectorDeEntrada {
             BufferedReader lector = new BufferedReader(fr);
 
             String lineaActual = lector.readLine();
+            
             while (lineaActual != null) {
 
                 this.contenidoDelArchivoDeEntrada.add(lineaActual);
                 lineaActual = lector.readLine();
 
             }
+            
+            lector.close();
 
         } catch (FileNotFoundException e) {
 

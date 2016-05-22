@@ -1,4 +1,5 @@
-package ar.edu.untref.aydoo;
+package ar.edu.untref.aydoo.elementos;
+
 
 public abstract class LineaHTML implements ElementoHTML {
 

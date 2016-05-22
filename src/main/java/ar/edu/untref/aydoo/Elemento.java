@@ -1,9 +1,7 @@
-package ar.edu.untref.aydoo;
+package ar.edu.untref.aydoo.elementos;
 
-/**
- * Created by synysterlove on 22/05/16.
- */
+import ar.edu.untref.aydoo.Transformable;
+
 public abstract class Elemento implements Transformable{
-
     
 }

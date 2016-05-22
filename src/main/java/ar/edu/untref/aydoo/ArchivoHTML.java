@@ -3,35 +3,31 @@ package ar.edu.untref.aydoo;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by synysterlove on 22/05/16.
- */
+import ar.edu.untref.aydoo.elementos.SeccionHTML;
+
 public class ArchivoHTML implements TransformadoHTML {
 
     List<SeccionHTML> seccionesHTML;
 
     public ArchivoHTML() {
-
         this.seccionesHTML = new ArrayList<SeccionHTML>();
-
     }
 
     @Override
     public String getContenido() {
 
         String contenido = "";
+        
         for(SeccionHTML seccion : this.seccionesHTML) {
-
             contenido += seccion.getContenido();
-
         }
+
         return contenido;
 
     }
 
     public void agregarSeccion(SeccionHTML seccion) {
-
         this.seccionesHTML.add(seccion);
-
     }
+
 }
