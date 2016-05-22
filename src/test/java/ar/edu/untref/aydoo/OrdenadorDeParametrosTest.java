@@ -49,4 +49,17 @@ public class OrdenadorDeParametrosTest {
 
 	}
 
+	@Test
+	public void seInsertanVariosParametrosPeroSoloSeGuardanAquellosQueSonValidos(){
+
+		String[] parametros = {"--mode=default", "miPresentacion.md", "Hola", "Esto", "Es", "AyDOO"};
+		OrdenadorDeParametros ordenador = new OrdenadorDeParametros();
+
+		String[] parametrosOrdenados = ordenador.ordenar(parametros);
+
+		Assert.assertEquals("--mode=default", parametrosOrdenados[0]);
+		Assert.assertEquals("miPresentacion.md", parametrosOrdenados[1]);
+
+	}
+
 }

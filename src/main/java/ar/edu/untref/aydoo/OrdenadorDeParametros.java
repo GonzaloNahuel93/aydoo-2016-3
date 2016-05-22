@@ -18,12 +18,12 @@ public class OrdenadorDeParametros {
 
 		//'.md' tiene 3 letras. Puede darse el caso que este parametro contenga el nombre del archivo a transformar.
 		if(parametros[i].length() > 3){
-			parametrosOrdenados = this.agregarModo(parametros[i], parametrosOrdenados);
+			parametrosOrdenados = this.agregarArchivo(parametros[i], parametrosOrdenados);
 		}
 
 		//'--mode=' tiene 7 letras. Puede darse el caso que este parametro contenga el modo en que se quiere generar la salida de la transformacion.
 		if(parametros[i].length() > 7){
-			parametrosOrdenados = this.agregarArchivo(parametros[i], parametrosOrdenados);
+			parametrosOrdenados = this.agregarModo(parametros[i], parametrosOrdenados);
 		}
 
 		return parametrosOrdenados;
