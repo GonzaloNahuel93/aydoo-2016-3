@@ -39,7 +39,7 @@ public class ListaHTML implements ElementoHTML {
     @Override
     public String concatenarContenido(String contenido) {
 
-        return "<ul>\n" + this.construirStringLista() + "</ul>\n";
-       // " " + this.getContenido() + "\n"
+        return contenido += "<ul>\n" + this.construirStringLista() + "</ul>\n";
+
     }
 }

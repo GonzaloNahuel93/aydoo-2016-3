@@ -9,12 +9,14 @@ public abstract class LineaHTML implements ElementoHTML {
     }
 
     public String getContenido(){
-    	return (this.contenido);
+    	return this.contenido;
     }
 
     @Override
     public String concatenarContenido(String contenido) {
+
         return contenido += (" " + this.getContenido() + "\n");
+
     }
 
 }

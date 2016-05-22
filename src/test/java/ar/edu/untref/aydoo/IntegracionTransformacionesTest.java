@@ -87,7 +87,6 @@ public class IntegracionTransformacionesTest {
 
     }
 
-    /*
     @Test
     public void queTransformeCorrectamenteUnaSeccion() {
 
@@ -107,7 +106,7 @@ public class IntegracionTransformacionesTest {
                 " <h1>Titulo</h1>\n" +
                 " <h2>Subtitulo</h2>\n" +
                 " <img src=\"Git.png\"/>\n" +
-                "</section>"),transformado.getContenido());
+                "</section>\n"),transformado.getContenido());
 
     }
 
@@ -133,16 +132,15 @@ public class IntegracionTransformacionesTest {
         TransformadoHTML transformado = transformadorSeccion.transformar(seccion);
 
         Assert.assertEquals(("<section>\n" +
-                "<h1>Titulo</h1>\n" +
-                "<h2>Subtitulo</h2>\n" +
-                "<img src=\"Git.png\"/>\n" +
+                " <h1>Titulo</h1>\n" +
+                " <h2>Subtitulo</h2>\n" +
+                " <img src=\"Git.png\"/>\n" +
                 "<ul>\n" +
                 " <li>item1</li>\n" +
                 " <li>item2</li>\n" +
                 "</ul>\n" +
-                "</section>"),transformado.getContenido());
+                "</section>\n"),transformado.getContenido());
 
     }
-    */
 
 }
