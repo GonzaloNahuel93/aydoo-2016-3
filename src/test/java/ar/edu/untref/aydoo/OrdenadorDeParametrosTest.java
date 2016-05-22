@@ -36,4 +36,17 @@ public class OrdenadorDeParametrosTest {
 
 	}
 
+	@Test
+	public void seInsertanParametrosParaOrdenarQueContieneEnMayusculasYNoDeberiaInfluirEnElOrdenamiento(){
+
+		String[] parametros = {"mIpReSeNtAcIoN.MD", "--MODE=No-OutPut"};
+		OrdenadorDeParametros ordenador = new OrdenadorDeParametros();
+
+		String[] parametrosOrdenados = ordenador.ordenar(parametros);
+
+		Assert.assertEquals("--mode=No-OutPut", parametrosOrdenados[0]);
+		Assert.assertEquals("mIpReSeNtAcIoN.md", parametrosOrdenados[1]);
+
+	}
+
 }
