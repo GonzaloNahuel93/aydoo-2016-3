@@ -32,7 +32,7 @@ public class ConstructorDeObjetosATransformarTest {
 
     }
 
-    /*
+
     @Test
     public void quePuedaConstruirUnTituloYUnSubtitulo() {
 
@@ -51,7 +51,26 @@ public class ConstructorDeObjetosATransformarTest {
         Assert.assertTrue(this.verificarSiElObjetoEstaEnLaLista(subtitulo, objetosConstruidos));
 
     }
-    */
+
+    @Test
+    public void quePuedaConstruirUnSubituloYUnTituloEnEseOrden() {
+
+        List<String> listaDeEntrada = new ArrayList<String>();
+        listaDeEntrada.add("##Subtitulo");
+        listaDeEntrada.add("#Titulo");
+
+        ConstructorDeObjetosATransformar constructor = new ConstructorDeObjetosATransformar();
+
+        List<Transformable> objetosConstruidos = constructor.construirObjetos(listaDeEntrada);
+
+        Titulo titulo = new Titulo("Titulo");
+        Subtitulo subtitulo = new Subtitulo("Subtitulo");
+
+        Assert.assertTrue(this.verificarSiElObjetoEstaEnLaLista(titulo, objetosConstruidos));
+        Assert.assertTrue(this.verificarSiElObjetoEstaEnLaLista(subtitulo, objetosConstruidos));
+
+    }
+
 
 
     /* Necesito definir este metodo para averiguar

@@ -59,4 +59,7 @@ public class Seccion implements Transformable {
         return this.contenido;
 
     }
+
+    public void colocarStringDeContenidoPropio(String contenido) {}; //En una seccion no hace nada porque la lista no tiene contenido
+
 }

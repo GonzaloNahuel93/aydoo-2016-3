@@ -32,5 +32,8 @@ public class EstructuraDeSecciones implements Transformable {
         return codigo;
 
     }
+
+    @Override
+    public void colocarStringDeContenidoPropio(String contenido) {} //Igual que la lista y la seccion, no tiene contenido propio
     
 }

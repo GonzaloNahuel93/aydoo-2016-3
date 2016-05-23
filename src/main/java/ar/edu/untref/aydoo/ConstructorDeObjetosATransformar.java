@@ -19,12 +19,11 @@ public class ConstructorDeObjetosATransformar {
     public List<Transformable> construirObjetos(List<String> listaDeEntrada) {
 
         List<Transformable> objetos = new ArrayList<Transformable>();
-        for (String s: listaDeEntrada) {
+        for (String actual: listaDeEntrada) {
 
-            Transformable objeto = this.repositorio.obtenerObjetoPorString(s);
-            ((Titulo)objeto).colocarContenido(s);
+            Transformable objeto = this.repositorio.obtenerObjetoPorString(actual);
+            objeto.colocarStringDeContenidoPropio(actual);
             objetos.add(objeto);
-
 
         }
 

@@ -6,5 +6,7 @@ public interface Transformable {
 
     @Override
     public boolean equals(Object obj);
-    
+
+    public void colocarStringDeContenidoPropio(String contenido);
+
 }

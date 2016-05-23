@@ -14,4 +14,11 @@ public class TextoPlano extends ElementoDeLinea {
 
     }
 
+    @Override
+    public void colocarStringDeContenidoPropio(String contenido) {
+
+        this.contenido = contenido;
+
+    }
+
 }

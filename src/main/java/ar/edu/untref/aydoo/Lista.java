@@ -59,4 +59,8 @@ public class Lista extends Elemento {
         return true; //Si todos fueron iguales, se retorna true
 
     }
+
+    @Override
+    public void colocarStringDeContenidoPropio(String contenido) {}; //En una lista no hace nada porque la lista no tiene contenido
+
 }

@@ -1,7 +1,7 @@
 package ar.edu.untref.aydoo;
 
 
-public class Imagen extends ElementoDeLinea {
+public class Imagen extends ElementoDefinidoPorDosCaracteresDeEspecificacion {
 
 	public Imagen(String imagen){
 		super(imagen);

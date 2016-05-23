@@ -1,7 +1,7 @@
 package ar.edu.untref.aydoo;
 
 
-public class Subtitulo extends ElementoDeLinea {
+public class Subtitulo extends ElementoDefinidoPorDosCaracteresDeEspecificacion {
 
 	public Subtitulo(String subtitulo){
 		super(subtitulo);

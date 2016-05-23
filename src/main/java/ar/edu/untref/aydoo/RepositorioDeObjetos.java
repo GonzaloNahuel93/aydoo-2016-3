@@ -16,14 +16,11 @@ public class RepositorioDeObjetos {
         //Se inicializa el mapa con lo que aceptamos en el archivo de entrada
         this.diccionarioDeObjetos = new HashMap<String, Transformable>();
         diccionarioDeObjetos.put("#", new Titulo(""));
+        diccionarioDeObjetos.put("##", new Subtitulo(""));
 
     }
 
-    /*Este metodo tiene la posta tanto
-    que hasta valida que no haya cosas raras en el
-    archivo de entrada!! Porque pide que todas las lineas
-    empiecen con alguno de los strings que tiene el mapa
-     */
+
     public Transformable obtenerObjetoPorString(String s) {
 
         Iterator<String> iteradorClavesDelMapa = diccionarioDeObjetos.keySet().iterator();
@@ -34,7 +31,7 @@ public class RepositorioDeObjetos {
 
         }
 
-        throw new SintaxisDelArchivoDeEntradaInvalidaException(); //Si no hubo nunca un matcheo con lo aceptado, tira excepcion porque la entrada tiene algo invalido
+        return new TextoPlano(s); //Si no matchea ninguna de las especificaciones, lo interpreta como texto
 
     }
 }

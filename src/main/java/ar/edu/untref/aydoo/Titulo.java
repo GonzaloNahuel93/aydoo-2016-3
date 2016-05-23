@@ -1,7 +1,7 @@
 package ar.edu.untref.aydoo;
 
 
-public class Titulo extends ElementoDeLinea {
+public class Titulo extends ElementoDefinidoPorUnCaracterDeEspecificacion {
 
     public Titulo(String titulo) {
         super(titulo);
@@ -12,12 +12,6 @@ public class Titulo extends ElementoDeLinea {
 
         TituloHTML tituloHTML = new TituloHTML(this.getContenido());
         return tituloHTML;
-
-    }
-
-    void colocarContenido(String linea) {
-
-        this.contenido = linea.substring(1);
 
     }
 
