@@ -9,7 +9,7 @@ public class ValidadorDeParametrosTest {
 	@Test
 	public void queTireTrueCuandoLosParametrosSonCorrectos(){
 
-		String[] parametros = {"--mode=default", "Mi Presentacion.md", "--output=Presentacion para AyDOO"};
+		String[] parametros = {"--mode=default", "miPresentacion.md", "--output=Presentacion para AyDOO"};
 		ValidadorDeParametros validador = new ValidadorDeParametros();
 
 		Assert.assertTrue(validador.hayCondicionesValidasParaTransformar(parametros));
@@ -26,4 +26,14 @@ public class ValidadorDeParametrosTest {
 
 	}
 
+	@Test
+	public void queTireFalseCuandoNoSeDetectaUnArchivoDeEntradaParaTransformar(){
+		
+		String[] parametros = {"--mode=no-output", "", "--output=presentacionMaster"};
+		ValidadorDeParametros validador = new ValidadorDeParametros();
+
+		Assert.assertFalse(validador.hayCondicionesValidasParaTransformar(parametros));
+		
+	}
+	
 }

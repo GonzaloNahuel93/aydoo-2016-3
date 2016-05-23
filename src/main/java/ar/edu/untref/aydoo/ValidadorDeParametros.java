@@ -12,29 +12,19 @@ public class ValidadorDeParametros {
 	}
 
 	private boolean contradiccionDeParametros(String primerParametro, String segundoParametro) {
-		
-		boolean contradiccionDeParametros = false;
-		
+
 		boolean sePidioModoNoOutput = primerParametro.equals("--mode=no-output");
-		boolean estaVacioElParametroParaPedirNombreAUnArchivoDeSalida = segundoParametro.equals("");
-		
-		if(sePidioModoNoOutput && !estaVacioElParametroParaPedirNombreAUnArchivoDeSalida){
-			contradiccionDeParametros = true;
-		}
-		
+		boolean sePidioUnArchivoDeSalida = !segundoParametro.equals("");
+
+		boolean contradiccionDeParametros = sePidioModoNoOutput && sePidioUnArchivoDeSalida;
+
 		return contradiccionDeParametros;
-		
+
 	}
 
 	private boolean hayArchivoDeEntrada(String parametro) {
 
-		boolean hayArchivoDeEntrada = false;
-		boolean estaVacioElParametro = parametro.equals("");
-
-		if(!estaVacioElParametro){
-			hayArchivoDeEntrada = true;
-		}
-
+		boolean hayArchivoDeEntrada = !parametro.equals("");
 		return hayArchivoDeEntrada;
 
 	}
