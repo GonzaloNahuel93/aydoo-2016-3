@@ -1,9 +1,7 @@
-package ar.edu.untref.aydoo.tests;
+package ar.edu.untref.aydoo;
 
 import org.junit.Assert;
 import org.junit.Test;
-
-import ar.edu.untref.aydoo.LectorDeEntrada;
 
 import java.io.BufferedWriter;
 import java.io.File;

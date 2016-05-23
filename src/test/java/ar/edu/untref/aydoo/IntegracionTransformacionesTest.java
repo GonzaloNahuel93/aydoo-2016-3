@@ -1,18 +1,7 @@
-package ar.edu.untref.aydoo.tests;
+package ar.edu.untref.aydoo;
 
 import org.junit.Assert;
 import org.junit.Test;
-
-import ar.edu.untref.aydoo.EstructuraBase;
-import ar.edu.untref.aydoo.Imagen;
-import ar.edu.untref.aydoo.ItemDeLista;
-import ar.edu.untref.aydoo.Lista;
-import ar.edu.untref.aydoo.Seccion;
-import ar.edu.untref.aydoo.Subtitulo;
-import ar.edu.untref.aydoo.TextoPlano;
-import ar.edu.untref.aydoo.Titulo;
-import ar.edu.untref.aydoo.ElementoTransformadoHTML;
-import ar.edu.untref.aydoo.Transformador;
 
 public class IntegracionTransformacionesTest {
 
@@ -189,7 +178,7 @@ public class IntegracionTransformacionesTest {
         seccion2.agregarContenido(imagen2);
         seccion2.agregarContenido(lista2);
 
-        EstructuraBase estructuraBase = new EstructuraBase();
+        EstructuraDeSecciones estructuraBase = new EstructuraDeSecciones();
         estructuraBase.agregarComponente(seccion1);
         estructuraBase.agregarComponente(seccion2);
 

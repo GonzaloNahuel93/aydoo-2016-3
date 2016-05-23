@@ -3,11 +3,11 @@ package ar.edu.untref.aydoo;
 import java.util.ArrayList;
 import java.util.List;
 
-public class EstructuraBase implements Transformable {
+public class EstructuraDeSecciones implements Transformable {
 
     private List<Seccion> secciones;
 
-    public EstructuraBase() {
+    public EstructuraDeSecciones() {
         this.secciones = new ArrayList<Seccion>();
     }
 
@@ -22,14 +22,14 @@ public class EstructuraBase implements Transformable {
     @Override
     public ElementoTransformadoHTML getTransformado() {
 
-        CodigoHTML transformado = new CodigoHTML();
+        CodigoHTML codigo = new CodigoHTML();
         Transformador transformadorDeSecciones = new Transformador();
         
         for (Seccion seccion : this.secciones) {
-            transformado.agregarSeccion((SeccionHTML)transformadorDeSecciones.transformar(seccion));
+            codigo.agregarSeccion((SeccionHTML)transformadorDeSecciones.transformar(seccion));
         }
         
-        return transformado;
+        return codigo;
 
     }
     
