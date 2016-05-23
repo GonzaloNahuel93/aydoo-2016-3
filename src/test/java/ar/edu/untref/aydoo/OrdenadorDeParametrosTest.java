@@ -2,7 +2,6 @@ package ar.edu.untref.aydoo.tests;
 
 import org.junit.Assert;
 import org.junit.Test;
-
 import ar.edu.untref.aydoo.OrdenadorDeParametros;
 
 public class OrdenadorDeParametrosTest {
@@ -13,6 +12,7 @@ public class OrdenadorDeParametrosTest {
 		//El orden estandar definido es:
 		//1) Modo de salida.
 		//2) Archivo a transformar.
+		//3) Output elegido (Opcional).
 
 		String[] parametros = {"miPresentacion.md", "--mode=default"};
 		OrdenadorDeParametros ordenador = new OrdenadorDeParametros();
@@ -100,6 +100,20 @@ public class OrdenadorDeParametrosTest {
 
 		Assert.assertEquals("--mode=nose", parametrosOrdenados[0]);
 		Assert.assertEquals("Presentacion de AyDOO.md", parametrosOrdenados[1]);
+		Assert.assertEquals("--output=AyDOO", parametrosOrdenados[2]);
+
+	}
+
+	@Test
+	public void queNoSeTomeEnCuentaCuandoSeColocaUnArchivoQueNoSeaMd(){
+
+		String[] parametros = {"--output=AyDOO", "Presentacion.txt", "--mode=default"};
+		OrdenadorDeParametros ordenador = new OrdenadorDeParametros();
+
+		String[] parametrosOrdenados = ordenador.ordenar(parametros);
+
+		Assert.assertEquals("--mode=default", parametrosOrdenados[0]);
+		Assert.assertEquals("", parametrosOrdenados[1]);
 		Assert.assertEquals("--output=AyDOO", parametrosOrdenados[2]);
 
 	}
