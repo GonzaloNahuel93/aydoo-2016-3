@@ -103,21 +103,30 @@ public class IntegracionConstructorDeObjetosATransformarTest {
 
     }
 
+    /*
     @Test
-    public void quePuedaConstruirUnItemDeLista() {
+    public void quePuedaConstruirUnaLista() {
 
         List<String> listaDeEntrada = new ArrayList<String>();
         listaDeEntrada.add("*item1");
+        listaDeEntrada.add("*item2");
+        listaDeEntrada.add("*item3");
 
         ConstructorDeObjetosATransformar constructor = new ConstructorDeObjetosATransformar();
 
         List<Transformable> objetosConstruidos = constructor.construirObjetos(listaDeEntrada);
 
         ItemDeLista item1 = new ItemDeLista("item1");
+        ItemDeLista item2 = new ItemDeLista("item2");
+        ItemDeLista item3 = new ItemDeLista("item3");
+        Lista lista = new Lista();
+        lista.agregarItem(item1);
+        lista.agregarItem(item2);
+        lista.agregarItem(item3);
 
-        Assert.assertTrue(this.verificarSiElObjetoEstaEnLaLista(item1, objetosConstruidos));
+        Assert.assertTrue(this.verificarSiElObjetoEstaEnLaLista(lista, objetosConstruidos));
 
-    }
+    }*/
 
     /* Necesito definir este metodo para averiguar
     si una lista contiene determinado elemento.
