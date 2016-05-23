@@ -3,15 +3,15 @@ package ar.edu.untref.aydoo;
 public class OrdenadorDeParametros {
 
 	public String[] ordenar(String[] parametros){
-		
-		String[] parametrosOrdenados = {"", ""};
-		
+
+		String[] parametrosOrdenados = {"", "", ""};
+
 		for(int i = 0 ; i < parametros.length ; i++){
 			parametrosOrdenados = evaluarParametro(parametros, parametrosOrdenados, i);
 		}
-		
+
 		return parametrosOrdenados;
-		
+
 	}
 
 	private String[] evaluarParametro(String[] parametros, String[] parametrosOrdenados, int i) {
@@ -26,6 +26,11 @@ public class OrdenadorDeParametros {
 			parametrosOrdenados = this.agregarModo(parametros[i], parametrosOrdenados);
 		}
 
+		//'--output=' tiene 9 letras. Puede darse el caso que este parametro contenga el nombre de salida del archivo requerido.
+		if(parametros[i].length() > 9){
+			parametrosOrdenados = this.agregarOutput(parametros[i], parametrosOrdenados);
+		}
+
 		return parametrosOrdenados;
 
 	}
@@ -36,7 +41,7 @@ public class OrdenadorDeParametros {
 		parametro = parametro.toLowerCase();
 
 		if("--mode=".equals(parametro)){
-			parametrosOrdenados[0] = parametro + parametroActual.substring(7,parametroActual.length());
+			parametrosOrdenados[0] = parametroActual.toLowerCase();
 		}
 
 		return parametrosOrdenados;
@@ -50,6 +55,19 @@ public class OrdenadorDeParametros {
 
 		if(".md".equals(parametro)){
 			parametrosOrdenados[1] = parametroActual.substring(0,parametroActual.length() - 3) + parametro;
+		}
+
+		return parametrosOrdenados;
+
+	}
+
+	private String[] agregarOutput(String parametroActual, String[] parametrosOrdenados){
+
+		String parametro = parametroActual.substring(0,9);
+		parametro = parametro.toLowerCase();
+
+		if("--output=".equals(parametro)){
+			parametrosOrdenados[2] = parametro + parametroActual.substring(9,parametroActual.length());
 		}
 
 		return parametrosOrdenados;

@@ -1,7 +1,9 @@
-package ar.edu.untref.aydoo;
+package ar.edu.untref.aydoo.tests;
 
 import org.junit.Assert;
 import org.junit.Test;
+
+import ar.edu.untref.aydoo.OrdenadorDeParametros;
 
 public class OrdenadorDeParametrosTest {
 
@@ -43,7 +45,7 @@ public class OrdenadorDeParametrosTest {
 
 		String[] parametrosOrdenados = ordenador.ordenar(parametros);
 
-		Assert.assertEquals("--mode=No-OutPut", parametrosOrdenados[0]);
+		Assert.assertEquals("--mode=no-output", parametrosOrdenados[0]);
 		Assert.assertEquals("mIpReSeNtAcIoN.md", parametrosOrdenados[1]);
 
 	}
@@ -71,6 +73,20 @@ public class OrdenadorDeParametrosTest {
 
 		Assert.assertEquals("", parametrosOrdenados[0]);
 		Assert.assertEquals("miPresentacion.md", parametrosOrdenados[1]);
+
+	}
+
+	@Test
+	public void seInsertanTodosLosParametrosIncluyendoLaPedidaDeUnOutputEspecial(){
+
+		String[] parametros = {"miPresentacion.md", "--mode=default", "--output=Archivo"};
+		OrdenadorDeParametros ordenador = new OrdenadorDeParametros();
+
+		String[] parametrosOrdenados = ordenador.ordenar(parametros);
+
+		Assert.assertEquals("--mode=default", parametrosOrdenados[0]);
+		Assert.assertEquals("miPresentacion.md", parametrosOrdenados[1]);
+		Assert.assertEquals("--output=Archivo", parametrosOrdenados[2]);
 
 	}
 
