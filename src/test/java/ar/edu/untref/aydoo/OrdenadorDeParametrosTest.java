@@ -90,4 +90,18 @@ public class OrdenadorDeParametrosTest {
 
 	}
 
+	@Test
+	public void seVerificaQueOrdeneBienLosParametrosCuandoSeInsertanLosTresParametrosConLetrasMayusculasYMinisculas(){
+
+		String[] parametros = {"--OuTpUt=AyDOO", "Presentacion de AyDOO.md", "--MODE=NosE"};
+		OrdenadorDeParametros ordenador = new OrdenadorDeParametros();
+
+		String[] parametrosOrdenados = ordenador.ordenar(parametros);
+
+		Assert.assertEquals("--mode=nose", parametrosOrdenados[0]);
+		Assert.assertEquals("Presentacion de AyDOO.md", parametrosOrdenados[1]);
+		Assert.assertEquals("--output=AyDOO", parametrosOrdenados[2]);
+
+	}
+
 }
