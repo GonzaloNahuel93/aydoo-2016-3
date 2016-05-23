@@ -7,7 +7,7 @@ import ar.edu.untref.aydoo.ValidadorDeParametros;
 public class ValidadorDeParametrosTest {
 
 	@Test
-	public void queTireTrueCuandoLosParametrosSonCorrectos(){
+	public void queTireTrueCuandoLosParametrosSonValidosComoParaHacerUnaTransformacion(){
 
 		String[] parametros = {"--mode=default", "miPresentacion.md", "--output=Presentacion para AyDOO"};
 		ValidadorDeParametros validador = new ValidadorDeParametros();
@@ -28,12 +28,22 @@ public class ValidadorDeParametrosTest {
 
 	@Test
 	public void queTireFalseCuandoNoSeDetectaUnArchivoDeEntradaParaTransformar(){
-		
-		String[] parametros = {"--mode=no-output", "", "--output=presentacionMaster"};
+
+		String[] parametros = {"--mode=default", "", "--output=presentacionMaster"};
 		ValidadorDeParametros validador = new ValidadorDeParametros();
 
 		Assert.assertFalse(validador.hayCondicionesValidasParaTransformar(parametros));
-		
+
 	}
-	
+
+	@Test
+	public void queTireTrueCuandoSePuedaDarElCasoQueSeInsertenOtraCombinacionDeParametrosValidosParaUnaTransformacion(){
+
+		String[] parametros = {"--mode=default", "miPresentacion.md", "--output=presentacionMaster"};
+		ValidadorDeParametros validador = new ValidadorDeParametros();
+
+		Assert.assertTrue(validador.hayCondicionesValidasParaTransformar(parametros));
+
+	}
+
 }
