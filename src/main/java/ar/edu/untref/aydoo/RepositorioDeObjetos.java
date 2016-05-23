@@ -18,6 +18,7 @@ public class RepositorioDeObjetos {
         diccionarioDeObjetos.put("#", new Titulo(""));
         diccionarioDeObjetos.put("##", new Subtitulo(""));
         diccionarioDeObjetos.put("i:", new Imagen(""));
+        diccionarioDeObjetos.put("*", new ItemDeLista(""));
 
     }
 
