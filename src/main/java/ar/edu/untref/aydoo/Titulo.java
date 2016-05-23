@@ -15,4 +15,10 @@ public class Titulo extends ElementoDeLinea {
 
     }
 
+    void colocarContenido(String linea) {
+
+        this.contenido = linea.substring(1);
+
+    }
+
 }

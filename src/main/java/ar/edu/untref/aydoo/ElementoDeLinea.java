@@ -2,7 +2,7 @@ package ar.edu.untref.aydoo;
 
 public abstract class ElementoDeLinea extends Elemento {
 
-    private String contenido;
+    protected String contenido;
 
     public ElementoDeLinea(String contenido) {
         this.contenido = contenido;
