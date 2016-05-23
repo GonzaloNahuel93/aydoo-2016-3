@@ -71,6 +71,21 @@ public class ConstructorDeObjetosATransformarTest {
 
     }
 
+    @Test
+    public void quePuedaConstruirTextoPlano() {
+
+        List<String> listaDeEntrada = new ArrayList<String>();
+        listaDeEntrada.add("Esto es textito simple");
+
+        ConstructorDeObjetosATransformar constructor = new ConstructorDeObjetosATransformar();
+
+        List<Transformable> objetosConstruidos = constructor.construirObjetos(listaDeEntrada);
+
+        TextoPlano texto = new TextoPlano("Esto es textito simple");
+
+        Assert.assertTrue(this.verificarSiElObjetoEstaEnLaLista(texto, objetosConstruidos));
+
+    }
 
 
     /* Necesito definir este metodo para averiguar
