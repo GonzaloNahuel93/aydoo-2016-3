@@ -12,4 +12,13 @@ public abstract class ElementoDeLinea extends Elemento {
         return contenido;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+
+        ElementoDeLinea elemento = (ElementoDeLinea)obj;
+        if(elemento.getContenido().equals(this.getContenido())) return true;
+        return false;
+
+    }
+
 }

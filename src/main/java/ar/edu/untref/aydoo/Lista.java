@@ -37,5 +37,26 @@ public class Lista extends Elemento {
     public void agregarItem(ItemDeLista item) {
         this.items.add(item);
     }
- 
+
+    public List<ItemDeLista> getItems() {
+
+        return this.items;
+
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+
+        Lista otraLista = (Lista)obj;
+        List<ItemDeLista> otrosItems = otraLista.getItems();
+        List<ItemDeLista> estosItems = this.getItems();
+        if(otrosItems.size() != estosItems.size()) return false;
+        for(int i=0; i < estosItems.size(); i++) { //Las dos listas tienen que ser del mismo tamaño asi que no hay riesgo de excepcion
+
+            if(!estosItems.get(i).equals(otrosItems.get(i))) return false; //Si algun par de items es distinto, tira falso
+
+        }
+        return true; //Si todos fueron iguales, se retorna true
+
+    }
 }

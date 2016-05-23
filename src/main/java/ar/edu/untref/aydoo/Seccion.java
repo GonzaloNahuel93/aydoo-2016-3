@@ -37,5 +37,26 @@ public class Seccion implements Transformable {
     public void agregarContenido(Elemento elemento) {    
         this.contenido.add(elemento);     
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+
+        Seccion otraSeccion = (Seccion)obj;
+        List<Elemento> otrosElementos = otraSeccion.getElementos();
+        List<Elemento> estosElementos = this.getElementos();
+        if(otrosElementos.size() != estosElementos.size()) return false;
+        for(int i=0; i < estosElementos.size(); i++) { //Las dos secciones tienen que ser del mismo tamaño asi que no hay riesgo de excepcion
+
+            if(!estosElementos.get(i).equals(otrosElementos.get(i))) return false; //Si algun par de elementos es distinto, tira falso
+
+        }
+        return true; //Si todos fueron iguales, se retorna true
+
+    }
+
+    public List<Elemento> getElementos() {
+
+        return this.contenido;
+
+    }
 }
