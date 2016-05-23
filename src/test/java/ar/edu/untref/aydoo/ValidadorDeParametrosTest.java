@@ -9,7 +9,7 @@ public class ValidadorDeParametrosTest {
 	@Test
 	public void queTireTrueCuandoLosParametrosSonValidosComoParaHacerUnaTransformacion(){
 
-		String[] parametros = {"--mode=default", "miPresentacion.md", "--output=Presentacion para AyDOO"};
+		String[] parametros = {"--mode=default", "miPresentacion.md", "--output=PresentacionParaAyDOO"};
 		ValidadorDeParametros validador = new ValidadorDeParametros();
 
 		Assert.assertTrue(validador.hayCondicionesValidasParaTransformar(parametros));
@@ -27,6 +27,16 @@ public class ValidadorDeParametrosTest {
 	}
 
 	@Test
+	public void queTireTrueCuandoSePuedaDarElCasoQueSeInserteOtraCombinacionDeParametrosValidosParaUnaTransformacion(){
+
+		String[] parametros = {"--mode=default", "miPresentacion.md", ""};
+		ValidadorDeParametros validador = new ValidadorDeParametros();
+
+		Assert.assertTrue(validador.hayCondicionesValidasParaTransformar(parametros));
+
+	}
+
+	@Test
 	public void queTireFalseCuandoNoSeDetectaUnArchivoDeEntradaParaTransformar(){
 
 		String[] parametros = {"--mode=default", "", "--output=presentacionMaster"};
@@ -37,9 +47,9 @@ public class ValidadorDeParametrosTest {
 	}
 
 	@Test
-	public void queTireTrueCuandoSePuedaDarElCasoQueSeInsertenOtraCombinacionDeParametrosValidosParaUnaTransformacion(){
+	public void queTireTrueCuandoSimplementeSePasaElArchivoDeEntradaParaUnaTransformacion(){
 
-		String[] parametros = {"--mode=default", "miPresentacion.md", "--output=presentacionMaster"};
+		String[] parametros = {"", "miPresentacion.md", ""};
 		ValidadorDeParametros validador = new ValidadorDeParametros();
 
 		Assert.assertTrue(validador.hayCondicionesValidasParaTransformar(parametros));

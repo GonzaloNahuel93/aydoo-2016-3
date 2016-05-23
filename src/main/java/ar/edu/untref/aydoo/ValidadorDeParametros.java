@@ -4,8 +4,10 @@ public class ValidadorDeParametros {
 
 	public boolean hayCondicionesValidasParaTransformar(String[] parametrosDeEntrada){
 
-		boolean hayCondicionesValidasParaTransformar = !this.contradiccionDeParametros(parametrosDeEntrada[0], parametrosDeEntrada[2]) && 
-										 				this.hayArchivoDeEntrada(parametrosDeEntrada[1]);
+		boolean hayContradiccionDeParametros = this.contradiccionDeParametros(parametrosDeEntrada[0], parametrosDeEntrada[2]);
+		boolean hayArchivoDeEntrada = this.hayArchivoDeEntrada(parametrosDeEntrada[1]);
+
+		boolean hayCondicionesValidasParaTransformar = !hayContradiccionDeParametros && hayArchivoDeEntrada;
 
 		return hayCondicionesValidasParaTransformar;
 
