@@ -17,6 +17,7 @@ public class RepositorioDeObjetos {
         this.diccionarioDeObjetos = new HashMap<String, Transformable>();
         diccionarioDeObjetos.put("#", new Titulo(""));
         diccionarioDeObjetos.put("##", new Subtitulo(""));
+        diccionarioDeObjetos.put("i:", new Imagen(""));
 
     }
 
@@ -31,7 +32,7 @@ public class RepositorioDeObjetos {
 
         }
 
-        return new TextoPlano(s); //Si no matchea ninguna de las especificaciones, lo interpreta como texto
+        return new TextoPlano(""); //Si no matchea ninguna de las especificaciones, lo interpreta como texto
 
     }
 }

@@ -9,7 +9,7 @@ import java.util.List;
 /**
  * Created by synysterlove on 23/05/16.
  */
-public class ConstructorDeObjetosATransformarTest {
+public class IntegracionConstructorDeObjetosATransformarTest {
 
     /* Quiero hacer que a partir de una lista de strings,
     donde cada string es una linea leida del archivo de entrada,
@@ -86,6 +86,23 @@ public class ConstructorDeObjetosATransformarTest {
         Assert.assertTrue(this.verificarSiElObjetoEstaEnLaLista(texto, objetosConstruidos));
 
     }
+
+    @Test
+    public void quePuedaConstruirUnaImagen() {
+
+        List<String> listaDeEntrada = new ArrayList<String>();
+        listaDeEntrada.add("i:aydoo.png");
+
+        ConstructorDeObjetosATransformar constructor = new ConstructorDeObjetosATransformar();
+
+        List<Transformable> objetosConstruidos = constructor.construirObjetos(listaDeEntrada);
+
+        Imagen imagen = new Imagen("aydoo.png");
+
+        Assert.assertTrue(this.verificarSiElObjetoEstaEnLaLista(imagen, objetosConstruidos));
+
+    }
+
 
 
     /* Necesito definir este metodo para averiguar
