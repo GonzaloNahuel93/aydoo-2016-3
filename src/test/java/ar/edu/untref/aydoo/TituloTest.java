@@ -32,7 +32,7 @@ public class TituloTest {
     public void queElContenidoDelTituloSeSeteeCorrectamenteAPartirDelStringQueLoRepresenta() {
 
         Titulo titulo = new Titulo("");
-        titulo.colocarStringDeContenidoPropio("#Titulo");
+        titulo.colocarStringDeContenidoPropio("# Titulo");
 
         Assert.assertEquals("Titulo", titulo.getContenido());
 

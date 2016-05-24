@@ -1,7 +1,7 @@
 package ar.edu.untref.aydoo;
 
 
-public class Imagen extends ElementoDefinidoPorDosCaracteresDeEspecificacion {
+public class Imagen extends ElementoDeLinea {
 
 	public Imagen(String imagen){
 		super(imagen);
@@ -14,5 +14,12 @@ public class Imagen extends ElementoDefinidoPorDosCaracteresDeEspecificacion {
 		return imagenHTML;
 
 	}
+
+    @Override
+    public void colocarStringDeContenidoPropio(String contenido) {
+
+        this.contenido = contenido.substring(2);
+
+    }
 
 }

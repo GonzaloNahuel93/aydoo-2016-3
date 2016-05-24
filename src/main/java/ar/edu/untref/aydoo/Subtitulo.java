@@ -1,7 +1,7 @@
 package ar.edu.untref.aydoo;
 
 
-public class Subtitulo extends ElementoDefinidoPorDosCaracteresDeEspecificacion {
+public class Subtitulo extends ElementoDeLinea {
 
 	public Subtitulo(String subtitulo){
 		super(subtitulo);
@@ -14,5 +14,12 @@ public class Subtitulo extends ElementoDefinidoPorDosCaracteresDeEspecificacion 
 	     return subtituloHTML;
 		
 	}
+
+    @Override
+    public void colocarStringDeContenidoPropio(String contenido) {
+
+        this.contenido = contenido.substring(3);
+
+    }
 
 }

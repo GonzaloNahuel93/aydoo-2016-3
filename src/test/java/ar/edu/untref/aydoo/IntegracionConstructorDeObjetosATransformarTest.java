@@ -20,7 +20,7 @@ public class IntegracionConstructorDeObjetosATransformarTest {
     public void quePuedaConstruirUnTitulo() {
 
         List<String> listaDeEntrada = new ArrayList<String>();
-        listaDeEntrada.add("#Titulo");
+        listaDeEntrada.add("# Titulo");
 
         ConstructorDeObjetosATransformar constructor = new ConstructorDeObjetosATransformar();
 
@@ -37,8 +37,8 @@ public class IntegracionConstructorDeObjetosATransformarTest {
     public void quePuedaConstruirUnTituloYUnSubtitulo() {
 
         List<String> listaDeEntrada = new ArrayList<String>();
-        listaDeEntrada.add("#Titulo");
-        listaDeEntrada.add("##Subtitulo");
+        listaDeEntrada.add("# Titulo");
+        listaDeEntrada.add("## Subtitulo");
 
         ConstructorDeObjetosATransformar constructor = new ConstructorDeObjetosATransformar();
 
@@ -56,8 +56,8 @@ public class IntegracionConstructorDeObjetosATransformarTest {
     public void quePuedaConstruirUnSubituloYUnTituloEnEseOrden() {
 
         List<String> listaDeEntrada = new ArrayList<String>();
-        listaDeEntrada.add("##Subtitulo");
-        listaDeEntrada.add("#Titulo");
+        listaDeEntrada.add("## Subtitulo");
+        listaDeEntrada.add("# Titulo");
 
         ConstructorDeObjetosATransformar constructor = new ConstructorDeObjetosATransformar();
 
@@ -107,8 +107,8 @@ public class IntegracionConstructorDeObjetosATransformarTest {
     public void quePuedaConstruirDosTitulos() {
 
         List<String> listaDeEntrada = new ArrayList<String>();
-        listaDeEntrada.add("#Titulo1");
-        listaDeEntrada.add("#Titulo2");
+        listaDeEntrada.add("# Titulo1");
+        listaDeEntrada.add("# Titulo2");
 
         ConstructorDeObjetosATransformar constructor = new ConstructorDeObjetosATransformar();
 
