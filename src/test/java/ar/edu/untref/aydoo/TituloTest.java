@@ -27,5 +27,15 @@ public class TituloTest {
         Assert.assertFalse(titulo1.equals(titulo2));
 
     }
+
+    @Test
+    public void queElContenidoDelTituloSeSeteeCorrectamenteAPartirDelStringQueLoRepresenta() {
+
+        Titulo titulo = new Titulo("");
+        titulo.colocarStringDeContenidoPropio("#Titulo");
+
+        Assert.assertEquals("Titulo", titulo.getContenido());
+
+    }
     
 }
