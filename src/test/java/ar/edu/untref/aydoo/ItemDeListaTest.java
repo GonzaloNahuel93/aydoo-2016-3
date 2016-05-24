@@ -9,32 +9,32 @@ import org.junit.Test;
 public class ItemDeListaTest {
 
     @Test
-    public void queDosSubtitulosIgualesSeanIguales() {
+    public void queDosItemsIgualesSeanIguales() {
 
-        Imagen imagen1 = new Imagen("Imagen.png");
-        Imagen imagen2 = new Imagen("Imagen.png");
+        ItemDeLista item1 = new ItemDeLista("Item");
+        ItemDeLista item2 = new ItemDeLista("Item");
 
-        Assert.assertTrue(imagen1.equals(imagen2));
+        Assert.assertTrue(item1.equals(item2));
 
     }
 
     @Test
     public void queDosSubtitulosDistintosSeanDistintos() {
 
-        Imagen imagen1 = new Imagen("Imagen1.png");
-        Imagen imagen2 = new Imagen("Imagen2.png");
+        ItemDeLista item1 = new ItemDeLista("Item1");
+        ItemDeLista item2 = new ItemDeLista("Item2");
 
-        Assert.assertFalse(imagen1.equals(imagen2));
+        Assert.assertFalse(item1.equals(item2));
 
     }
 
     @Test
     public void queElContenidoDelSubtituloSeSeteeCorrectamenteAPartirDelStringQueLoRepresenta() {
 
-        Imagen imagen = new Imagen("");
-        imagen.colocarStringDeContenidoPropio("i:imagen.png");
+        ItemDeLista item = new ItemDeLista("");
+        item.colocarStringDeContenidoPropio("*item");
 
-        Assert.assertEquals("imagen.png", imagen.getContenido());
+        Assert.assertEquals("item", item.getContenido());
 
     }
     
