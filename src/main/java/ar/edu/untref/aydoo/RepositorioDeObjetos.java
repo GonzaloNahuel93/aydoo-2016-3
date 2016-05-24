@@ -14,11 +14,7 @@ public class RepositorioDeObjetos {
     public RepositorioDeObjetos() {
 
         //Se inicializa el mapa con lo que aceptamos en el archivo de entrada
-        this.diccionarioDeObjetos = new HashMap<String, Transformable>();
-        diccionarioDeObjetos.put("#", new Titulo(""));
-        diccionarioDeObjetos.put("##", new Subtitulo(""));
-        diccionarioDeObjetos.put("i:", new Imagen(""));
-        diccionarioDeObjetos.put("*", new ItemDeLista(""));
+        this.reiniciarRepositorio();
 
     }
 
@@ -29,11 +25,27 @@ public class RepositorioDeObjetos {
         while(iteradorClavesDelMapa.hasNext()) {
 
             String actual = iteradorClavesDelMapa.next();
-            if(s.startsWith(actual)) return diccionarioDeObjetos.get(actual);
+            if(s.startsWith(actual)) {
+
+                Transformable aDevolver = diccionarioDeObjetos.get(actual);
+                this.reiniciarRepositorio();
+                return aDevolver;
+
+            }
 
         }
 
         return new TextoPlano(""); //Si no matchea ninguna de las especificaciones, lo interpreta como texto
+
+    }
+
+    private void reiniciarRepositorio() {
+
+        this.diccionarioDeObjetos = new HashMap<String, Transformable>();
+        diccionarioDeObjetos.put("#", new Titulo(""));
+        diccionarioDeObjetos.put("##", new Subtitulo(""));
+        diccionarioDeObjetos.put("i:", new Imagen(""));
+        diccionarioDeObjetos.put("*", new ItemDeLista(""));
 
     }
 }

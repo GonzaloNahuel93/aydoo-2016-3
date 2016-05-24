@@ -103,6 +103,26 @@ public class IntegracionConstructorDeObjetosATransformarTest {
 
     }
 
+    @Test
+    public void quePuedaConstruirDosTitulos() {
+
+        List<String> listaDeEntrada = new ArrayList<String>();
+        listaDeEntrada.add("#Titulo1");
+        listaDeEntrada.add("#Titulo2");
+
+        ConstructorDeObjetosATransformar constructor = new ConstructorDeObjetosATransformar();
+
+        List<Transformable> objetosConstruidos = constructor.construirObjetos(listaDeEntrada);
+
+        Titulo titulo1 = new Titulo("Titulo1");
+        Titulo titulo2 = new Titulo("Titulo2");
+
+        Assert.assertTrue(this.verificarSiElObjetoEstaEnLaLista(titulo1, objetosConstruidos));
+        Assert.assertTrue(this.verificarSiElObjetoEstaEnLaLista(titulo2, objetosConstruidos));
+
+
+    }
+
     /*
     @Test
     public void quePuedaConstruirUnaLista() {
