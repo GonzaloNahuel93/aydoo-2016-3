@@ -67,16 +67,6 @@ public class ListaTest {
         Assert.assertFalse(lista1.equals(lista2));
 
     }
-
-    /*todo: falta codear lo que va a hacer andar este test
-    @Test
-    public void queElContenidoDeLaListaSeSeteeCorrectamenteAPartirDelStringQueLoRepresenta() {
-
-        Imagen imagen = new Imagen("");
-        imagen.colocarStringDeContenidoPropio("i:imagen.png");
-
-        Assert.assertEquals("imagen.png", imagen.getContenido());
-
-    }*/
+    
     
 }
