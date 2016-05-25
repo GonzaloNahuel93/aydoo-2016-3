@@ -17,9 +17,13 @@ public class ValidadorDeParametros {
 	private boolean modoDeSalidaValido(String modoDeSalida){
 
 		boolean sePidioModoDefault = modoDeSalida.equals("--mode=default") || modoDeSalida.equals("");
-		boolean sePidioModoNoOutput = modoDeSalida.startsWith("--output=");
+		boolean sePidioModoNoOutput = modoDeSalida.startsWith("--mode=no-output");
 
 		boolean modoDeSalidaValido = sePidioModoDefault || sePidioModoNoOutput;
+		
+		if(!modoDeSalidaValido){
+			System.out.println("El modo de salida insertado es incorrecto. Solo se permiten: default o no-output.");
+		}
 
 		return modoDeSalidaValido;
 
@@ -31,6 +35,10 @@ public class ValidadorDeParametros {
 		boolean sePidioUnArchivoDeSalida = !output.equals("");
 
 		boolean contradiccionDeParametros = sePidioModoNoOutput && sePidioUnArchivoDeSalida;
+		
+		if(contradiccionDeParametros){
+			System.out.println("La combinacion de parametros es invalida.");
+		}
 
 		return contradiccionDeParametros;
 
@@ -39,6 +47,11 @@ public class ValidadorDeParametros {
 	private boolean hayArchivoDeEntrada(String archivo) {
 
 		boolean hayArchivoDeEntrada = !archivo.equals("");
+		
+		if(!hayArchivoDeEntrada){
+			System.out.println("Para proceder con la transformacion se necesita de un archivo de entrada .md.");
+		}
+		
 		return hayArchivoDeEntrada;
 
 	}
