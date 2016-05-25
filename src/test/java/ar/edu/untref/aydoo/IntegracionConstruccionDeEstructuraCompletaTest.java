@@ -34,7 +34,6 @@ public class IntegracionConstruccionDeEstructuraCompletaTest {
 
     }
 
-    /*
     @Test
     public void quePuedaConstruirDosSecciones() {
 
@@ -52,16 +51,19 @@ public class IntegracionConstruccionDeEstructuraCompletaTest {
         Seccion seccion2 = new Seccion();
         seccion2.agregarContenido(new Subtitulo("Subtitulo"));
 
-        ConstructorDeSeccion constructor = new ConstructorDeSeccion();
+        EstructuraDeSecciones estructura = new EstructuraDeSecciones();
+        estructura.agregarComponente(seccion1);
+        estructura.agregarComponente(seccion2);
 
-        List<Transformable> objetosConstruidos = constructor.construirObjetos(listaDeEntrada);
+        ConstructorDeEstructura constructor = new ConstructorDeEstructura();
 
-        Assert.assertEquals(seccion1, objetosConstruidos.get(0));
-        Assert.assertEquals(seccion2, objetosConstruidos.get(1));
+        EstructuraDeSecciones estructuraConstruida = constructor.construirEstructura(listaDeEntrada);
+
+        Assert.assertEquals(estructura, estructuraConstruida);
 
     }
 
-
+/*
     @Test
     public void quePuedaConstruirUnaSeccionConUnaListaDentro() {
 
@@ -78,13 +80,16 @@ public class IntegracionConstruccionDeEstructuraCompletaTest {
         lista.agregarItem(new ItemDeLista("item3"));
         seccion.agregarContenido(lista);
 
-        ConstructorDeSeccion constructor = new ConstructorDeSeccion();
+        EstructuraDeSecciones estructura = new EstructuraDeSecciones();
+        estructura.agregarComponente(seccion);
 
-        List<Transformable> objetosConstruidos = constructor.construirObjetos(listaDeEntrada);
+        ConstructorDeEstructura constructor = new ConstructorDeEstructura();
 
-        Assert.assertTrue(this.verificarSiElObjetoEstaEnLaLista(seccion, objetosConstruidos));
+        EstructuraDeSecciones estructuraConstruida = constructor.construirEstructura(listaDeEntrada);
 
-    }*/
+        Assert.assertEquals(estructura, estructuraConstruida);
 
+    }
+*/
     
 }

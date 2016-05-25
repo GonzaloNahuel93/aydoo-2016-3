@@ -15,7 +15,11 @@ public class ConstructorDeEstructura {
         int i = comienzoDeLaSeccion;
         for(int j=i; j < listaDeEntrada.size(); j++) {
 
-            if(!listaDeEntrada.get(j).equals("---")) {
+            if(listaDeEntrada.get(j).equals("---")) {
+
+                j=listaDeEntrada.size(); //Si encuentra un --- cierra el for
+
+            } else {
 
                 i++;
 
@@ -63,19 +67,5 @@ public class ConstructorDeEstructura {
 
     }
 
-    /*
-    private Seccion construirSeccion(List<String> listaDeEntrada, int comienzoDeLaSeccion, int finalDeLaSeccion) {
-
-        Seccion seccion = new Seccion();
-        for(int i = comienzoDeLaSeccion+1; i <= finalDeLaSeccion; i++) {
-
-            Transformable elemento = this.repositorio.obtenerObjetoPorString(listaDeEntrada.get(i));
-            elemento.colocarStringDeContenidoPropio(listaDeEntrada.get(i));
-            seccion.agregarContenido((Elemento)elemento);
-
-        }
-        return seccion;
-
-    }*/
 
 }
