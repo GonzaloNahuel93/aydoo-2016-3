@@ -202,20 +202,5 @@ public class IntegracionConstructorDeSeccionTest {
     }
 
 
-    /* Necesito definir este metodo para averiguar
-    si una lista contiene determinado elemento.
-    Contains no me sirve porque no sabe
-    comparar elementos
-     */
-    private boolean verificarSiElObjetoEstaEnLaLista(Elemento objeto, List<Elemento> objetosConstruidos) {
-
-        for (Elemento objetoActual : objetosConstruidos) {
-
-            if(objetoActual.equals(objeto)) return true;
-
-        }
-        return false;
-
-    }
 
 }
