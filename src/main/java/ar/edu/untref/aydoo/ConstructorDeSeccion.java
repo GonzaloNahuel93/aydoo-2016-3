@@ -84,7 +84,7 @@ public class ConstructorDeSeccion {
         int i = comienzoDeLaLista;
         for(int j=i; j < listaDeEntrada.size(); j++) {
 
-            if(listaDeEntrada.get(j).startsWith("*")) {
+            if(!listaDeEntrada.get(j).startsWith("---")) {
 
                 i++;
 

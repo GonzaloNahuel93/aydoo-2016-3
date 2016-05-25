@@ -8,15 +8,46 @@ public class EstructuraDeSecciones implements Transformable {
     private List<Seccion> secciones;
 
     public EstructuraDeSecciones() {
+
         this.secciones = new ArrayList<Seccion>();
+
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+
+        EstructuraDeSecciones otraEstructura = (EstructuraDeSecciones)obj;
+        List<Seccion> otrasSecciones = otraEstructura.getSecciones();
+        if(this.secciones.size() == otrasSecciones.size()) {
+
+            for (int i = 0; i < this.secciones.size(); i++) {
+
+                if(!this.secciones.get(i).equals(otrasSecciones.get(i))) {
+
+                    return false;
+
+                }
+
+            }
+
+            return true;
+
+        }
+
+        return false;
+
     }
 
     public void agregarComponente(Seccion seccion) {
+
         this.secciones.add(seccion);
+
     }
 
     public List<Seccion> getSecciones() {
+
         return this.secciones;
+
     }
 
     @Override

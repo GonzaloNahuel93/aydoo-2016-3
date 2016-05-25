@@ -1,32 +1,40 @@
 package ar.edu.untref.aydoo;
 
+import org.junit.Assert;
+import org.junit.Test;
+
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by synysterlove on 25/05/16.
  */
 public class IntegracionConstruccionDeEstructuraCompletaTest {
 
-    /*
+
     @Test
-    public void quePuedaConstruirUnaSeccion() {
+    public void quePuedaConstruirUnaEstructuraConUnaSeccion() {
 
         List<String> listaDeEntrada = new ArrayList<String>();
         listaDeEntrada.add("---");
         listaDeEntrada.add("# Titulo");
         listaDeEntrada.add("i:java.jpg");
 
-        Seccion seccion = new Seccion();
-        seccion.agregarContenido(new Titulo("Titulo"));
-        seccion.agregarContenido(new Imagen("java.jpg"));
-
         ConstructorDeEstructura constructor = new ConstructorDeEstructura();
 
         EstructuraDeSecciones estructuraConstruida = constructor.construirEstructura(listaDeEntrada);
 
-        Assert.assertTrue(this.verificarSiLaSeccionEstaEnLaEstructura(seccion, estructuraConstruida));
+        EstructuraDeSecciones estructura = new EstructuraDeSecciones();
+        Seccion seccion = new Seccion();
+        seccion.agregarContenido(new Titulo("Titulo"));
+        seccion.agregarContenido(new Imagen("java.jpg"));
+        estructura.agregarComponente(seccion);
+
+        Assert.assertEquals(estructura, estructuraConstruida);
 
     }
 
-
+    /*
     @Test
     public void quePuedaConstruirDosSecciones() {
 

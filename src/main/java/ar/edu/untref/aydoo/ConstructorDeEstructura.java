@@ -23,21 +23,43 @@ public class ConstructorDeEstructura {
 
         }
 
-        if(i != listaDeEntrada.size()) {
-
-            return i - 2;
-
-        } else {
-
-            return i - 1;
-
-        }
+        return i - 1;
 
     }
 
     public EstructuraDeSecciones construirEstructura(List<String> listaDeEntrada) {
 
-        return null;
+        EstructuraDeSecciones estructura = new EstructuraDeSecciones();
+        for(int i=0; i < listaDeEntrada.size(); i++) {
+
+            String actual = listaDeEntrada.get(i);
+            if (actual.equals("---")) { //Solo entra aca cuando detecta el principio de una seccion
+
+                int finalDeLaSeccion = this.calcularDondeTerminaLaSeccion(listaDeEntrada, i+1);
+
+                Seccion seccion = this.construirSeccion(listaDeEntrada, i+1, finalDeLaSeccion);
+                estructura.agregarComponente(seccion);
+                i = finalDeLaSeccion;
+
+            } else {
+
+                throw new SintaxisDelArchivoDeEntradaInvalidaException();
+
+            }
+
+        }
+
+        return estructura;
+
+    }
+
+    private Seccion construirSeccion(List<String> listaDeEntrada, int comienzoDeLaSeccion, int finalDeLaSeccion) {
+
+        List<String> listaDeComponentesDeLaSeccion = listaDeEntrada.subList(comienzoDeLaSeccion, finalDeLaSeccion+1);
+        ConstructorDeSeccion constructorSeccion = new ConstructorDeSeccion();
+        Seccion seccionConstruida = constructorSeccion.construirSeccion(listaDeComponentesDeLaSeccion);
+
+        return seccionConstruida;
 
     }
 
