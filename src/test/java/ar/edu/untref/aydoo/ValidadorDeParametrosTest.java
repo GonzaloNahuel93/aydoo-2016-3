@@ -55,4 +55,14 @@ public class ValidadorDeParametrosTest {
 
 	}
 
+	@Test
+	public void queTireFalseCuandoSePasaUnModoDeSalidaInvalido(){
+		
+		String[] parametros = {"--mode=arcoiris", "miPresentacion.md", "--output=Salida"};
+		ValidadorDeParametros validador = new ValidadorDeParametros();
+
+		Assert.assertFalse(validador.hayCondicionesValidasParaTransformar(parametros));
+		
+	}
+
 }
