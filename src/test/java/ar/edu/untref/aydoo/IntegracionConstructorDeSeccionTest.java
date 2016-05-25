@@ -97,23 +97,26 @@ public class IntegracionConstructorDeSeccionTest {
 
     }
 
-    /*
+
     @Test
-    public void quePuedaConstruirUnaImagen() {
+    public void quePuedaConstruirUnaSeccionConUnaImagen() {
 
         List<String> listaDeEntrada = new ArrayList<String>();
         listaDeEntrada.add("i:aydoo.png");
 
         ConstructorDeSeccionATransformar constructor = new ConstructorDeSeccionATransformar();
 
-        List<Transformable> objetosConstruidos = constructor.construirObjetos(listaDeEntrada);
+        Seccion seccionConstruida = constructor.construirSeccion(listaDeEntrada);
 
+        Seccion seccion = new Seccion();
         Imagen imagen = new Imagen("aydoo.png");
+        seccion.agregarContenido(imagen);
 
-        Assert.assertTrue(this.verificarSiElObjetoEstaEnLaLista(imagen, objetosConstruidos));
+        Assert.assertEquals(seccion, seccionConstruida);
 
     }
 
+    /*
     @Test
     public void quePuedaConstruirDosTitulos() {
 
