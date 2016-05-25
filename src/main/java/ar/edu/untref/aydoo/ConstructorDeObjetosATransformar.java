@@ -30,11 +30,15 @@ public class ConstructorDeObjetosATransformar {
 
                 Lista lista = this.construirLista(listaDeEntrada, i, finalDeLaLista);
                 objetos.add(lista);
-                i+=finalDeLaLista;
+                i += finalDeLaLista;
 
-            } else if (actual.startsWith("---")) { //Solo entra aca cuando detecta el principio de una seccion
+            } else if (actual.equals("---")) { //Solo entra aca cuando detecta el principio de una seccion
 
-                //TODO
+                int finalDeLaSeccion = this.calcularDondeTerminaLaSeccion(listaDeEntrada, i+1);
+
+                Seccion seccion = this.construirSeccion(listaDeEntrada, i, finalDeLaSeccion);
+                objetos.add(seccion);
+                i += finalDeLaSeccion;
 
             } else {
 
@@ -49,6 +53,21 @@ public class ConstructorDeObjetosATransformar {
         return objetos;
 
     }
+
+    private Seccion construirSeccion(List<String> listaDeEntrada, int comienzoDeLaSeccion, int finalDeLaSeccion) {
+
+        Seccion seccion = new Seccion();
+        for(int i = comienzoDeLaSeccion+1; i <= finalDeLaSeccion; i++) {
+
+            Transformable elemento = this.repositorio.obtenerObjetoPorString(listaDeEntrada.get(i));
+            elemento.colocarStringDeContenidoPropio(listaDeEntrada.get(i));
+            seccion.agregarContenido((Elemento)elemento);
+
+        }
+        return seccion;
+
+    }
+
 
     private Lista construirLista(List<String> listaDeEntrada, int comienzoDeLaLista, int finalDeLaLista) {
 
@@ -81,8 +100,35 @@ public class ConstructorDeObjetosATransformar {
 
         }
 
-
         return i-1;
+
+    }
+
+    /*Funciona igual que el de la lista, pero devuelve
+    la ultima posicion de la seccion
+     */
+    private int calcularDondeTerminaLaSeccion(List<String> listaDeEntrada, int comienzoDeLaSeccion) {
+
+        int i = comienzoDeLaSeccion;
+        for(int j=i; j < listaDeEntrada.size(); j++) {
+
+            if(!listaDeEntrada.get(j).equals("---")) {
+
+                i++;
+
+            }
+
+        }
+
+        if(i != listaDeEntrada.size()) {
+
+            return i - 2;
+
+        } else {
+
+            return i - 1;
+
+        }
 
     }
 
