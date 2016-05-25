@@ -35,13 +35,12 @@ public class ValidadorDeParametrosTest {
 
 	}
 
-	@Test
-	public void queTireFalseCuandoNoSeDetectaUnArchivoDeEntradaParaTransformar(){
+	@Test(expected=ArchivoInvalidoException.class)
+	public void queLanceExcepcionCuandoNoSeDetectaUnArchivoDeEntradaParaTransformar(){
 
 		String[] parametros = {"--mode=default", "", "--output=presentacionMaster"};
 		ValidadorDeParametros validador = new ValidadorDeParametros();
-
-		Assert.assertFalse(validador.hayCondicionesValidasParaTransformar(parametros));
+        validador.hayCondicionesValidasParaTransformar(parametros);
 
 	}
 
