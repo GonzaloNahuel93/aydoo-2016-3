@@ -15,13 +15,13 @@ public class ValidadorDeParametrosTest {
 
 	}
 
-	@Test
-	public void queTireFalseCuandoLosParametrosDelModeYOutputSeContradicen(){
+	@Test(expected=CombinacionDeParametrosInvalidaException.class)
+	public void queLanceExcepcionCuandoLosParametrosDelModeYOutputSeContradicen(){
 
 		String[] parametros = {"--mode=no-output", "miPresentacion.md", "--output=presentacionMaster"};
 		ValidadorDeParametros validador = new ValidadorDeParametros();
+        validador.hayCondicionesValidasParaTransformar(parametros);
 
-		Assert.assertFalse(validador.hayCondicionesValidasParaTransformar(parametros));
 
 	}
 
