@@ -27,7 +27,8 @@ public class IntegracionConstruccionYTransformacionTest {
 
         ConstructorDeEstructura constructor = new ConstructorDeEstructura();
         Transformador transformador = new Transformador();
-        ElementoTransformadoHTML transformado =  transformador.transformar(constructor.construirEstructura(listaDeEntrada));
+        EstructuraDeSecciones estructura = constructor.construirEstructura(listaDeEntrada);
+        ElementoTransformadoHTML transformado =  transformador.transformar(estructura);
 
         Assert.assertEquals(("<section>\n" +
                         "<h1>Titulo</h1>\n" +
