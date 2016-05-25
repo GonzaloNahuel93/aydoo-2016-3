@@ -24,7 +24,7 @@ public class ConstructorDeObjetosATransformar {
 
             String actual = listaDeEntrada.get(i);
 
-            if(actual.startsWith("*")) { //Solo entra aca cuando detecta el principio de una lista
+            if (actual.startsWith("*")) { //Solo entra aca cuando detecta el principio de una lista
 
                 int finalDeLaLista = this.calcularDondeTerminaLaLista(listaDeEntrada, i);
 
