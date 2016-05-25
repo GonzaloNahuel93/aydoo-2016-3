@@ -116,9 +116,9 @@ public class IntegracionConstructorDeSeccionTest {
 
     }
 
-    /*
+
     @Test
-    public void quePuedaConstruirDosTitulos() {
+    public void quePuedaConstruirUnaSeccionConDosTitulos() {
 
         List<String> listaDeEntrada = new ArrayList<String>();
         listaDeEntrada.add("# Titulo1");
@@ -126,16 +126,18 @@ public class IntegracionConstructorDeSeccionTest {
 
         ConstructorDeSeccionATransformar constructor = new ConstructorDeSeccionATransformar();
 
-        List<Transformable> objetosConstruidos = constructor.construirObjetos(listaDeEntrada);
+        Seccion seccionConstruida = constructor.construirSeccion(listaDeEntrada);
 
+        Seccion seccion = new Seccion();
         Titulo titulo1 = new Titulo("Titulo1");
         Titulo titulo2 = new Titulo("Titulo2");
+        seccion.agregarContenido(titulo1);
+        seccion.agregarContenido(titulo2);
 
-        Assert.assertTrue(this.verificarSiElObjetoEstaEnLaLista(titulo1, objetosConstruidos));
-        Assert.assertTrue(this.verificarSiElObjetoEstaEnLaLista(titulo2, objetosConstruidos));
-
+        Assert.assertEquals(seccion, seccionConstruida);
 
     }
+    /*
 
     @Test
     public void quePuedaConstruirUnaLista() {
