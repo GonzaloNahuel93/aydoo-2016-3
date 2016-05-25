@@ -44,7 +44,7 @@ public class IntegracionConstruccionDeEstructuraCompletaTest {
         Seccion seccion2 = new Seccion();
         seccion2.agregarContenido(new Subtitulo("Subtitulo"));
 
-        ConstructorDeSeccionATransformar constructor = new ConstructorDeSeccionATransformar();
+        ConstructorDeSeccion constructor = new ConstructorDeSeccion();
 
         List<Transformable> objetosConstruidos = constructor.construirObjetos(listaDeEntrada);
 
@@ -70,7 +70,7 @@ public class IntegracionConstruccionDeEstructuraCompletaTest {
         lista.agregarItem(new ItemDeLista("item3"));
         seccion.agregarContenido(lista);
 
-        ConstructorDeSeccionATransformar constructor = new ConstructorDeSeccionATransformar();
+        ConstructorDeSeccion constructor = new ConstructorDeSeccion();
 
         List<Transformable> objetosConstruidos = constructor.construirObjetos(listaDeEntrada);
 

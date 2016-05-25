@@ -22,7 +22,7 @@ public class IntegracionConstructorDeSeccionTest {
         List<String> listaDeEntrada = new ArrayList<String>();
         listaDeEntrada.add("# Titulo");
 
-        ConstructorDeSeccionATransformar constructor = new ConstructorDeSeccionATransformar();
+        ConstructorDeSeccion constructor = new ConstructorDeSeccion();
 
         Seccion seccionConstruida = constructor.construirSeccion(listaDeEntrada);
 
@@ -42,7 +42,7 @@ public class IntegracionConstructorDeSeccionTest {
         listaDeEntrada.add("# Titulo");
         listaDeEntrada.add("## Subtitulo");
 
-        ConstructorDeSeccionATransformar constructor = new ConstructorDeSeccionATransformar();
+        ConstructorDeSeccion constructor = new ConstructorDeSeccion();
 
         Seccion seccionConstruida = constructor.construirSeccion(listaDeEntrada);
 
@@ -64,7 +64,7 @@ public class IntegracionConstructorDeSeccionTest {
         listaDeEntrada.add("## Subtitulo");
         listaDeEntrada.add("# Titulo");
 
-        ConstructorDeSeccionATransformar constructor = new ConstructorDeSeccionATransformar();
+        ConstructorDeSeccion constructor = new ConstructorDeSeccion();
 
         Seccion seccionConstruida = constructor.construirSeccion(listaDeEntrada);
 
@@ -85,7 +85,7 @@ public class IntegracionConstructorDeSeccionTest {
         List<String> listaDeEntrada = new ArrayList<String>();
         listaDeEntrada.add("Esto es textito simple");
 
-        ConstructorDeSeccionATransformar constructor = new ConstructorDeSeccionATransformar();
+        ConstructorDeSeccion constructor = new ConstructorDeSeccion();
 
         Seccion seccionConstruida = constructor.construirSeccion(listaDeEntrada);
 
@@ -104,7 +104,7 @@ public class IntegracionConstructorDeSeccionTest {
         List<String> listaDeEntrada = new ArrayList<String>();
         listaDeEntrada.add("i:aydoo.png");
 
-        ConstructorDeSeccionATransformar constructor = new ConstructorDeSeccionATransformar();
+        ConstructorDeSeccion constructor = new ConstructorDeSeccion();
 
         Seccion seccionConstruida = constructor.construirSeccion(listaDeEntrada);
 
@@ -124,7 +124,7 @@ public class IntegracionConstructorDeSeccionTest {
         listaDeEntrada.add("# Titulo1");
         listaDeEntrada.add("# Titulo2");
 
-        ConstructorDeSeccionATransformar constructor = new ConstructorDeSeccionATransformar();
+        ConstructorDeSeccion constructor = new ConstructorDeSeccion();
 
         Seccion seccionConstruida = constructor.construirSeccion(listaDeEntrada);
 
@@ -147,7 +147,7 @@ public class IntegracionConstructorDeSeccionTest {
         listaDeEntrada.add("*item2");
         listaDeEntrada.add("*item3");
 
-        ConstructorDeSeccionATransformar constructor = new ConstructorDeSeccionATransformar();
+        ConstructorDeSeccion constructor = new ConstructorDeSeccion();
 
         Seccion seccionConstruida = constructor.construirSeccion(listaDeEntrada);
 
@@ -160,6 +160,42 @@ public class IntegracionConstructorDeSeccionTest {
         lista.agregarItem(item2);
         lista.agregarItem(item3);
         seccion.agregarContenido(lista);
+
+        Assert.assertEquals(seccion, seccionConstruida);
+
+    }
+
+
+    @Test
+    public void quePuedaConstruirUnaSeccionConUnPocoDeTodo() {
+
+        List<String> listaDeEntrada = new ArrayList<String>();
+        listaDeEntrada.add("# TituloPrincipal");
+        listaDeEntrada.add("## Lista");
+        listaDeEntrada.add("*item1");
+        listaDeEntrada.add("*item2");
+        listaDeEntrada.add("*item3");
+        listaDeEntrada.add("i:palace.png");
+
+        ConstructorDeSeccion constructor = new ConstructorDeSeccion();
+
+        Seccion seccionConstruida = constructor.construirSeccion(listaDeEntrada);
+
+        Seccion seccion = new Seccion();
+        Titulo titulo = new Titulo("TituloPrincipal");
+        Subtitulo subtitulo = new Subtitulo("Lista");
+        ItemDeLista item1 = new ItemDeLista("item1");
+        ItemDeLista item2 = new ItemDeLista("item2");
+        ItemDeLista item3 = new ItemDeLista("item3");
+        Lista lista = new Lista();
+        lista.agregarItem(item1);
+        lista.agregarItem(item2);
+        lista.agregarItem(item3);
+        Imagen imagen = new Imagen("palace.png");
+        seccion.agregarContenido(titulo);
+        seccion.agregarContenido(subtitulo);
+        seccion.agregarContenido(lista);
+        seccion.agregarContenido(imagen);
 
         Assert.assertEquals(seccion, seccionConstruida);
 

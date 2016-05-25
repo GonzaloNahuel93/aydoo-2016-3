@@ -6,11 +6,11 @@ import java.util.List;
 /**
  * Created by synysterlove on 23/05/16.
  */
-public class ConstructorDeSeccionATransformar {
+public class ConstructorDeSeccion {
 
     private RepositorioDeObjetos repositorio;
 
-    public ConstructorDeSeccionATransformar() {
+    public ConstructorDeSeccion() {
 
         this.repositorio = new RepositorioDeObjetos();
 
@@ -30,7 +30,7 @@ public class ConstructorDeSeccionATransformar {
 
                 Lista lista = this.construirLista(listaDeEntrada, i, finalDeLaLista);
                 objetos.add(lista);
-                i += finalDeLaLista;
+                i = finalDeLaLista;
 
             } else {
 
