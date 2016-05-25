@@ -78,23 +78,26 @@ public class IntegracionConstructorDeSeccionTest {
 
     }
 
-/*
+
     @Test
-    public void quePuedaConstruirTextoPlano() {
+    public void quePuedaConstruirUnaSeccionConTextoPlano() {
 
         List<String> listaDeEntrada = new ArrayList<String>();
         listaDeEntrada.add("Esto es textito simple");
 
         ConstructorDeSeccionATransformar constructor = new ConstructorDeSeccionATransformar();
 
-        List<Transformable> objetosConstruidos = constructor.construirObjetos(listaDeEntrada);
+        Seccion seccionConstruida = constructor.construirSeccion(listaDeEntrada);
 
+        Seccion seccion = new Seccion();
         TextoPlano texto = new TextoPlano("Esto es textito simple");
+        seccion.agregarContenido(texto);
 
-        Assert.assertTrue(this.verificarSiElObjetoEstaEnLaLista(texto, objetosConstruidos));
+        Assert.assertEquals(seccion, seccionConstruida);
 
     }
 
+    /*
     @Test
     public void quePuedaConstruirUnaImagen() {
 
