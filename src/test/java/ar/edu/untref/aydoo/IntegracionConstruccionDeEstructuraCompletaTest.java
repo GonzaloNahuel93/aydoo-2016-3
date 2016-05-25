@@ -91,5 +91,21 @@ public class IntegracionConstruccionDeEstructuraCompletaTest {
 
     }
 
+    @Test
+    public void quePuedaConstruirUnaEstructuraConUnaSeccionVacia() {
+
+        List<String> listaDeEntrada = new ArrayList<String>();
+        listaDeEntrada.add("---");
+
+        ConstructorDeEstructura constructor = new ConstructorDeEstructura();
+        EstructuraDeSecciones estructuraConstruida = constructor.construirEstructura(listaDeEntrada);
+
+        Seccion seccion = new Seccion();
+        EstructuraDeSecciones estructura = new EstructuraDeSecciones();
+        estructura.agregarComponente(seccion);
+
+        Assert.assertEquals(estructura, estructuraConstruida);
+    }
+
     
 }
