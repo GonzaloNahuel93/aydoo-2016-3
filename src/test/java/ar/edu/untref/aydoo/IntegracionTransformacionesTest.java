@@ -106,7 +106,7 @@ public class IntegracionTransformacionesTest {
         					 "<h1>Titulo</h1>\n" +
         					 "<h2>Subtitulo</h2>\n" +
         					 "<img src=\"Git.png\"/>\n" +
-        					 "</section>\n\n")
+        					 "</section>\n")
         					 ,transformado.getContenido());
 
     }
@@ -140,7 +140,7 @@ public class IntegracionTransformacionesTest {
         					 "<li>item1</li>\n" +
         					 "<li>item2</li>\n" +
         					 "</ul>\n" +
-        					 "</section>\n\n")
+        					 "</section>\n")
         					 ,transformado.getContenido());
 
     }
@@ -193,8 +193,7 @@ public class IntegracionTransformacionesTest {
                 			 "<li>item1.1</li>\n" +
                 			 "<li>item1.2</li>\n" +
                 			 "</ul>\n" +
-                			 "</section>\n\n" +
-
+                			 "</section>\n" +
                 			 "<section>\n" +
                 			 "<h1>Titulo2</h1>\n" +
                 			 "<h2>Subtitulo2</h2>\n" +
@@ -203,7 +202,7 @@ public class IntegracionTransformacionesTest {
                 			 "<li>item2.1</li>\n" +
                 			 "<li>item2.2</li>\n" +
                 			 "</ul>\n" +
-        					 "</section>\n\n")
+        					 "</section>\n")
         					 , transformado.getContenido());
 
     }

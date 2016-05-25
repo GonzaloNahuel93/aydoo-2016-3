@@ -22,7 +22,7 @@ public class SeccionHTMLTest {
                              "<h1>Analisis y Diseno Orientado a Objetos</h1>\n" +
                              "<h2>Trabajo Practico Numero 1</h2>\n" +
                              "<img src=\"Imagen.png\"/>\n" +
-                             "</section>\n\n")
+                             "</section>\n")
                              , contenidoDeLaSeccionHTML);
 
 	}
@@ -45,7 +45,7 @@ public class SeccionHTMLTest {
                 			 "<li>item1</li>\n" +
                 			 "<li>item2</li>\n" +
                 			 "</ul>\n" +
-        					 "</section>\n\n")
+        					 "</section>\n")
         					 , contenidoDeLaSeccionHTML);
 
     }

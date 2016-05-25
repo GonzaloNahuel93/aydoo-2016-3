@@ -17,7 +17,7 @@ public class SeccionHTML implements ElementoTransformadoHTML {
 
     @Override
     public String getContenido() {
-        return "<section>\n" + this.construirStringDeContenidos() + "</section>\n\n";
+        return "<section>\n" + this.construirStringDeContenidos() + "</section>\n";
     }
 
     private String construirStringDeContenidos() {
