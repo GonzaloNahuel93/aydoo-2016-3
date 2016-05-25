@@ -123,7 +123,6 @@ public class IntegracionConstructorDeObjetosATransformarTest {
 
     }
 
-    /*
     @Test
     public void quePuedaConstruirUnaLista() {
 
@@ -146,7 +145,7 @@ public class IntegracionConstructorDeObjetosATransformarTest {
 
         Assert.assertTrue(this.verificarSiElObjetoEstaEnLaLista(lista, objetosConstruidos));
 
-    }*/
+    }
 
     /* Necesito definir este metodo para averiguar
     si una lista contiene determinado elemento.

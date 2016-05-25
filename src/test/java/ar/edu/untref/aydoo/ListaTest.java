@@ -67,6 +67,6 @@ public class ListaTest {
         Assert.assertFalse(lista1.equals(lista2));
 
     }
-    
+
     
 }
