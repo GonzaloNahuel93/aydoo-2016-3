@@ -63,7 +63,7 @@ public class IntegracionConstruccionDeEstructuraCompletaTest {
 
     }
 
-/*
+
     @Test
     public void quePuedaConstruirUnaSeccionConUnaListaDentro() {
 
@@ -90,6 +90,6 @@ public class IntegracionConstruccionDeEstructuraCompletaTest {
         Assert.assertEquals(estructura, estructuraConstruida);
 
     }
-*/
+
     
 }
