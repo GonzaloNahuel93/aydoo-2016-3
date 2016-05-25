@@ -34,9 +34,9 @@ public class IntegracionConstructorDeSeccionTest {
 
     }
 
-    /*
+
     @Test
-    public void quePuedaConstruirUnTituloYUnSubtitulo() {
+    public void quePuedaConstruirUnaSeccionConUnTituloYUnSubtitulo() {
 
         List<String> listaDeEntrada = new ArrayList<String>();
         listaDeEntrada.add("# Titulo");
@@ -44,16 +44,18 @@ public class IntegracionConstructorDeSeccionTest {
 
         ConstructorDeSeccionATransformar constructor = new ConstructorDeSeccionATransformar();
 
-        List<Transformable> objetosConstruidos = constructor.construirObjetos(listaDeEntrada);
+        Seccion seccionConstruida = constructor.construirSeccion(listaDeEntrada);
 
+        Seccion seccion = new Seccion();
         Titulo titulo = new Titulo("Titulo");
         Subtitulo subtitulo = new Subtitulo("Subtitulo");
+        seccion.agregarContenido(titulo);
+        seccion.agregarContenido(subtitulo);
 
-        Assert.assertTrue(this.verificarSiElObjetoEstaEnLaLista(titulo, objetosConstruidos));
-        Assert.assertTrue(this.verificarSiElObjetoEstaEnLaLista(subtitulo, objetosConstruidos));
+        Assert.assertEquals(seccion, seccionConstruida);
 
     }
-
+/*
     @Test
     public void quePuedaConstruirUnSubituloYUnTituloEnEseOrden() {
 
