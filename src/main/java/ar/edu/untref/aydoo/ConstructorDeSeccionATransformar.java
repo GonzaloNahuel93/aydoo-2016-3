@@ -6,19 +6,19 @@ import java.util.List;
 /**
  * Created by synysterlove on 23/05/16.
  */
-public class ConstructorDeObjetosATransformar {
+public class ConstructorDeSeccionATransformar {
 
     private RepositorioDeObjetos repositorio;
 
-    public ConstructorDeObjetosATransformar() {
+    public ConstructorDeSeccionATransformar() {
 
         this.repositorio = new RepositorioDeObjetos();
 
     }
     
-    public List<Transformable> construirObjetos(List<String> listaDeEntrada) {
+    public Seccion construirSeccion(List<String> listaDeEntrada) {
 
-        List<Transformable> objetos = new ArrayList<Transformable>();
+        List<Elemento> objetos = new ArrayList<Elemento>();
 
         for (int i=0; i < listaDeEntrada.size(); i++) {
 
@@ -32,17 +32,9 @@ public class ConstructorDeObjetosATransformar {
                 objetos.add(lista);
                 i += finalDeLaLista;
 
-            } else if (actual.equals("---")) { //Solo entra aca cuando detecta el principio de una seccion
-
-                int finalDeLaSeccion = this.calcularDondeTerminaLaSeccion(listaDeEntrada, i+1);
-
-                Seccion seccion = this.construirSeccion(listaDeEntrada, i, finalDeLaSeccion);
-                objetos.add(seccion);
-                i += finalDeLaSeccion;
-
             } else {
 
-                Transformable objeto = this.repositorio.obtenerObjetoPorString(actual);
+                Elemento objeto = this.repositorio.obtenerObjetoPorString(actual);
                 objeto.colocarStringDeContenidoPropio(actual);
                 objetos.add(objeto);
 
@@ -50,20 +42,20 @@ public class ConstructorDeObjetosATransformar {
 
         }
 
-        return objetos;
+        Seccion seccionCompleta = this.ponerElementosALaSeccion(objetos);
+        return seccionCompleta;
 
     }
 
-    private Seccion construirSeccion(List<String> listaDeEntrada, int comienzoDeLaSeccion, int finalDeLaSeccion) {
+    private Seccion ponerElementosALaSeccion(List<Elemento> objetos) {
 
         Seccion seccion = new Seccion();
-        for(int i = comienzoDeLaSeccion+1; i <= finalDeLaSeccion; i++) {
+        for(Elemento elemento : objetos) {
 
-            Transformable elemento = this.repositorio.obtenerObjetoPorString(listaDeEntrada.get(i));
-            elemento.colocarStringDeContenidoPropio(listaDeEntrada.get(i));
-            seccion.agregarContenido((Elemento)elemento);
+            seccion.agregarContenido(elemento);
 
         }
+
         return seccion;
 
     }
@@ -101,34 +93,6 @@ public class ConstructorDeObjetosATransformar {
         }
 
         return i-1;
-
-    }
-
-    /*Funciona igual que el de la lista, pero devuelve
-    la ultima posicion de la seccion
-     */
-    private int calcularDondeTerminaLaSeccion(List<String> listaDeEntrada, int comienzoDeLaSeccion) {
-
-        int i = comienzoDeLaSeccion;
-        for(int j=i; j < listaDeEntrada.size(); j++) {
-
-            if(!listaDeEntrada.get(j).equals("---")) {
-
-                i++;
-
-            }
-
-        }
-
-        if(i != listaDeEntrada.size()) {
-
-            return i - 2;
-
-        } else {
-
-            return i - 1;
-
-        }
 
     }
 

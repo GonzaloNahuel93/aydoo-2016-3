@@ -9,7 +9,7 @@ import java.util.Map;
  */
 public class RepositorioDeObjetos {
 
-    private Map<String, Transformable> diccionarioDeObjetos;
+    private Map<String, Elemento> diccionarioDeObjetos;
 
     public RepositorioDeObjetos() {
 
@@ -19,7 +19,7 @@ public class RepositorioDeObjetos {
     }
 
 
-    public Transformable obtenerObjetoPorString(String s) {
+    public Elemento obtenerObjetoPorString(String s) {
 
         Iterator<String> iteradorClavesDelMapa = diccionarioDeObjetos.keySet().iterator();
         while(iteradorClavesDelMapa.hasNext()) {
@@ -27,7 +27,7 @@ public class RepositorioDeObjetos {
             String actual = iteradorClavesDelMapa.next();
             if(s.startsWith(actual)) {
 
-                Transformable aDevolver = diccionarioDeObjetos.get(actual);
+                Elemento aDevolver = diccionarioDeObjetos.get(actual);
                 this.reiniciarRepositorio();
                 return aDevolver;
 
@@ -41,7 +41,7 @@ public class RepositorioDeObjetos {
 
     private void reiniciarRepositorio() {
 
-        this.diccionarioDeObjetos = new HashMap<String, Transformable>();
+        this.diccionarioDeObjetos = new HashMap<String, Elemento>();
         diccionarioDeObjetos.put("#", new Titulo(""));
         diccionarioDeObjetos.put("##", new Subtitulo(""));
         diccionarioDeObjetos.put("i:", new Imagen(""));
