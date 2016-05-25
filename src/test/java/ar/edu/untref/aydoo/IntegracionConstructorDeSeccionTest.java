@@ -201,6 +201,21 @@ public class IntegracionConstructorDeSeccionTest {
 
     }
 
+    @Test
+    public void quePuedaConstruirUnaSecionVacia() {
+
+        List<String> listaDeEntrada = new ArrayList<String>();
+
+        ConstructorDeSeccion constructor = new ConstructorDeSeccion();
+
+        Seccion seccionConstruida = constructor.construirSeccion(listaDeEntrada);
+
+        Seccion seccion = new Seccion();
+
+        Assert.assertEquals(seccion, seccionConstruida);
+
+    }
+
 
 
 }
