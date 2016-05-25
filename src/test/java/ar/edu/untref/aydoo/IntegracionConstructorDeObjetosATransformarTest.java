@@ -167,6 +167,32 @@ public class IntegracionConstructorDeObjetosATransformarTest {
 
     }
 
+    @Test
+    public void quePuedaConstruirDosSecciones() {
+
+        List<String> listaDeEntrada = new ArrayList<String>();
+        listaDeEntrada.add("---");
+        listaDeEntrada.add("# Titulo");
+        listaDeEntrada.add("i:java.jpg");
+        listaDeEntrada.add("---");
+        listaDeEntrada.add("# Subtitulo");
+
+        Seccion seccion1 = new Seccion();
+        seccion1.agregarContenido(new Titulo("Titulo"));
+        seccion1.agregarContenido(new Imagen("java.jpg"));
+
+        Seccion seccion2 = new Seccion();
+        seccion2.agregarContenido(new Subtitulo("Subtitulo"));
+
+        ConstructorDeObjetosATransformar constructor = new ConstructorDeObjetosATransformar();
+
+        List<Transformable> objetosConstruidos = constructor.construirObjetos(listaDeEntrada);
+
+        Assert.assertEquals(seccion1, objetosConstruidos.get(0));
+        Assert.assertEquals(seccion2, objetosConstruidos.get(1));
+
+    }
+
     /* Necesito definir este metodo para averiguar
     si una lista contiene determinado elemento.
     Contains no me sirve porque no sabe
