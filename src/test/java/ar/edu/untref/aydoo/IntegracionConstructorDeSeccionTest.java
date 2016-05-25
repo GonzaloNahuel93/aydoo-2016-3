@@ -137,10 +137,10 @@ public class IntegracionConstructorDeSeccionTest {
         Assert.assertEquals(seccion, seccionConstruida);
 
     }
-    /*
+
 
     @Test
-    public void quePuedaConstruirUnaLista() {
+    public void quePuedaConstruirUnaSeccionConUnaLista() {
 
         List<String> listaDeEntrada = new ArrayList<String>();
         listaDeEntrada.add("*item1");
@@ -149,8 +149,9 @@ public class IntegracionConstructorDeSeccionTest {
 
         ConstructorDeSeccionATransformar constructor = new ConstructorDeSeccionATransformar();
 
-        List<Transformable> objetosConstruidos = constructor.construirObjetos(listaDeEntrada);
+        Seccion seccionConstruida = constructor.construirSeccion(listaDeEntrada);
 
+        Seccion seccion = new Seccion();
         ItemDeLista item1 = new ItemDeLista("item1");
         ItemDeLista item2 = new ItemDeLista("item2");
         ItemDeLista item3 = new ItemDeLista("item3");
@@ -158,10 +159,11 @@ public class IntegracionConstructorDeSeccionTest {
         lista.agregarItem(item1);
         lista.agregarItem(item2);
         lista.agregarItem(item3);
+        seccion.agregarContenido(lista);
 
-        Assert.assertTrue(this.verificarSiElObjetoEstaEnLaLista(lista, objetosConstruidos));
+        Assert.assertEquals(seccion, seccionConstruida);
 
-    }*/
+    }
 
 
     /* Necesito definir este metodo para averiguar
