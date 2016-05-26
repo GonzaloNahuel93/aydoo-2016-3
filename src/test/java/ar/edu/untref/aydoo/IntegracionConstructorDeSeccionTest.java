@@ -34,7 +34,6 @@ public class IntegracionConstructorDeSeccionTest {
 
     }
 
-
     @Test
     public void quePuedaConstruirUnaSeccionConUnTituloYUnSubtitulo() {
 
@@ -55,7 +54,6 @@ public class IntegracionConstructorDeSeccionTest {
         Assert.assertEquals(seccion, seccionConstruida);
 
     }
-
 
     @Test
     public void quePuedaConstruirUnaSeccionConUnSubituloYUnTituloEnEseOrden() {
@@ -78,7 +76,6 @@ public class IntegracionConstructorDeSeccionTest {
 
     }
 
-
     @Test
     public void quePuedaConstruirUnaSeccionConTextoPlano() {
 
@@ -97,7 +94,6 @@ public class IntegracionConstructorDeSeccionTest {
 
     }
 
-
     @Test
     public void quePuedaConstruirUnaSeccionConUnaImagen() {
 
@@ -115,7 +111,6 @@ public class IntegracionConstructorDeSeccionTest {
         Assert.assertEquals(seccion, seccionConstruida);
 
     }
-
 
     @Test
     public void quePuedaConstruirUnaSeccionConDosTitulos() {
@@ -137,7 +132,6 @@ public class IntegracionConstructorDeSeccionTest {
         Assert.assertEquals(seccion, seccionConstruida);
 
     }
-
 
     @Test
     public void quePuedaConstruirUnaSeccionConUnaLista() {
@@ -164,7 +158,6 @@ public class IntegracionConstructorDeSeccionTest {
         Assert.assertEquals(seccion, seccionConstruida);
 
     }
-
 
     @Test
     public void quePuedaConstruirUnaSeccionConUnPocoDeTodo() {
@@ -216,6 +209,48 @@ public class IntegracionConstructorDeSeccionTest {
 
     }
 
+   /* @Test
+    public void quePuedaConstruirDosListasYEntreMedioDeEllasHayaUnSubtitulo(){
+    	
+    	List<String> listaDeEntrada = new ArrayList<String>();
+        listaDeEntrada.add("# Titulo");
+        listaDeEntrada.add("## Lista");
+        listaDeEntrada.add("*item1");
+        listaDeEntrada.add("*item2");
+        listaDeEntrada.add("*item3");
+        listaDeEntrada.add("## Otra Lista");
+        listaDeEntrada.add("*item1");
+        listaDeEntrada.add("*item2");
 
+        ConstructorDeSeccion constructor = new ConstructorDeSeccion();
+
+        Seccion seccionConstruida = constructor.construirSeccion(listaDeEntrada);
+
+        Seccion seccion = new Seccion();
+        Titulo titulo = new Titulo("Titulo");
+        Subtitulo subtitulo1 = new Subtitulo("Lista");
+        ItemDeLista item1 = new ItemDeLista("item1");
+        ItemDeLista item2 = new ItemDeLista("item2");
+        ItemDeLista item3 = new ItemDeLista("item3");
+        Lista lista1 = new Lista();
+        lista1.agregarItem(item1);
+        lista1.agregarItem(item2);
+        lista1.agregarItem(item3);
+        Subtitulo subtitulo2 = new Subtitulo("Otra Lista");
+        ItemDeLista primerItem = new ItemDeLista("item1");
+        ItemDeLista segundoItem = new ItemDeLista("item2");
+        Lista lista2 = new Lista();
+        lista2.agregarItem(primerItem);
+        lista2.agregarItem(segundoItem);
+        
+        seccion.agregarContenido(titulo);
+        seccion.agregarContenido(subtitulo1);
+        seccion.agregarContenido(lista1);
+        seccion.agregarContenido(subtitulo2);
+        seccion.agregarContenido(lista2);
+
+        Assert.assertEquals(seccion, seccionConstruida);
+    	
+    }*/
 
 }
