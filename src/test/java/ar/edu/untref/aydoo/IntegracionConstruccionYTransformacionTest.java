@@ -6,9 +6,6 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by synysterlove on 25/05/16.
- */
 public class IntegracionConstruccionYTransformacionTest {
 
     @Test

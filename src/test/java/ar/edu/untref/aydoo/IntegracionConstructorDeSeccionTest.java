@@ -6,9 +6,6 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by synysterlove on 23/05/16.
- */
 public class IntegracionConstructorDeSeccionTest {
 
     /* Quiero hacer que a partir de una lista de strings,

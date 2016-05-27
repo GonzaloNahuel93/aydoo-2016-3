@@ -3,9 +3,6 @@ package ar.edu.untref.aydoo;
 import org.junit.Assert;
 import org.junit.Test;
 
-/**
- * Created by synysterlove on 26/05/16.
- */
 public class EstructuraDeSeccionesTest {
 
     @Test
@@ -41,7 +38,6 @@ public class EstructuraDeSeccionesTest {
 
     }
 
-
     @Test
     public void queDosEstructurasConSeccionesDistintasSeanDistintas() {
 
@@ -75,7 +71,6 @@ public class EstructuraDeSeccionesTest {
 
     }
 
-
     @Test
     public void queDosEstructurasConDiferenteTamanioSeanDistintas() {
 
@@ -107,7 +102,5 @@ public class EstructuraDeSeccionesTest {
         Assert.assertNotEquals(estructura1, estructura2);
 
     }
-
-
     
 }

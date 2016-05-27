@@ -3,9 +3,6 @@ package ar.edu.untref.aydoo;
 import org.junit.Assert;
 import org.junit.Test;
 
-/**
- * Created by synysterlove on 24/05/16.
- */
 public class SubtituloTest {
     
     @Test

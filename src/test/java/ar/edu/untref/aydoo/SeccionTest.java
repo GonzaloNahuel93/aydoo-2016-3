@@ -3,9 +3,6 @@ package ar.edu.untref.aydoo;
 import org.junit.Assert;
 import org.junit.Test;
 
-/**
- * Created by synysterlove on 26/05/16.
- */
 public class SeccionTest {
 
     @Test
@@ -32,7 +29,6 @@ public class SeccionTest {
         Assert.assertEquals(seccion1, seccion2);
 
     }
-
 
     @Test
     public void queDosSeccionesConDistintosElementosSeanDistintas() {

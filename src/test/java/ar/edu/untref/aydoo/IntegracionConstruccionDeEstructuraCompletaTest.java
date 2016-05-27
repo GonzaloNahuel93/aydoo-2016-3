@@ -60,7 +60,6 @@ public class IntegracionConstruccionDeEstructuraCompletaTest {
 
     }
 
-
     @Test
     public void quePuedaConstruirUnaSeccionConUnaListaDentro() {
 
@@ -116,6 +115,5 @@ public class IntegracionConstruccionDeEstructuraCompletaTest {
         estructuraConstruida.getSecciones();
 
     }
-
     
 }

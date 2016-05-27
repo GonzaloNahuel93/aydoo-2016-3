@@ -19,7 +19,7 @@ public class OrdenadorDeParametrosTest {
 		String[] parametrosOrdenados = ordenador.ordenar(parametros);
 
 		Assert.assertEquals("--mode=default", parametrosOrdenados[0]);
-		Assert.assertEquals("miPresentacion.md", parametrosOrdenados[1]);
+		Assert.assertEquals("", parametrosOrdenados[1]); //El archivo debe existir fisicamente en el ordenador, pero se asume que no está
 
 	}
 
@@ -32,7 +32,7 @@ public class OrdenadorDeParametrosTest {
 		String[] parametrosOrdenados = ordenador.ordenar(parametros);
 
 		Assert.assertEquals("--mode=arcoiris", parametrosOrdenados[0]);
-		Assert.assertEquals("miPresentacion.md", parametrosOrdenados[1]);
+		Assert.assertEquals("", parametrosOrdenados[1]); //El archivo debe existir fisicamente en el ordenador, pero se asume que no está
 
 	}
 
@@ -45,7 +45,7 @@ public class OrdenadorDeParametrosTest {
 		String[] parametrosOrdenados = ordenador.ordenar(parametros);
 
 		Assert.assertEquals("--mode=no-output", parametrosOrdenados[0]);
-		Assert.assertEquals("mIpReSeNtAcIoN.md", parametrosOrdenados[1]);
+		Assert.assertEquals("", parametrosOrdenados[1]); //El archivo debe existir fisicamente en el ordenador, pero se asume que no está
 
 	}
 
@@ -58,7 +58,7 @@ public class OrdenadorDeParametrosTest {
 		String[] parametrosOrdenados = ordenador.ordenar(parametros);
 
 		Assert.assertEquals("--mode=default", parametrosOrdenados[0]);
-		Assert.assertEquals("miPresentacion.md", parametrosOrdenados[1]);
+		Assert.assertEquals("", parametrosOrdenados[1]); //El archivo debe existir fisicamente en el ordenador, pero se asume que no está
 
 	}
 
@@ -71,7 +71,7 @@ public class OrdenadorDeParametrosTest {
 		String[] parametrosOrdenados = ordenador.ordenar(parametros);
 
 		Assert.assertEquals("", parametrosOrdenados[0]);
-		Assert.assertEquals("miPresentacion.md", parametrosOrdenados[1]);
+		Assert.assertEquals("", parametrosOrdenados[1]); //El archivo debe existir fisicamente en el ordenador, pero se asume que no está
 
 	}
 
@@ -84,7 +84,7 @@ public class OrdenadorDeParametrosTest {
 		String[] parametrosOrdenados = ordenador.ordenar(parametros);
 
 		Assert.assertEquals("--mode=default", parametrosOrdenados[0]);
-		Assert.assertEquals("miPresentacion.md", parametrosOrdenados[1]);
+		Assert.assertEquals("", parametrosOrdenados[1]); //El archivo debe existir fisicamente en el ordenador, pero se asume que no está
 		Assert.assertEquals("--output=Archivo", parametrosOrdenados[2]);
 
 	}
@@ -98,7 +98,7 @@ public class OrdenadorDeParametrosTest {
 		String[] parametrosOrdenados = ordenador.ordenar(parametros);
 
 		Assert.assertEquals("--mode=nose", parametrosOrdenados[0]);
-		Assert.assertEquals("Presentacion de AyDOO.md", parametrosOrdenados[1]);
+		Assert.assertEquals("", parametrosOrdenados[1]); //El archivo debe existir fisicamente en el ordenador, pero se asume que no está
 		Assert.assertEquals("--output=AyDOO", parametrosOrdenados[2]);
 
 	}
