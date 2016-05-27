@@ -68,5 +68,23 @@ public class ListaTest {
 
     }
 
+    @Test
+    public void queDosListasDeDiferenteTamanioSeanDistintas() {
+
+        Lista lista1 = new Lista();
+        Lista lista2 = new Lista();
+
+        ItemDeLista item11 = new ItemDeLista("Item11");
+        ItemDeLista item12 = new ItemDeLista("Item12");
+        ItemDeLista item21 = new ItemDeLista("Item21");
+
+        lista1.agregarItem(item11);
+        lista1.agregarItem(item12);
+        lista2.agregarItem(item21);
+
+        Assert.assertFalse(lista1.equals(lista2));
+
+    }
+
     
 }
