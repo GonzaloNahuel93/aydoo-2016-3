@@ -41,7 +41,6 @@ public class OrdenadorDeTareas {
 			EstructuraDeSecciones estructuraConstruida = this.constructor.construirEstructura(lineasDeArchivo);
 
 			CodigoHTML codigoHTML = ((CodigoHTML)estructuraConstruida.getTransformado());
-			System.out.print(codigoHTML.getContenido());
 
 			String[] archivos = {parametros[1], parametros[2]};
 			String nombreDeArchivoDeSalida = this.determinarNombreDelArchivoDeSalida(archivos);
@@ -56,7 +55,7 @@ public class OrdenadorDeTareas {
 	
 	private String determinarNombreDelArchivoDeSalida(String[] archivos){
 		
-		String nombreDeArchivoDeSalida = null;
+		String nombreDeArchivoDeSalida = "";
 		
 		if(!archivos[1].equals("")){
 			
