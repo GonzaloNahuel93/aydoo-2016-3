@@ -1,4 +1,4 @@
-package ar.edu.untref.aydoo.excepciones;
+package ar.edu.untref.aydoo;
 
 @SuppressWarnings("serial")
 public class ModoDeSalidaInvalidoException extends RuntimeException {

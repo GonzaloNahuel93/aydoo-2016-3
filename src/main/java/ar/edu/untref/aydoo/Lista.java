@@ -1,11 +1,7 @@
-package ar.edu.untref.aydoo.componentes;
+package ar.edu.untref.aydoo;
 
 import java.util.ArrayList;
 import java.util.List;
-import ar.edu.untref.aydoo.Transformador;
-import ar.edu.untref.aydoo.componenteshtml.ElementoTransformadoHTML;
-import ar.edu.untref.aydoo.componenteshtml.ItemDeListaHTML;
-import ar.edu.untref.aydoo.componenteshtml.ListaHTML;
 
 public class Lista extends Elemento {
 

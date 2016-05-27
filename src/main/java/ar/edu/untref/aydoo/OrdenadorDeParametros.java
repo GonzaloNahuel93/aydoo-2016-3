@@ -1,5 +1,7 @@
 package ar.edu.untref.aydoo;
 
+import java.io.File;
+
 public class OrdenadorDeParametros {
 
 	public String[] ordenar(String[] parametros){
@@ -16,10 +18,8 @@ public class OrdenadorDeParametros {
 
 	private String[] evaluarParametro(String[] parametros, String[] parametrosOrdenados, int i) {
 
-		//'.md' tiene 3 letras. Puede darse el caso que este parametro contenga el nombre del archivo a transformar.
-		if(parametros[i].length() > 3){
-			parametrosOrdenados = this.agregarArchivo(parametros[i], parametrosOrdenados);
-		}
+		//Se debe verificar que archivo es la entrada para transformar.
+		this.agregarArchivoDeEntrada(parametros[i], parametrosOrdenados);
 
 		//'--mode=' tiene 7 letras. Puede darse el caso que este parametro contenga el modo en que se quiere generar la salida de la transformacion.
 		if(parametros[i].length() > 7){
@@ -48,13 +48,16 @@ public class OrdenadorDeParametros {
 
 	}
 
-	private String[] agregarArchivo(String parametroActual, String[] parametrosOrdenados){
+	private String[] agregarArchivoDeEntrada(String parametroActual, String[] parametrosOrdenados){
 
-		String parametro = parametroActual.substring(parametroActual.length() - 3,parametroActual.length());
-		parametro = parametro.toLowerCase();
+		if((new File(parametroActual)).exists()){
 
-		if(".md".equals(parametro)){
-			parametrosOrdenados[1] = parametroActual.substring(0,parametroActual.length() - 3) + parametro;
+			parametrosOrdenados[1] = parametroActual;
+
+		}else if((new File(parametroActual + ".md").exists())){
+
+			parametrosOrdenados[1] = parametroActual + ".md";
+
 		}
 
 		return parametrosOrdenados;

@@ -1,7 +1,5 @@
-package ar.edu.untref.aydoo.componentes;
+package ar.edu.untref.aydoo;
 
-import ar.edu.untref.aydoo.componenteshtml.ElementoTransformadoHTML;
-import ar.edu.untref.aydoo.componenteshtml.TituloHTML;
 
 public class Titulo extends ElementoDeLinea {
 

@@ -1,4 +1,4 @@
-package ar.edu.untref.aydoo.componenteshtml;
+package ar.edu.untref.aydoo;
 
 import java.util.ArrayList;
 import java.util.List;

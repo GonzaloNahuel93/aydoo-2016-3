@@ -1,7 +1,5 @@
-package ar.edu.untref.aydoo.componentes;
+package ar.edu.untref.aydoo;
 
-import ar.edu.untref.aydoo.componenteshtml.ElementoTransformadoHTML;
-import ar.edu.untref.aydoo.componenteshtml.ItemDeListaHTML;
 
 public class ItemDeLista extends ElementoDeLinea {
 

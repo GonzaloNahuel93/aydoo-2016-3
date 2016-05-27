@@ -1,4 +1,4 @@
-package ar.edu.untref.aydoo.componenteshtml;
+package ar.edu.untref.aydoo;
 
 public class TituloHTML extends LineaHTML {
 

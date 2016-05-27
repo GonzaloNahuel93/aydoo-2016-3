@@ -1,5 +1,6 @@
 package ar.edu.untref.aydoo;
 
+
 public class GeneradorDeSalida {
 
 	public void generarSalida(CodigoHTML codigoHTML, String[] salidaPedida){
