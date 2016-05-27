@@ -41,7 +41,7 @@ public class ConstructorDeEstructura {
 
                 int finalDeLaSeccion = this.calcularDondeTerminaLaSeccion(listaDeEntrada, i+1);
 
-                Seccion seccion = this.construirSeccion(listaDeEntrada, i+1, finalDeLaSeccion);
+                Seccion seccion = this.obtenerSeccionConstruida(listaDeEntrada, i+1, finalDeLaSeccion);
                 estructura.agregarComponente(seccion);
                 i = finalDeLaSeccion;
 
@@ -57,7 +57,7 @@ public class ConstructorDeEstructura {
 
     }
 
-    private Seccion construirSeccion(List<String> listaDeEntrada, int comienzoDeLaSeccion, int finalDeLaSeccion) {
+    private Seccion obtenerSeccionConstruida(List<String> listaDeEntrada, int comienzoDeLaSeccion, int finalDeLaSeccion) {
 
         List<String> listaDeComponentesDeLaSeccion = listaDeEntrada.subList(comienzoDeLaSeccion, finalDeLaSeccion+1);
         ConstructorDeSeccion constructorSeccion = new ConstructorDeSeccion();
