@@ -107,5 +107,16 @@ public class IntegracionConstruccionDeEstructuraCompletaTest {
         Assert.assertEquals(estructura, estructuraConstruida);
     }
 
+    @Test(expected=SintaxisDelArchivoDeEntradaInvalidaException.class)
+    public void queNoPuedaConstruirUnaEstructuraSiLeVieneAlgoFueraDeUnaSeccion() {
+
+        List<String> listaDeEntrada = new ArrayList<String>();
+        listaDeEntrada.add("# Titulo");
+
+        ConstructorDeEstructura constructor = new ConstructorDeEstructura();
+        EstructuraDeSecciones estructuraConstruida = constructor.construirEstructura(listaDeEntrada);
+
+    }
+
     
 }
