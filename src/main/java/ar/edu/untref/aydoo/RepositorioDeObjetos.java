@@ -4,20 +4,14 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
-/**
- * Created by synysterlove on 23/05/16.
- */
 public class RepositorioDeObjetos {
 
     private Map<String, ElementoDeLinea> diccionarioDeObjetos;
 
     public RepositorioDeObjetos() {
-
         //Se inicializa el mapa con lo que aceptamos en el archivo de entrada
         this.reiniciarRepositorio();
-
     }
-
 
     public ElementoDeLinea obtenerObjetoPorString(String s) {
 
@@ -48,4 +42,5 @@ public class RepositorioDeObjetos {
         diccionarioDeObjetos.put("*", new ItemDeLista(""));
 
     }
+
 }

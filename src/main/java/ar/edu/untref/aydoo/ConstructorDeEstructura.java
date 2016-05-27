@@ -2,11 +2,14 @@ package ar.edu.untref.aydoo;
 
 import java.util.List;
 
-/**
- * Created by synysterlove on 25/05/16.
- */
 public class ConstructorDeEstructura {
 
+	private ConstructorDeSeccion constructorSeccion;
+	
+	public ConstructorDeEstructura(){
+		this.constructorSeccion = new ConstructorDeSeccion();
+	}
+	
     /*Funciona igual que el de la lista, pero devuelve
    la ultima posicion de la seccion
     */
@@ -60,12 +63,10 @@ public class ConstructorDeEstructura {
     private Seccion construirSeccion(List<String> listaDeEntrada, int comienzoDeLaSeccion, int finalDeLaSeccion) {
 
         List<String> listaDeComponentesDeLaSeccion = listaDeEntrada.subList(comienzoDeLaSeccion, finalDeLaSeccion+1);
-        ConstructorDeSeccion constructorSeccion = new ConstructorDeSeccion();
-        Seccion seccionConstruida = constructorSeccion.construirSeccion(listaDeComponentesDeLaSeccion);
+        Seccion seccionConstruida = this.constructorSeccion.construirSeccion(listaDeComponentesDeLaSeccion);
 
         return seccionConstruida;
 
     }
-
 
 }

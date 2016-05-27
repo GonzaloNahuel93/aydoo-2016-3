@@ -3,17 +3,12 @@ package ar.edu.untref.aydoo;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by synysterlove on 23/05/16.
- */
 public class ConstructorDeSeccion {
 
     private RepositorioDeObjetos repositorio;
 
     public ConstructorDeSeccion() {
-
         this.repositorio = new RepositorioDeObjetos();
-
     }
     
     public Seccion construirSeccion(List<String> listaDeEntrada) {
@@ -50,16 +45,14 @@ public class ConstructorDeSeccion {
     private Seccion ponerElementosALaSeccion(List<Elemento> objetos) {
 
         Seccion seccion = new Seccion();
+
         for(Elemento elemento : objetos) {
-
-            seccion.agregarContenido(elemento);
-
+        	seccion.agregarContenido(elemento);
         }
 
         return seccion;
 
     }
-
 
     private Lista construirLista(List<String> listaDeEntrada, int comienzoDeLaLista, int finalDeLaLista) {
 
@@ -99,6 +92,5 @@ public class ConstructorDeSeccion {
         return i-1;
 
     }
-
 
 }
