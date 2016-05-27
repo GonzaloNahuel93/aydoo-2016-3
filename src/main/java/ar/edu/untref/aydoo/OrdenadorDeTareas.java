@@ -36,7 +36,16 @@ public class OrdenadorDeTareas {
 		if(losParametrosSonValidosParaTransformar){
 
 			this.lector.leerArchivo(new File(archivoDeEntrada));
-			List<String> lineasDeArchivo = this.lector.getContenidoDelArchivoDeEntrada();
+
+            try {
+
+                List<String> lineasDeArchivo = this.lector.getContenidoDelArchivoDeEntrada();
+
+            } catch (SintaxisDelArchivoDeEntradaInvalidaException e) {
+
+                System.out.print("No se puede transformar este archivo, su sintaxis es invalida");
+
+            }
 
             Transformador transformador = new Transformador();
 
