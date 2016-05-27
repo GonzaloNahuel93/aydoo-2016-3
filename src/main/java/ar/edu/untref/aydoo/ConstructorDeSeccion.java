@@ -88,6 +88,10 @@ public class ConstructorDeSeccion {
 
                 i++;
 
+            } else {
+
+                j = listaDeEntrada.size(); //Si encuentra algo que no sea un item cierra la lista
+
             }
 
         }

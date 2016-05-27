@@ -209,7 +209,7 @@ public class IntegracionConstructorDeSeccionTest {
 
     }
 
-   /* @Test
+    @Test
     public void quePuedaConstruirDosListasYEntreMedioDeEllasHayaUnSubtitulo(){
     	
     	List<String> listaDeEntrada = new ArrayList<String>();
@@ -251,6 +251,6 @@ public class IntegracionConstructorDeSeccionTest {
 
         Assert.assertEquals(seccion, seccionConstruida);
     	
-    }*/
+    }
 
 }
