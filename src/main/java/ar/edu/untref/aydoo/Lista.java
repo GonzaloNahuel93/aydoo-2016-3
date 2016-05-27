@@ -60,7 +60,5 @@ public class Lista extends Elemento {
 
     }
 
-    @Override
-    public void colocarStringDeContenidoPropio(String contenido) {}; //En una lista no hace nada porque la lista no tiene contenido
 
 }

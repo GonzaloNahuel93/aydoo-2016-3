@@ -60,6 +60,4 @@ public class Seccion implements Transformable {
 
     }
 
-    public void colocarStringDeContenidoPropio(String contenido) {}; //En una seccion no hace nada porque la lista no tiene contenido
-
 }

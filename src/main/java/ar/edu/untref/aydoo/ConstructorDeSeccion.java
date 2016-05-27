@@ -34,7 +34,7 @@ public class ConstructorDeSeccion {
 
             } else {
 
-                Elemento objeto = this.repositorio.obtenerObjetoPorString(actual);
+                ElementoDeLinea objeto = this.repositorio.obtenerObjetoPorString(actual);
                 objeto.colocarStringDeContenidoPropio(actual);
                 objetos.add(objeto);
 
@@ -66,7 +66,7 @@ public class ConstructorDeSeccion {
         Lista lista = new Lista();
         for(int i = comienzoDeLaLista; i <= finalDeLaLista; i++) {
 
-            Transformable item = this.repositorio.obtenerObjetoPorString(listaDeEntrada.get(i));
+            ElementoDeLinea item = this.repositorio.obtenerObjetoPorString(listaDeEntrada.get(i));
             item.colocarStringDeContenidoPropio(listaDeEntrada.get(i));
             lista.agregarItem((ItemDeLista)item);
 

@@ -21,5 +21,8 @@ public abstract class ElementoDeLinea extends Elemento {
 
     }
 
+    public abstract void colocarStringDeContenidoPropio(String contenido);
+
+
 
 }
