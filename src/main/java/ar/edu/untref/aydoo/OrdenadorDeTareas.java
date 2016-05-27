@@ -42,7 +42,6 @@ public class OrdenadorDeTareas {
                 List<String> lineasDeArchivo = this.lector.getContenidoDelArchivoDeEntrada();
 
                 Transformador transformador = new Transformador();
-
                 CodigoHTML codigoHTML = (CodigoHTML)transformador.transformar(this.constructor.construirEstructura(lineasDeArchivo));
 
                 String[] archivos = {parametros[1], parametros[2]};

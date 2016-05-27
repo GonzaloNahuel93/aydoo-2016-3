@@ -59,8 +59,6 @@ public class OrdenadorDeParametros {
 			parametrosOrdenados[1] = parametroActual + ".md";
 
 		}
-		
-		System.out.print(parametrosOrdenados[1]);
 
 		return parametrosOrdenados;
 

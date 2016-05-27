@@ -7,8 +7,10 @@ public class ValidadorDeParametros {
 		boolean hayUnModoDeSalidaValido = this.modoDeSalidaValido(parametrosDeEntrada[0]);
 		boolean hayContradiccionDeParametros = this.contradiccionDeParametros(parametrosDeEntrada[0], parametrosDeEntrada[2]);
 		boolean hayArchivoDeEntrada = this.hayArchivoDeEntrada(parametrosDeEntrada[1]);
+		boolean contieneCaracteresRarosElArchivoDeEntrada = this.hayCaracteresRaros(parametrosDeEntrada[1]);
 
-		boolean hayCondicionesValidasParaTransformar = (hayUnModoDeSalidaValido && !hayContradiccionDeParametros) && hayArchivoDeEntrada;
+		boolean hayCondicionesValidasParaTransformar = (hayUnModoDeSalidaValido && !hayContradiccionDeParametros) && (hayArchivoDeEntrada && 
+														!contieneCaracteresRarosElArchivoDeEntrada);
 
 		return hayCondicionesValidasParaTransformar;
 
@@ -54,6 +56,32 @@ public class ValidadorDeParametros {
 
 		return hayArchivoDeEntrada;
 
+	}
+
+	private boolean hayCaracteresRaros(String nombreDelArchivoDeEntrada) {
+		
+		boolean hayCaracteresRaros = false;
+		
+		if(this.hayArchivoDeEntrada(nombreDelArchivoDeEntrada)){
+			
+			boolean hayEnies = nombreDelArchivoDeEntrada.contains("ñ") || nombreDelArchivoDeEntrada.contains("Ñ");
+			boolean hayAcentos = (nombreDelArchivoDeEntrada.contains("á") || nombreDelArchivoDeEntrada.contains("Á")) ||
+								 (nombreDelArchivoDeEntrada.contains("é") || nombreDelArchivoDeEntrada.contains("É")) ||
+								 (nombreDelArchivoDeEntrada.contains("í") || nombreDelArchivoDeEntrada.contains("Í")) ||
+								 (nombreDelArchivoDeEntrada.contains("ó") || nombreDelArchivoDeEntrada.contains("Ó")) ||
+								 (nombreDelArchivoDeEntrada.contains("ú") || nombreDelArchivoDeEntrada.contains("Ú"));
+			boolean hayBarra = nombreDelArchivoDeEntrada.contains("/");
+			
+			hayCaracteresRaros = hayEnies || hayAcentos || hayBarra;
+			
+		}
+		
+		if(hayCaracteresRaros){
+			throw new CaracteresNoPermitidosException();
+		}
+		
+		return hayCaracteresRaros;
+		
 	}
 
 }
