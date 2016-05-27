@@ -1,8 +1,10 @@
-package ar.edu.untref.aydoo;
+package ar.edu.untref.aydoo.excepciones;
 
-/**
- * Created by synysterlove on 25/05/16.
- */
+@SuppressWarnings("serial")
 public class CombinacionDeParametrosInvalidaException extends RuntimeException {
     
+	public CombinacionDeParametrosInvalidaException(){
+		super("La combinacion de parametros ingresados es invalido.");
+	}
+
 }

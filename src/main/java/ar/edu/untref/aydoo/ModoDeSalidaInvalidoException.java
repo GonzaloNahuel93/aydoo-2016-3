@@ -1,8 +1,10 @@
-package ar.edu.untref.aydoo;
+package ar.edu.untref.aydoo.excepciones;
 
-/**
- * Created by synysterlove on 25/05/16.
- */
+@SuppressWarnings("serial")
 public class ModoDeSalidaInvalidoException extends RuntimeException {
-    
+
+	public ModoDeSalidaInvalidoException(){
+		super("El modo de salida insertado es incorrecto. Solo se permiten: default o no-output.");
+	}
+
 }

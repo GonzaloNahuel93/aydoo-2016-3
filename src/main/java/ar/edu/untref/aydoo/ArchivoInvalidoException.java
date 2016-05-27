@@ -1,10 +1,10 @@
-package ar.edu.untref.aydoo;
+package ar.edu.untref.aydoo.excepciones;
 
 @SuppressWarnings("serial")
 public class ArchivoInvalidoException extends RuntimeException {
-    
+
 	public ArchivoInvalidoException(){
-		super("El archivo es invalido.");
+		super("Para proceder con la transformacion se necesita de un archivo de entrada .md.");
 	}
 	
 }
