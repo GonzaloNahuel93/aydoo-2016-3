@@ -38,9 +38,9 @@ public class OrdenadorDeTareas {
 			this.lector.leerArchivo(new File(archivoDeEntrada));
 			List<String> lineasDeArchivo = this.lector.getContenidoDelArchivoDeEntrada();
 
-			EstructuraDeSecciones estructuraConstruida = this.constructor.construirEstructura(lineasDeArchivo);
+            Transformador transformador = new Transformador();
 
-			CodigoHTML codigoHTML = ((CodigoHTML)estructuraConstruida.getTransformado());
+			CodigoHTML codigoHTML = (CodigoHTML)transformador.transformar(this.constructor.construirEstructura(lineasDeArchivo));
 
 			String[] archivos = {parametros[1], parametros[2]};
 			String nombreDeArchivoDeSalida = this.determinarNombreDelArchivoDeSalida(archivos);
