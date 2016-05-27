@@ -1,4 +1,4 @@
-package ar.edu.untref.aydoo;
+package ar.edu.untref.aydoo.componenteshtml;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,12 +22,12 @@ public class ListaHTML implements ElementoHTML {
 
     @Override
     public String concatenarContenido(String contenido) {
-    	
+
     	contenido += "<ul>\n" + this.construirStringLista() + "</ul>\n";
         return contenido;
-        
+
     }
-    
+
     private String construirStringLista(){
 
         String stringLista = "";
@@ -39,5 +39,5 @@ public class ListaHTML implements ElementoHTML {
         return stringLista;
 
     }
-    
+
 }

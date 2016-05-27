@@ -1,4 +1,4 @@
-package ar.edu.untref.aydoo;
+package ar.edu.untref.aydoo.componenteshtml;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,6 +11,10 @@ public class CodigoHTML implements ElementoTransformadoHTML {
         this.seccionesHTML = new ArrayList<SeccionHTML>();
     }
 
+    public void agregarSeccion(SeccionHTML seccion) {
+        this.seccionesHTML.add(seccion);
+    }
+    
     @Override
     public String getContenido() {
 
@@ -22,10 +26,6 @@ public class CodigoHTML implements ElementoTransformadoHTML {
 
         return contenido;
 
-    }
-
-    public void agregarSeccion(SeccionHTML seccion) {
-        this.seccionesHTML.add(seccion);
     }
 
 }
