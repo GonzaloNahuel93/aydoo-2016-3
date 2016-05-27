@@ -75,9 +75,9 @@ public class EstructuraDeSeccionesTest {
 
     }
 
-    /*
+
     @Test
-    public void queDosSeccionesConDiferenteTamanioSeanDistintas() {
+    public void queDosEstructurasConDiferenteTamanioSeanDistintas() {
 
         Seccion seccion1 = new Seccion();
         Seccion seccion2 = new Seccion();
@@ -95,10 +95,18 @@ public class EstructuraDeSeccionesTest {
         seccion1.agregarContenido(subtitulo);
         seccion2.agregarContenido(titulo);
         seccion2.agregarContenido(lista);
+        seccion2.agregarContenido(subtitulo);
 
-        Assert.assertNotEquals(seccion1, seccion2);
+        EstructuraDeSecciones estructura1 = new EstructuraDeSecciones();
+        EstructuraDeSecciones estructura2 = new EstructuraDeSecciones();
 
-    }*/
+        estructura1.agregarComponente(seccion1);
+        estructura1.agregarComponente(seccion2);
+        estructura2.agregarComponente(seccion2);
+
+        Assert.assertNotEquals(estructura1, estructura2);
+
+    }
 
 
     
