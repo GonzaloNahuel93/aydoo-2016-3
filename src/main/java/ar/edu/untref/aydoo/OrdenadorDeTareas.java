@@ -55,7 +55,7 @@ public class OrdenadorDeTareas {
 	
 	private String determinarNombreDelArchivoDeSalida(String[] archivos){
 		
-		String nombreDeArchivoDeSalida = "";
+		String nombreDeArchivoDeSalida = null;
 		
 		if(!archivos[1].equals("")){
 			
@@ -63,7 +63,7 @@ public class OrdenadorDeTareas {
 			
 		}else{
 			
-			nombreDeArchivoDeSalida = archivos[0].substring(archivos[0].length() - 3, archivos[0].length());
+			nombreDeArchivoDeSalida = archivos[0].substring(0, archivos[0].length() - 3);
 			
 		}
 		
