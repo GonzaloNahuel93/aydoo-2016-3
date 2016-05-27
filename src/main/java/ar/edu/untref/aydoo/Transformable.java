@@ -1,4 +1,6 @@
-package ar.edu.untref.aydoo;
+package ar.edu.untref.aydoo.componentes;
+
+import ar.edu.untref.aydoo.componenteshtml.ElementoTransformadoHTML;
 
 public interface Transformable {
 

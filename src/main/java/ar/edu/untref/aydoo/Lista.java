@@ -1,7 +1,11 @@
-package ar.edu.untref.aydoo;
+package ar.edu.untref.aydoo.componentes;
 
 import java.util.ArrayList;
 import java.util.List;
+import ar.edu.untref.aydoo.Transformador;
+import ar.edu.untref.aydoo.componenteshtml.ElementoTransformadoHTML;
+import ar.edu.untref.aydoo.componenteshtml.ItemDeListaHTML;
+import ar.edu.untref.aydoo.componenteshtml.ListaHTML;
 
 public class Lista extends Elemento {
 
@@ -19,10 +23,35 @@ public class Lista extends Elemento {
 
     }
 
+    public void agregarItem(ItemDeLista item) {
+        this.items.add(item);
+    }
+
+    public List<ItemDeLista> getItems() {
+        return this.items;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+
+        Lista otraLista = (Lista)obj;
+        List<ItemDeLista> otrosItems = otraLista.getItems();
+        List<ItemDeLista> estosItems = this.getItems();
+
+        if(otrosItems.size() != estosItems.size()) return false;
+
+        for(int i=0; i < estosItems.size(); i++) { //Las dos listas tienen que ser del mismo tamaño asi que no hay riesgo de excepcion
+            if(!estosItems.get(i).equals(otrosItems.get(i))) return false; //Si algun par de items es distinto, tira falso
+        }
+
+        return true; //Si todos fueron iguales, se retorna true
+
+    }
+
     private ListaHTML transformarItems(ListaHTML listaHTML) {
 
         Transformador transformadorItems = new Transformador();
-        
+
         for(ItemDeLista item : this.items) {
 
             ItemDeListaHTML itemHTML = (ItemDeListaHTML) transformadorItems.transformar(item);
@@ -33,32 +62,5 @@ public class Lista extends Elemento {
         return listaHTML;
 
     }
-
-    public void agregarItem(ItemDeLista item) {
-        this.items.add(item);
-    }
-
-    public List<ItemDeLista> getItems() {
-
-        return this.items;
-
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-
-        Lista otraLista = (Lista)obj;
-        List<ItemDeLista> otrosItems = otraLista.getItems();
-        List<ItemDeLista> estosItems = this.getItems();
-        if(otrosItems.size() != estosItems.size()) return false;
-        for(int i=0; i < estosItems.size(); i++) { //Las dos listas tienen que ser del mismo tamaño asi que no hay riesgo de excepcion
-
-            if(!estosItems.get(i).equals(otrosItems.get(i))) return false; //Si algun par de items es distinto, tira falso
-
-        }
-        return true; //Si todos fueron iguales, se retorna true
-
-    }
-
 
 }

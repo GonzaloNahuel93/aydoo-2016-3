@@ -1,4 +1,4 @@
-package ar.edu.untref.aydoo;
+package ar.edu.untref.aydoo.componentes;
 
 public abstract class ElementoDeLinea extends Elemento {
 
@@ -12,6 +12,8 @@ public abstract class ElementoDeLinea extends Elemento {
         return contenido;
     }
 
+    public abstract void colocarStringDeContenidoPropio(String contenido);
+
     @Override
     public boolean equals(Object obj) {
 
@@ -20,9 +22,5 @@ public abstract class ElementoDeLinea extends Elemento {
         return false;
 
     }
-
-    public abstract void colocarStringDeContenidoPropio(String contenido);
-
-
 
 }

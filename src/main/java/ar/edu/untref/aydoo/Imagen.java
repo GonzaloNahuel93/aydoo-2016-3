@@ -1,5 +1,7 @@
-package ar.edu.untref.aydoo;
+package ar.edu.untref.aydoo.componentes;
 
+import ar.edu.untref.aydoo.componenteshtml.ElementoTransformadoHTML;
+import ar.edu.untref.aydoo.componenteshtml.ImagenHTML;
 
 public class Imagen extends ElementoDeLinea {
 
@@ -17,9 +19,7 @@ public class Imagen extends ElementoDeLinea {
 
     @Override
     public void colocarStringDeContenidoPropio(String contenido) {
-
         this.contenido = contenido.substring(2);
-
     }
 
 }

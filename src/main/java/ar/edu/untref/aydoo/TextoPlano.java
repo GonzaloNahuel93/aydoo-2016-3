@@ -1,7 +1,10 @@
-package ar.edu.untref.aydoo;
+package ar.edu.untref.aydoo.componentes;
+
+import ar.edu.untref.aydoo.componenteshtml.ElementoTransformadoHTML;
+import ar.edu.untref.aydoo.componenteshtml.TextoPlanoHTML;
 
 public class TextoPlano extends ElementoDeLinea {
-    
+
     public TextoPlano(String texto) {
         super(texto);     
     }
@@ -16,9 +19,7 @@ public class TextoPlano extends ElementoDeLinea {
 
     @Override
     public void colocarStringDeContenidoPropio(String contenido) {
-
         this.contenido = contenido;
-
     }
 
 }
