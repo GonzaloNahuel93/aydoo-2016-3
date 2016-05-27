@@ -41,22 +41,23 @@ public class OrdenadorDeTareas {
 
                 List<String> lineasDeArchivo = this.lector.getContenidoDelArchivoDeEntrada();
 
+                Transformador transformador = new Transformador();
+
+                CodigoHTML codigoHTML = (CodigoHTML)transformador.transformar(this.constructor.construirEstructura(lineasDeArchivo));
+
+                String[] archivos = {parametros[1], parametros[2]};
+                String nombreDeArchivoDeSalida = this.determinarNombreDelArchivoDeSalida(archivos);
+
+                String[] entradas = {modoDeSalida, nombreDeArchivoDeSalida};
+
+                this.generador.generarSalida(codigoHTML, entradas);
+
             } catch (SintaxisDelArchivoDeEntradaInvalidaException e) {
 
                 System.out.print("No se puede transformar este archivo, su sintaxis es invalida");
+                e.printStackTrace();
 
             }
-
-            Transformador transformador = new Transformador();
-
-			CodigoHTML codigoHTML = (CodigoHTML)transformador.transformar(this.constructor.construirEstructura(lineasDeArchivo));
-
-			String[] archivos = {parametros[1], parametros[2]};
-			String nombreDeArchivoDeSalida = this.determinarNombreDelArchivoDeSalida(archivos);
-			
-			String[] entradas = {modoDeSalida, nombreDeArchivoDeSalida};
-
-			this.generador.generarSalida(codigoHTML, entradas);
 
 		}
 
