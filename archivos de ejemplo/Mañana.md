@@ -1,0 +1,1 @@
+Este archivo de entrada debe fallar
