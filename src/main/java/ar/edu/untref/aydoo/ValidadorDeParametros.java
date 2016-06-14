@@ -5,7 +5,9 @@ public class ValidadorDeParametros implements UnidadDeProceso{
 	private UnidadDeProceso sucesor;
 
 	public ValidadorDeParametros(){
-		this.sucesor = new LectorDeEntrada();
+
+        this.sucesor = new LectorDeEntrada();
+
 	}
 
 	public void ejecutarOperacion(Object informacionDeEntrada){
@@ -14,18 +16,27 @@ public class ValidadorDeParametros implements UnidadDeProceso{
 		boolean losParametrosSonValidosParaTransformar = this.hayCondicionesValidasParaTransformar(parametrosDeEntrada);
 
 		if(losParametrosSonValidosParaTransformar){
+
 		   this.sucesor.ejecutarOperacion(parametrosDeEntrada);
+
 		}
 
 	}
 
+
 	public void setSucesor(UnidadDeProceso nuevoSucesor){
-		this.sucesor = nuevoSucesor;
+
+        this.sucesor = nuevoSucesor;
+
 	}
 
+
 	public UnidadDeProceso getSucesor(){
+
 		return this.sucesor;
+
 	}
+
 
 	public boolean hayCondicionesValidasParaTransformar(String[] parametrosDeEntrada){
 
@@ -41,6 +52,7 @@ public class ValidadorDeParametros implements UnidadDeProceso{
 
 	}
 
+
 	private boolean modoDeSalidaValido(String modoDeSalida){
 
 		boolean sePidioModoDefault = modoDeSalida.equals("--mode=default") || modoDeSalida.equals("");
@@ -49,12 +61,15 @@ public class ValidadorDeParametros implements UnidadDeProceso{
 		boolean modoDeSalidaValido = sePidioModoDefault || sePidioModoNoOutput;
 
 		if(!modoDeSalidaValido){
+
             throw new ModoDeSalidaInvalidoException();
+
         }
 
 		return modoDeSalidaValido;
 
 	}
+
 
 	private boolean contradiccionDeParametros(String modoDeSalida, String output) {
 
@@ -64,7 +79,9 @@ public class ValidadorDeParametros implements UnidadDeProceso{
 		boolean contradiccionDeParametros = sePidioModoNoOutput && sePidioUnArchivoDeSalida;
 
 		if(contradiccionDeParametros){
+
 			throw new CombinacionDeParametrosInvalidaException();
+
 		}
 
 		return contradiccionDeParametros;
@@ -76,7 +93,9 @@ public class ValidadorDeParametros implements UnidadDeProceso{
 		boolean hayArchivoDeEntrada = !archivo.equals("");
 
 		if(!hayArchivoDeEntrada){
+
             throw new ArchivoInvalidoException();
+
         }
 
 		return hayArchivoDeEntrada;
@@ -89,12 +108,12 @@ public class ValidadorDeParametros implements UnidadDeProceso{
 		
 		if(this.hayArchivoDeEntrada(nombreDelArchivoDeEntrada)){
 			
-			boolean hayEnies = nombreDelArchivoDeEntrada.contains("ñ") || nombreDelArchivoDeEntrada.contains("Ñ");
-			boolean hayAcentos = (nombreDelArchivoDeEntrada.contains("á") || nombreDelArchivoDeEntrada.contains("Á")) ||
-								 (nombreDelArchivoDeEntrada.contains("é") || nombreDelArchivoDeEntrada.contains("É")) ||
-								 (nombreDelArchivoDeEntrada.contains("í") || nombreDelArchivoDeEntrada.contains("Í")) ||
-								 (nombreDelArchivoDeEntrada.contains("ó") || nombreDelArchivoDeEntrada.contains("Ó")) ||
-								 (nombreDelArchivoDeEntrada.contains("ú") || nombreDelArchivoDeEntrada.contains("Ú"));
+			boolean hayEnies = nombreDelArchivoDeEntrada.contains("ï¿½") || nombreDelArchivoDeEntrada.contains("ï¿½");
+			boolean hayAcentos = (nombreDelArchivoDeEntrada.contains("ï¿½") || nombreDelArchivoDeEntrada.contains("ï¿½")) ||
+								 (nombreDelArchivoDeEntrada.contains("ï¿½") || nombreDelArchivoDeEntrada.contains("ï¿½")) ||
+								 (nombreDelArchivoDeEntrada.contains("ï¿½") || nombreDelArchivoDeEntrada.contains("ï¿½")) ||
+								 (nombreDelArchivoDeEntrada.contains("ï¿½") || nombreDelArchivoDeEntrada.contains("ï¿½")) ||
+								 (nombreDelArchivoDeEntrada.contains("ï¿½") || nombreDelArchivoDeEntrada.contains("ï¿½"));
 			boolean hayBarra = nombreDelArchivoDeEntrada.contains("/");
 			
 			hayCaracteresRaros = hayEnies || hayAcentos || hayBarra;
@@ -102,7 +121,9 @@ public class ValidadorDeParametros implements UnidadDeProceso{
 		}
 		
 		if(hayCaracteresRaros){
+
 			throw new CaracteresNoPermitidosException();
+
 		}
 		
 		return hayCaracteresRaros;

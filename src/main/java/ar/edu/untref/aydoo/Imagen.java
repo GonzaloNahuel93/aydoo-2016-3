@@ -5,7 +5,11 @@ public class Imagen extends ElementoDeLinea {
 
 	public Imagen(String imagen){
 		super(imagen);
-	}
+    }
+
+    public Imagen() {
+        super();
+    }
 
 	@Override
 	public ElementoTransformadoHTML getTransformado() {

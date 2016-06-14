@@ -7,6 +7,10 @@ public class Titulo extends ElementoDeLinea {
         super(titulo);
     }
 
+    public Titulo() {
+        super();
+    }
+
     @Override
     public ElementoTransformadoHTML getTransformado() {
 

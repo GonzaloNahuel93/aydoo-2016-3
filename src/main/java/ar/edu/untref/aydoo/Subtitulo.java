@@ -4,8 +4,14 @@ package ar.edu.untref.aydoo;
 public class Subtitulo extends ElementoDeLinea {
 
 	public Subtitulo(String subtitulo){
-		super(subtitulo);
-	}
+
+			super(subtitulo);
+
+    }
+
+    public Subtitulo() {
+        super();
+    }
 
 	@Override
 	public ElementoTransformadoHTML getTransformado() {

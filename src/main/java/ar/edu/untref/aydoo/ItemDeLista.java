@@ -7,6 +7,10 @@ public class ItemDeLista extends ElementoDeLinea {
         super(contenido);
     }
 
+    public ItemDeLista() {
+        super();
+    }
+
     @Override
     public ElementoTransformadoHTML getTransformado() {
 

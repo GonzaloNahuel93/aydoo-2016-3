@@ -6,11 +6,16 @@ import java.util.Map;
 
 public class RepositorioDeObjetos {
 
-    private Map<String, ElementoDeLinea> diccionarioDeObjetos;
+    private Map<String, Class> diccionarioDeObjetos;
 
     public RepositorioDeObjetos() {
-        //Se inicializa el mapa con lo que aceptamos en el archivo de entrada
-        this.reiniciarRepositorio();
+
+        this.diccionarioDeObjetos = new HashMap<String, Class>();
+        diccionarioDeObjetos.put("#", Titulo.class);
+        diccionarioDeObjetos.put("##", Subtitulo.class);
+        diccionarioDeObjetos.put("i:", Imagen.class);
+        diccionarioDeObjetos.put("*", ItemDeLista.class);
+
     }
 
     public ElementoDeLinea obtenerObjetoPorString(String s) {
@@ -21,10 +26,16 @@ public class RepositorioDeObjetos {
             String actual = iteradorClavesDelMapa.next();
             if(s.startsWith(actual)) {
 
-                ElementoDeLinea aDevolver = diccionarioDeObjetos.get(actual);
-                this.reiniciarRepositorio();
-                return aDevolver;
+                try {
 
+                    ElementoDeLinea aDevolver = (ElementoDeLinea)diccionarioDeObjetos.get(actual).newInstance();
+                    return aDevolver;
+
+                } catch (Exception e) {
+
+                    throw new RepositorioInvalidoException();
+
+                }
             }
 
         }
@@ -33,14 +44,5 @@ public class RepositorioDeObjetos {
 
     }
 
-    private void reiniciarRepositorio() {
-
-        this.diccionarioDeObjetos = new HashMap<String, ElementoDeLinea>();
-        diccionarioDeObjetos.put("#", new Titulo(""));
-        diccionarioDeObjetos.put("##", new Subtitulo(""));
-        diccionarioDeObjetos.put("i:", new Imagen(""));
-        diccionarioDeObjetos.put("*", new ItemDeLista(""));
-
-    }
 
 }

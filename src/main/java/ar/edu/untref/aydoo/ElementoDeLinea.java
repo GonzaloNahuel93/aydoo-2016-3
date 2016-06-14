@@ -4,6 +4,12 @@ public abstract class ElementoDeLinea extends Elemento {
 
     protected String contenido;
 
+    public ElementoDeLinea() {
+
+        this.contenido = "";
+
+    }
+
     public ElementoDeLinea(String contenido) {
         this.contenido = contenido;
     }
