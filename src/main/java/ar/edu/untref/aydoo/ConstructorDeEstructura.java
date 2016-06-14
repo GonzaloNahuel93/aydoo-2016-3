@@ -2,16 +2,42 @@ package ar.edu.untref.aydoo;
 
 import java.util.List;
 
-public class ConstructorDeEstructura {
+public class ConstructorDeEstructura implements UnidadDeProceso{
 
+	private UnidadDeProceso sucesor;
 	private ConstructorDeSeccion constructorSeccion;
-	
+
 	public ConstructorDeEstructura(){
+
+		this.sucesor = new Transformador();
 		this.constructorSeccion = new ConstructorDeSeccion();
+
 	}
-	
+
+	public void ejecutarOperacion(Object informacionDeEntrada){
+
+		@SuppressWarnings("unchecked")
+		List<Object> listaDeInformacion = (List<Object>) informacionDeEntrada;
+		@SuppressWarnings("unchecked")
+		List<String> lineasDeArchivo = (List<String>) listaDeInformacion.get(0);
+
+		EstructuraDeSecciones estructuraDeSecciones = this.construirEstructura(lineasDeArchivo);
+		listaDeInformacion.add(0, estructuraDeSecciones);
+
+		this.sucesor.ejecutarOperacion(listaDeInformacion);
+
+	}
+
+	public void setSucesor(UnidadDeProceso nuevoSucesor){
+		this.sucesor = nuevoSucesor;
+	}
+
+	public UnidadDeProceso getSucesor(){
+		return this.sucesor;
+	}
+
     /*Funciona igual que el de la lista, pero devuelve
-   la ultima posicion de la seccion
+   	  la ultima posicion de la seccion
     */
     private int calcularDondeTerminaLaSeccion(List<String> listaDeEntrada, int comienzoDeLaSeccion) {
 
