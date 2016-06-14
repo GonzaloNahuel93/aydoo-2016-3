@@ -2,7 +2,28 @@ package ar.edu.untref.aydoo;
 
 import java.io.File;
 
-public class OrdenadorDeParametros {
+public class OrdenadorDeParametros implements UnidadDeProceso{
+
+	private UnidadDeProceso sucesor;
+
+	public OrdenadorDeParametros(){
+		this.sucesor = new ValidadorDeParametros();
+	}
+
+	public void ejecutarOperacion(Object informacionDeEntrada){
+
+		String[] parametrosDeEntrada = this.ordenar((String[]) informacionDeEntrada);
+		this.sucesor.ejecutarOperacion(parametrosDeEntrada);
+
+	}
+
+	public void setSucesor(UnidadDeProceso nuevoSucesor){
+		this.sucesor = nuevoSucesor;
+	}
+
+	public UnidadDeProceso getSucesor(){
+		return this.sucesor;
+	}
 
 	public String[] ordenar(String[] parametros){
 

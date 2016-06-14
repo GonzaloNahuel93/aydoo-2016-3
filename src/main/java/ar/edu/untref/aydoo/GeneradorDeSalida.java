@@ -1,6 +1,45 @@
 package ar.edu.untref.aydoo;
 
-public class GeneradorDeSalida {
+import java.util.List;
+
+public class GeneradorDeSalida implements UnidadDeProceso{
+
+	private UnidadDeProceso sucesor;
+
+	public GeneradorDeSalida(){
+		this.sucesor = null;
+	}
+
+	public void ejecutarOperacion(Object informacionDeEntrada){
+
+		@SuppressWarnings("unchecked")
+		List<Object> listaDeInformacion = ((List<Object>) informacionDeEntrada);
+
+		//Se extrae la informacion de la lista.
+		CodigoHTML codigoHTML = ((CodigoHTML) listaDeInformacion.get(0));
+
+		String[] parametros = ((String[]) listaDeInformacion.get(1));
+		String modoDeSalida = parametros[0];
+		String archivoDeEntrada = parametros[1];
+		String outPut = parametros[2];
+		//
+
+		String[] archivos = {archivoDeEntrada, outPut};
+        String nombreDeArchivoDeSalida = this.determinarNombreDelArchivoDeSalida(archivos);
+
+        String[] salidasPedidas = {modoDeSalida, nombreDeArchivoDeSalida};
+
+        this.generarSalida(codigoHTML, salidasPedidas);
+
+	}
+
+	public void setSucesor(UnidadDeProceso nuevoSucesor){
+		this.sucesor = nuevoSucesor;
+	}
+
+	public UnidadDeProceso getSucesor(){
+		return this.sucesor;
+	}
 
 	public void generarSalida(CodigoHTML codigoHTML, String[] salidaPedida){
 
@@ -17,6 +56,24 @@ public class GeneradorDeSalida {
 			this.generarSalidaPorConsola(codigoHTML);
 
 		}		
+
+	}
+
+	private String determinarNombreDelArchivoDeSalida(String[] archivos){
+
+		String nombreDeArchivoDeSalida = null;
+
+		if(!archivos[1].equals("")){
+
+			nombreDeArchivoDeSalida = archivos[1].substring(9, archivos[1].length());
+
+		}else{
+
+			nombreDeArchivoDeSalida = archivos[0].substring(0, archivos[0].length() - 3);
+
+		}
+
+		return nombreDeArchivoDeSalida;
 
 	}
 

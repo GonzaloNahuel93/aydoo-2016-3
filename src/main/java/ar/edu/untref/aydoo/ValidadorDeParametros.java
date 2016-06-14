@@ -1,6 +1,31 @@
 package ar.edu.untref.aydoo;
 
-public class ValidadorDeParametros {
+public class ValidadorDeParametros implements UnidadDeProceso{
+
+	private UnidadDeProceso sucesor;
+
+	public ValidadorDeParametros(){
+		this.sucesor = new LectorDeEntrada();
+	}
+
+	public void ejecutarOperacion(Object informacionDeEntrada){
+
+		String[] parametrosDeEntrada = ((String[]) informacionDeEntrada);
+		boolean losParametrosSonValidosParaTransformar = this.hayCondicionesValidasParaTransformar(parametrosDeEntrada);
+
+		if(losParametrosSonValidosParaTransformar){
+		   this.sucesor.ejecutarOperacion(parametrosDeEntrada);
+		}
+
+	}
+
+	public void setSucesor(UnidadDeProceso nuevoSucesor){
+		this.sucesor = nuevoSucesor;
+	}
+
+	public UnidadDeProceso getSucesor(){
+		return this.sucesor;
+	}
 
 	public boolean hayCondicionesValidasParaTransformar(String[] parametrosDeEntrada){
 
