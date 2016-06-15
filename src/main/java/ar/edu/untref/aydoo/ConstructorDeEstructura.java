@@ -19,10 +19,10 @@ public class ConstructorDeEstructura implements UnidadDeProceso{
 		@SuppressWarnings("unchecked")
 		List<Object> listaDeInformacion = (List<Object>) informacionDeEntrada;
 		@SuppressWarnings("unchecked")
-		List<String> lineasDeArchivo = (List<String>) listaDeInformacion.get(0);
+		List<String> lineasDeArchivo = (List<String>) (listaDeInformacion.get(0)); //- En la POSICION 0 estan las lineas del archivo.
 
 		EstructuraDeSecciones estructuraDeSecciones = this.construirEstructura(lineasDeArchivo);
-		listaDeInformacion.add(0, estructuraDeSecciones);
+		listaDeInformacion.set(0, estructuraDeSecciones); //- Ahora se sustituye la POSICION 0 con la Estructura de Secciones.
 
 		this.sucesor.ejecutarOperacion(listaDeInformacion);
 

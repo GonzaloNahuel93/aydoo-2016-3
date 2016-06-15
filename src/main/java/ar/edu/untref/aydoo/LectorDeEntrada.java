@@ -27,6 +27,9 @@ public class LectorDeEntrada implements UnidadDeProceso{
 
 			List<String> lineasDeArchivo = this.getContenidoDelArchivoDeEntrada();
 
+			//La lista de Object contendra:
+			//POSICION 0 ===> Los sucesivos datos actualizados de la transformacion.
+			//POSICION 1 ===> Los parametros de entrada. Esta posicion 1 quedara fija, solo se ira sustituyendo la posicion 0.
 			List<Object> informacionParaElSucesor = new LinkedList<Object>();
 			informacionParaElSucesor.add(lineasDeArchivo);
 			informacionParaElSucesor.add(parametros);
@@ -58,14 +61,14 @@ public class LectorDeEntrada implements UnidadDeProceso{
             BufferedReader lector = new BufferedReader(fr);
 
             String lineaActual = lector.readLine();
-            
+
             while (lineaActual != null) {
 
                 this.contenidoDelArchivoDeEntrada.add(lineaActual);
                 lineaActual = lector.readLine();
 
             }
-            
+
             lector.close();
 
         } catch (FileNotFoundException e) {

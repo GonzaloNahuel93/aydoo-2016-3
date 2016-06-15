@@ -13,9 +13,7 @@ package ar.edu.untref.aydoo;
 public interface UnidadDeProceso {
 
 	public void ejecutarOperacion(Object informacionDeEntrada);
-
 	public void setSucesor(UnidadDeProceso nuevoSucesor);
-
 	public UnidadDeProceso getSucesor();
 
 }

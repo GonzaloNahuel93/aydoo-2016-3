@@ -15,10 +15,11 @@ public class Transformador implements UnidadDeProceso{
 		@SuppressWarnings("unchecked")
 		List<Object> listaDeInformacion = (List<Object>) informacionDeEntrada;
 
-		EstructuraDeSecciones estructuraDeSecciones = (EstructuraDeSecciones) listaDeInformacion.get(0);
+		//- En la POSICION 0 estan las Estructuras de Secciones.
+		EstructuraDeSecciones estructuraDeSecciones = (EstructuraDeSecciones) (listaDeInformacion.get(0));
 
 		CodigoHTML codigoHTML = (CodigoHTML) (this.transformar(estructuraDeSecciones));
-		listaDeInformacion.add(0, codigoHTML);
+		listaDeInformacion.set(0, codigoHTML); //- Ahora se sustituye la POSICION 0 ya con el Codigo HTML.
 
 		this.sucesor.ejecutarOperacion(listaDeInformacion);
 

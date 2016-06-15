@@ -12,13 +12,23 @@ import java.io.OutputStream;
 public class CreadorDePresentacion {
 
 	public void generarPresentacion(CodigoHTML codigoHTML, String nombreDePresentacion){
-		
-		File presentacion = this.crearDirectorio(nombreDePresentacion);
-		this.colocarContenidoBase(presentacion);
-		this.modificarIndex(presentacion, codigoHTML);
-		
+
+		File plantilla = new File("plantilla");
+
+		if(plantilla.exists()){
+
+			File presentacion = this.crearDirectorio(nombreDePresentacion);
+			this.colocarContenidoBase(presentacion);
+			this.modificarIndex(presentacion, codigoHTML);
+
+		}else{
+
+			System.out.print("No esta la plantilla para proceder a crear la presentacion.");
+
+		}
+
 	}
-	
+
 	private File crearDirectorio(String nombreDePresentacion) {
 
 		File presentacion = new File(nombreDePresentacion);
@@ -33,7 +43,7 @@ public class CreadorDePresentacion {
 		File plantilla = new File("plantilla");
 
 		String[] archivos = plantilla.list();
-		
+
 		for (int i = 0 ; i < archivos.length ; i++) {
 		  copiarDirectorios(new File(plantilla,archivos[i]),new File(directorio,archivos[i]));                           
 		}
@@ -41,23 +51,23 @@ public class CreadorDePresentacion {
 	}
 
 	private void copiarDirectorios(File origen, File destino) {
-		
+
 		if(origen.isDirectory()){
-			
+
 			destino.mkdir();
-			
+
 			String[] ficheros = origen.list();
-			
+
 			for (int i = 0 ; i < ficheros.length ; i++) {
 			  copiarDirectorios(new File(origen,ficheros[i]),new File(destino,ficheros[i]));                           
 			}
-			
+
 		}else{
-			
+
 			this.copiarFicheros(origen, destino);
-			
+
 		}
-		
+
 	}
 
 	private void copiarFicheros(File origen, File destino) {
@@ -94,28 +104,28 @@ public class CreadorDePresentacion {
 
             String lineaActual = raf.readLine().trim();
             String codigoCompleto = "";
-       
+
             while (lineaActual != null) {
-            	
+
             	lineaActual = lineaActual.trim();
             	boolean esLaLineaAReemplazar = lineaActual.equals("[este-es-el-texto-a-reemplazar]");
-            	
+
             	if(esLaLineaAReemplazar){
 
             		codigoCompleto = codigoCompleto + "\n" + codigoHTML.getContenido() + "\n\n";
-            		
+
             	}else{
-            		
+
             		codigoCompleto = codigoCompleto + lineaActual + "\n";
-            		
+
             	}
 
                 lineaActual = raf.readLine();
 
             }
-            
+
             raf.close();
-            
+
             FileOutputStream fo = new FileOutputStream(index);
     		fo.write(codigoCompleto.getBytes());
     		fo.close();
@@ -129,7 +139,7 @@ public class CreadorDePresentacion {
             throw new LecturaInvalidaException();
 
         }
-		
+
 	}
-	
+
 }

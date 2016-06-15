@@ -1,12 +1,15 @@
 package ar.edu.untref.aydoo;
 
-/**
- * Created by synysterlove on 14/06/16.
- */
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import org.junit.Test;
+
 public class IntegracionCompletaTest {
 
-
-    /*
     @Test
     public void queTransformeCorrectamenteUnArchivoDado() throws IOException {
 
@@ -15,9 +18,9 @@ public class IntegracionCompletaTest {
         BufferedWriter bw = new BufferedWriter(fw);
         bw.write("---");
         bw.newLine();
-        bw.write("#Titulo");
+        bw.write("# Titulo");
         bw.newLine();
-        bw.write("##Subtitulo");
+        bw.write("## Subtitulo");
         bw.newLine();
         bw.write("---");
         bw.newLine();
@@ -56,7 +59,5 @@ public class IntegracionCompletaTest {
         archivo.delete();
 
     }
-    */
 
-    
 }

@@ -13,12 +13,12 @@ public class GeneradorDeSalida implements UnidadDeProceso{
 	public void ejecutarOperacion(Object informacionDeEntrada){
 
 		@SuppressWarnings("unchecked")
-		List<Object> listaDeInformacion = ((List<Object>) informacionDeEntrada);
+		List<Object> listaDeInformacion = (List<Object>) informacionDeEntrada;
 
 		//Se extrae la informacion de la lista.
-		CodigoHTML codigoHTML = ((CodigoHTML) listaDeInformacion.get(0));
+		CodigoHTML codigoHTML = (CodigoHTML) (listaDeInformacion.get(0)); //- En la POSICION 0 ya esta el Codigo HTML listo.
 
-		String[] parametros = ((String[]) listaDeInformacion.get(1));
+		String[] parametros = (String[]) (listaDeInformacion.get(1)); //- En la POSICION 1 estan los parametros de entrada ya validados previamente.
 		String modoDeSalida = parametros[0];
 		String archivoDeEntrada = parametros[1];
 		String outPut = parametros[2];
@@ -27,9 +27,9 @@ public class GeneradorDeSalida implements UnidadDeProceso{
 		String[] archivos = {archivoDeEntrada, outPut};
         String nombreDeArchivoDeSalida = this.determinarNombreDelArchivoDeSalida(archivos);
 
-        String[] salidasPedidas = {modoDeSalida, nombreDeArchivoDeSalida};
+        String[] salidaPedida = {modoDeSalida, nombreDeArchivoDeSalida};
 
-        this.generarSalida(codigoHTML, salidasPedidas);
+        this.generarSalida(codigoHTML, salidaPedida);
 
 	}
 
